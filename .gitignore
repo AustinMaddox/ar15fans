@@ -168,7 +168,7 @@ pip-log.txt
 *~
 /cache/*.html
 /cache/*.php
-/cache/queue.php.lock
+/cache/*.lock
 /files/*
 /images/avatars/gallery/*
 /images/avatars/upload/*
