@@ -1092,6 +1092,14 @@ class parse_message extends bbcode_firstpass
 		$this->allow_flash_bbcode = $allow_flash_bbcode;
 		$this->allow_quote_bbcode = $allow_quote_bbcode;
 		$this->allow_url_bbcode = $allow_url_bbcode;
+		
+// BEGAN - phpBB-SEO xseo links mod
+		if (!function_exists('xseo_links')) {
+			global $phpbb_root_path, $phpEx;
+			include($phpbb_root_path . 'phpbb_seo/xseo_links.' . $phpEx);
+		}
+		$this->message = xseo_links($this->message);
+// ENDED - phpBB-SEO xseo links mod
 
 		// If false, then $this->message won't be altered, the text will be returned instead.
 		if (!$update_this_message)
