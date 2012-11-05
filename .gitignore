@@ -172,5 +172,6 @@ pip-log.txt
 /files/*
 /images/avatars/gallery/*
 /images/avatars/upload/*
+/phpbb_seo/cache/*
 /store/*
 /config.php
