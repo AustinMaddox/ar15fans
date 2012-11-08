@@ -122,7 +122,7 @@ if (!$show_guests)
 }
 
 // Get user list
-$sql = 'SELECT u.user_id, u.username, u.username_clean, u.user_type, u.user_colour, s.session_id, s.session_time, s.session_page, s.session_ip, s.session_browser, s.session_viewonline, s.session_forum_id
+$sql = 'SELECT u.user_id, u.username, u.username_clean, u.user_type, u.user_colour, s.session_id, s.session_time, s.session_page, s.session_ip, s.session_browser, s.session_viewonline, s.session_forum_id, s.session_album_id
 	FROM ' . USERS_TABLE . ' u, ' . SESSIONS_TABLE . ' s
 	WHERE u.user_id = s.session_user_id
 		AND s.session_time >= ' . (time() - ($config['load_online_time'] * 60)) .
@@ -192,6 +192,13 @@ while ($row = $db->sql_fetchrow($result))
 	{
 		$on_page[1] = '';
 	}
+
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::viewonline_pre_switch($on_page, $row['session_page']);
+	}
+// ENDED - phpBB Gallery mod
 
 	switch ($on_page[1])
 	{
@@ -318,6 +325,15 @@ while ($row = $db->sql_fetchrow($result))
 			$location = $user->lang['REPORTING_POST'];
 			$location_url = append_sid("{$phpbb_root_path}index.$phpEx");
 		break;
+		
+// BEGAN - phpBB Gallery mod
+		case phpbb_gallery_url::path('relative'):
+			if (class_exists('phpbb_gallery_integration'))
+			{
+				phpbb_gallery_integration::viewonline($row['session_album_id']);
+			}
+		break;
+// ENDED - phpBB Gallery mod
 
 		default:
 			$location = $user->lang['INDEX'];

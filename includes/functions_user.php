@@ -133,6 +133,13 @@ function user_update_name($old_name, $new_name)
 		}
 	}
 
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::user_update_name($old_name, $new_name);
+	}
+// ENDED - phpBB Gallery mod
+
 	if ($config['newest_username'] == $old_name)
 	{
 		set_config('newest_username', $new_name, true);
@@ -491,6 +498,13 @@ function user_delete($mode, $user_id, $post_username = false)
 	$db->sql_transaction('begin');
 
 	$table_ary = array(USERS_TABLE, USER_GROUP_TABLE, TOPICS_WATCH_TABLE, FORUMS_WATCH_TABLE, ACL_USERS_TABLE, TOPICS_TRACK_TABLE, TOPICS_POSTED_TABLE, FORUMS_TRACK_TABLE, PROFILE_FIELDS_DATA_TABLE, MODERATOR_CACHE_TABLE, DRAFTS_TABLE, BOOKMARKS_TABLE, SESSIONS_KEYS_TABLE, PRIVMSGS_FOLDER_TABLE, PRIVMSGS_RULES_TABLE);
+
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		$table_ary = phpbb_gallery_integration::user_delete($mode, $user_id, $post_username, $table_ary);
+	}
+// ENDED - phpBB Gallery mod
 
 	foreach ($table_ary as $table)
 	{
@@ -2685,6 +2699,13 @@ function group_delete($group_id, $group_name = false)
 		WHERE group_id = $group_id";
 	$db->sql_query($sql);
 
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::group_delete($group_id, $group_name);
+	}
+// ENDED - phpBB Gallery mod
+
 	// Re-cache moderators
 	if (!function_exists('cache_moderators'))
 	{
@@ -2782,6 +2803,13 @@ function group_user_add($group_id, $user_id_ary = false, $username_ary = false, 
 
 	// Clear permissions cache of relevant users
 	$auth->acl_clear_prefetch($user_id_ary);
+
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::group_user_add($group_id, $user_id_ary);
+	}
+// ENDED - phpBB Gallery mod
 
 	if (!$group_name)
 	{
@@ -2913,6 +2941,13 @@ function group_user_del($group_id, $user_id_ary = false, $username_ary = false, 
 
 	// Clear permissions cache of relevant users
 	$auth->acl_clear_prefetch($user_id_ary);
+
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::group_user_del($group_id, $user_id_ary);
+	}
+// ENDED - phpBB Gallery mod
 
 	if (!$group_name)
 	{
@@ -3318,6 +3353,13 @@ function group_set_user_default($group_id, $user_id_ary, $group_attributes = fal
 			set_config('newest_user_colour', $sql_ary['user_colour'], true);
 		}
 	}
+
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::group_set_user_default($user_id_ary, $sql_ary);
+	}
+// ENDED - phpBB Gallery mod
 
 	if ($update_listing)
 	{

@@ -150,6 +150,12 @@ class acp_logs
 			$data = array();
 				
 			$checks = array('viewtopic', 'viewlogs', 'viewforum');
+// BEGAN - phpBB Gallery mod
+			if ($mode == 'gallery')
+			{
+				$checks = array('viewimage', 'viewalbum');
+			}
+// ENDED - phpBB Gallery mod
 			foreach ($checks as $check)
 			{
 				if (isset($row[$check]) && $row[$check])

@@ -599,6 +599,13 @@ switch ($mode)
 
 			unset($module);
 		}
+		
+// BEGAN - phpBB Gallery mod
+		if (class_exists('phpbb_gallery_integration'))
+		{
+			phpbb_gallery_integration::memberlist_viewprofile($member);
+		}
+// ENDED - phpBB Gallery mod
 
 		$template->assign_vars(show_profile($member, $user_notes_enabled, $warn_user_enabled));
 

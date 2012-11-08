@@ -981,6 +981,10 @@ function display_custom_bbcodes()
 	// Start counting from 22 for the bbcode ids (every bbcode takes two ids - opening/closing)
 	$num_predefined_bbcodes = 22;
 
+// BEGAN - phpBB Gallery mod
+	$user->add_lang('mods/info_acp_gallery');
+// ENDED - phpBB Gallery mod
+
 	$sql = 'SELECT bbcode_id, bbcode_tag, bbcode_helpline
 		FROM ' . BBCODES_TABLE . '
 		WHERE display_on_posting = 1
@@ -1007,6 +1011,12 @@ function display_custom_bbcodes()
 		$i++;
 	}
 	$db->sql_freeresult($result);
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::posting_display_popup();
+	}
+// ENDED - phpBB Gallery mod
 }
 
 /**

@@ -135,6 +135,13 @@ function generate_smilies($mode, $forum_id)
 		);
 	}
 
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::generate_smilies($mode, $forum_id);
+	}
+// ENDED - phpBB Gallery mod
+
 	if ($mode == 'window')
 	{
 		page_footer();

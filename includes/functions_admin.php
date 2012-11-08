@@ -2536,6 +2536,13 @@ function view_log($mode, &$log, &$log_count, $limit = 0, $offset = 0, $forum_id 
 			$sql_forum = '';
 		break;
 
+// BEGAN - phpBB Gallery mod
+		case 'gallery':
+			$log_type = LOG_GALLERY;
+			$sql_forum = '';
+		break;
+// ENDED - phpBB Gallery mod
+
 		default:
 			return;
 	}
@@ -2646,6 +2653,10 @@ function view_log($mode, &$log, &$log_count, $limit = 0, $offset = 0, $forum_id 
 			'topic_id'			=> $row['topic_id'],
 
 			'viewforum'			=> ($row['forum_id'] && $auth->acl_get('f_read', $row['forum_id'])) ? append_sid("{$phpbb_root_path}viewforum.$phpEx", 'f=' . $row['forum_id']) : false,
+// BEGAN - phpBB Gallery mod
+			'viewalbum'			=> ((isset($row['album_id']) && $row['album_id'] && ($log_type == LOG_GALLERY)) ? phpbb_gallery_url::append_sid('album', 'album_id=' . $row['album_id']) : false),
+			'viewimage'			=> ((isset($row['image_id']) && $row['image_id'] && ($log_type == LOG_GALLERY)) ? phpbb_gallery_url::append_sid('image_page', 'album_id=' . $row['album_id'] . '&amp;image_id=' . $row['image_id']) : false),
+// ENDED - phpBB Gallery mod
 			'action'			=> (isset($user->lang[$row['log_operation']])) ? $user->lang[$row['log_operation']] : '{' . ucfirst(str_replace('_', ' ', $row['log_operation'])) . '}',
 		);
 

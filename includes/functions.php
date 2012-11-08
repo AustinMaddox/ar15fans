@@ -3416,6 +3416,10 @@ function add_log()
 	$reportee_id	= ($mode == 'user') ? intval(array_shift($args)) : '';
 	$forum_id		= ($mode == 'mod') ? intval(array_shift($args)) : '';
 	$topic_id		= ($mode == 'mod') ? intval(array_shift($args)) : '';
+// BEGAN - phpBB Gallery mod
+	$album_id		= ($mode == 'gallery') ? intval(array_shift($args)) : '';
+	$image_id		= ($mode == 'gallery') ? intval(array_shift($args)) : '';
+// ENDED - phpBB Gallery mod
 	$action			= array_shift($args);
 	$data			= (!sizeof($args)) ? '' : serialize($args);
 
@@ -3451,6 +3455,16 @@ function add_log()
 		case 'critical':
 			$sql_ary['log_type'] = LOG_CRITICAL;
 		break;
+
+// BEGAN - phpBB Gallery mod
+		case 'gallery':
+			$sql_ary += array(
+				'log_type'	=> LOG_GALLERY,
+				'album_id'	=> $album_id,
+				'image_id'	=> $image_id,
+			);
+		break;
+// ENDED - phpBB Gallery mod
 
 		default:
 			return false;
@@ -3520,16 +3534,20 @@ function get_preg_expression($mode)
 			return '([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*(?:[\w\!\#$\%\'\*\+\-\/\=\?\^\`{\|\}\~]|&amp;)+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,63})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)';
 		break;
 
+// BEGAN - Changed to allow links to open in new window
+		// http://www.phpbb.com/kb/article/links-opening-new-windows/
+		// Allow the created HTML output to be parsed again by phpBB
 		case 'bbcode_htm':
 			return array(
 				'#<!\-\- e \-\-><a href="mailto:(.*?)">.*?</a><!\-\- e \-\->#',
-				'#<!\-\- l \-\-><a (?:class="[\w-]+" )?href="(.*?)(?:(&amp;|\?)sid=[0-9a-f]{32})?">.*?</a><!\-\- l \-\->#',
-				'#<!\-\- ([mw]) \-\-><a (?:class="[\w-]+" )?href="(.*?)">.*?</a><!\-\- \1 \-\->#',
+				'#<!\-\- l \-\-><a (?:class="[\w-]+" )?href="(.*?)(?:(&amp;|\?)sid=[0-9a-f]{32})?" onclick="window\.open\(this\.href\);return false;">.*?</a><!\-\- l \-\->#',
+				'#<!\-\- ([mw]) \-\-><a (?:class="[\w-]+" )?href="(.*?)" onclick="window\.open\(this\.href\);return false;">.*?</a><!\-\- \1 \-\->#',
 				'#<!\-\- s(.*?) \-\-><img src="\{SMILIES_PATH\}\/.*? \/><!\-\- s\1 \-\->#',
 				'#<!\-\- .*? \-\->#s',
 				'#<.*?>#s',
 			);
 		break;
+// ENDED - Changed to allow links to open in new window
 
 		// Whoa these look impressive!
 		// The code to generate the following two regular expressions which match valid IPv4/IPv6 addresses
@@ -4654,6 +4672,29 @@ function page_header($page_title = '', $display_online_list = true, $item_id = 0
 		}
 	}
 
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::page_header();
+	}
+		// BEGAN - Gallery Link additions for the nav.html menu
+	$template->assign_vars(array(
+		'U_G_SEARCH'					=> phpbb_gallery_url::append_sid('search', ''),
+		'U_G_SEARCH_COMMENTED'			=> (phpbb_gallery_config::get('allow_comments')) ? phpbb_gallery_url::append_sid('search', 'search_id=commented') : '',
+		'U_G_SEARCH_CONTESTS'			=> (phpbb_gallery_config::get('allow_rates') && phpbb_gallery_config::get('contests_ended')) ? phpbb_gallery_url::append_sid('search', 'search_id=contests') : '',
+		'U_G_SEARCH_RANDOM'				=> phpbb_gallery_url::append_sid('search', 'search_id=random'),
+		'U_G_SEARCH_RECENT'				=> phpbb_gallery_url::append_sid('search', 'search_id=recent'),
+		'U_G_SEARCH_SELF'				=> phpbb_gallery_url::append_sid('search', 'search_id=egosearch'),
+		'U_G_SEARCH_TOPRATED'			=> (phpbb_gallery_config::get('allow_rates')) ? phpbb_gallery_url::append_sid('search', 'search_id=toprated') : '',
+
+		'U_G_MANAGE_PHOTOS'				=> append_sid("{$phpbb_root_path}ucp.$phpEx", 'i=gallery&mode=manage_albums'),
+		
+//		'U_YOUR_PERSONAL_GALLERY'		=> // See includes/gallery/integration.php Search for "static public function page_header()"
+		'U_USERS_PERSONAL_GALLERIES'	=> phpbb_gallery_url::append_sid('index', 'mode=personal'),
+	));
+		// ENDED - Gallery Link additions for the nav.html menu
+// ENDED - phpBB Gallery mod
+
 	// The following assigns all _common_ variables that may be used at any point in a template.
 	$template->assign_vars(array(
 		'SITENAME'						=> $config['sitename'],
@@ -4842,7 +4883,7 @@ function page_footer($run_cron = true)
 	$template->assign_vars(array(
 		'DEBUG_OUTPUT'			=> (defined('DEBUG')) ? $debug_output : '',
 		'TRANSLATION_INFO'		=> (!empty($user->lang['TRANSLATION_INFO'])) ? $user->lang['TRANSLATION_INFO'] : '',
-		'CREDIT_LINE'			=> $user->lang('POWERED_BY', '<a href="http://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group'),
+		'CREDIT_LINE'			=> '',
 
 		'U_ACP' => ($auth->acl_get('a_') && !empty($user->data['is_registered'])) ? append_sid("{$phpbb_root_path}adm/index.$phpEx", false, true, $user->session_id) : '')
 	);

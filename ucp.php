@@ -326,6 +326,13 @@ if (!$auth->acl_get('u_sig'))
 	$module->set_display('profile', 'signature', false);
 }
 
+// BEGAN - phpBB Gallery mod
+if (class_exists('phpbb_gallery_integration'))
+{
+	phpbb_gallery_integration::ucp($module);
+}
+// ENDED - phpBB Gallery mod
+
 // Select the active module
 $module->set_active($id, $mode);
 

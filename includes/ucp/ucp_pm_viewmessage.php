@@ -237,6 +237,13 @@ function view_message($id, $mode, $folder_id, $msg_id, $folder, $message_row)
 		'U_FORWARD_PM'		=> ($config['forward_pm'] && $auth->acl_get('u_sendpm') && $auth->acl_get('u_pm_forward')) ? "$url&amp;mode=compose&amp;action=forward&amp;f=$folder_id&amp;p=" . $message_row['msg_id'] : '')
 	);
 
+// BEGAN - phpBB Gallery mod
+	if (class_exists('phpbb_gallery_integration'))
+	{
+		phpbb_gallery_integration::ucp_pm_viewmessage($id, $mode, $folder_id, $msg_id, $folder, $message_row);
+	}
+// ENDED - phpBB Gallery mod
+
 	// Display not already displayed Attachments for this post, we already parsed them. ;)
 	if (isset($attachments) && sizeof($attachments))
 	{

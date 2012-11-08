@@ -710,6 +710,7 @@ $template->assign_vars(array(
 	'FORUM_ID' 		=> $forum_id,
 	'FORUM_NAME' 	=> $topic_data['forum_name'],
 	'FORUM_DESC'	=> generate_text_for_display($topic_data['forum_desc'], $topic_data['forum_desc_uid'], $topic_data['forum_desc_bitfield'], $topic_data['forum_desc_options']),
+	'FORUM_IMAGE'	=> ($topic_data['forum_image']) ? '<img src="' . $phpbb_root_path . $topic_data['forum_image'] . '" alt="' . $topic_data['forum_name'] .  '" />' : '',
 	'TOPIC_ID' 		=> $topic_id,
 	'TOPIC_TITLE' 	=> $topic_data['topic_title'],
 	'TOPIC_POSTER'	=> $topic_data['topic_poster'],
@@ -739,7 +740,10 @@ $template->assign_vars(array(
 	'AIM_IMG' 			=> $user->img('icon_contact_aim', 'AIM'),
 	'MSN_IMG' 			=> $user->img('icon_contact_msnm', 'MSNM'),
 	'YIM_IMG' 			=> $user->img('icon_contact_yahoo', 'YIM'),
-	'JABBER_IMG'		=> $user->img('icon_contact_jabber', 'JABBER') ,
+	'JABBER_IMG'		=> $user->img('icon_contact_jabber', 'JABBER'),
+// BEGAN - phpBB Gallery mod
+	'GALLERY_IMG'		=> $user->img('icon_contact_gallery', 'PERSONAL_ALBUM'),
+// ENDED - phpBB Gallery mod
 	'REPORT_IMG'		=> $user->img('icon_post_report', 'REPORT_POST'),
 	'REPORTED_IMG'		=> $user->img('icon_topic_reported', 'POST_REPORTED'),
 	'UNAPPROVED_IMG'	=> $user->img('icon_topic_unapproved', 'POST_UNAPPROVED'),
@@ -1096,7 +1100,7 @@ if (!sizeof($post_list))
 $max_post_time = 0;
 
 $sql = $db->sql_build_query('SELECT', array(
-	'SELECT'	=> 'u.*, z.friend, z.foe, p.*',
+	'SELECT'	=> 'u.*, z.friend, z.foe, p.*, gu.personal_album_id, gu.user_images',
 
 	'FROM'		=> array(
 		USERS_TABLE		=> 'u',
@@ -1107,6 +1111,10 @@ $sql = $db->sql_build_query('SELECT', array(
 		array(
 			'FROM'	=> array(ZEBRA_TABLE => 'z'),
 			'ON'	=> 'z.user_id = ' . $user->data['user_id'] . ' AND z.zebra_id = p.poster_id'
+		)
+		, array(
+			'FROM'	=> array(GALLERY_USERS_TABLE => 'gu'),
+			'ON'	=> 'gu.user_id = p.poster_id'
 		)
 	),
 
@@ -1217,6 +1225,11 @@ while ($row = $db->sql_fetchrow($result))
 				'jabber'			=> '',
 				'search'			=> '',
 				'age'				=> '',
+// BEGAN - phpBB Gallery mod
+				'gallery_album'		=> '',
+				'gallery_images'	=> '',
+				'gallery_search'	=> '',
+// ENDED - phpBB Gallery mod
 
 				'username'			=> $row['username'],
 				'user_colour'		=> $row['user_colour'],
@@ -1240,7 +1253,7 @@ while ($row = $db->sql_fetchrow($result))
 			$id_cache[] = $poster_id;
 
 			$user_cache[$poster_id] = array(
-				'joined'		=> $user->format_date($row['user_regdate']),
+				'joined'		=> $user->format_date($row['user_regdate'], 'F Y'),
 				'posts'			=> $row['user_posts'],
 				'warnings'		=> (isset($row['user_warnings'])) ? $row['user_warnings'] : 0,
 				'from'			=> (!empty($row['user_from'])) ? $row['user_from'] : '',
@@ -1270,6 +1283,11 @@ while ($row = $db->sql_fetchrow($result))
 				'yim'			=> ($row['user_yim']) ? 'http://edit.yahoo.com/config/send_webmesg?.target=' . urlencode($row['user_yim']) . '&amp;.src=pg' : '',
 				'jabber'		=> ($row['user_jabber'] && $auth->acl_get('u_sendim')) ? append_sid("{$phpbb_root_path}memberlist.$phpEx", "mode=contact&amp;action=jabber&amp;u=$poster_id") : '',
 				'search'		=> ($auth->acl_get('u_search')) ? append_sid("{$phpbb_root_path}search.$phpEx", "author_id=$poster_id&amp;sr=posts") : '',
+// BEGAN - phpBB Gallery mod
+				'gallery_album'		=> (phpbb_gallery_config::get('viewtopic_icon') && $row['personal_album_id']) ? phpbb_gallery_url::append_sid('album', "album_id=" . $row['personal_album_id']) : '',
+				'gallery_images'	=> (phpbb_gallery_config::get('viewtopic_images')) ? $row['user_images'] : 0,
+				'gallery_search'	=> (phpbb_gallery_config::get('viewtopic_images') && phpbb_gallery_config::get('viewtopic_link') && $row['user_images']) ? phpbb_gallery_url::append_sid('search', "user_id=$poster_id") : '',
+// ENDED - phpBB Gallery mod
 
 				'author_full'		=> get_username_string('full', $poster_id, $row['username'], $row['user_colour']),
 				'author_colour'		=> get_username_string('colour', $poster_id, $row['username'], $row['user_colour']),
@@ -1691,6 +1709,12 @@ for ($i = 0, $end = sizeof($post_list); $i < $end; ++$i)
 		'U_MSN'			=> $user_cache[$poster_id]['msn'],
 		'U_YIM'			=> $user_cache[$poster_id]['yim'],
 		'U_JABBER'		=> $user_cache[$poster_id]['jabber'],
+
+// BEGAN - phpBB Gallery mod
+		'U_GALLERY'			=> $user_cache[$poster_id]['gallery_album'],
+		'GALLERY_IMAGES'	=> $user_cache[$poster_id]['gallery_images'],
+		'U_GALLERY_SEARCH'	=> $user_cache[$poster_id]['gallery_search'],
+// ENDED - phpBB Gallery mod
 
 		'U_REPORT'			=> ($auth->acl_get('f_report', $forum_id)) ? append_sid("{$phpbb_root_path}report.$phpEx", 'f=' . $forum_id . '&amp;p=' . $row['post_id']) : '',
 		'U_MCP_REPORT'		=> ($auth->acl_get('m_report', $forum_id)) ? append_sid("{$phpbb_root_path}mcp.$phpEx", 'i=reports&amp;mode=report_details&amp;f=' . $forum_id . '&amp;p=' . $row['post_id'], true, $user->session_id) : '',

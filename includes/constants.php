@@ -135,6 +135,9 @@ define('LOG_ADMIN', 0);
 define('LOG_MOD', 1);
 define('LOG_CRITICAL', 2);
 define('LOG_USERS', 3);
+// BEGAN - phpBB Gallery mod
+define('LOG_GALLERY', 4);
+// ENDED - phpBB Gallery mod
 
 // Private messaging - Do NOT change these values
 define('PRIVMSGS_HOLD_BOX', -4);
@@ -278,5 +281,22 @@ define('ZEBRA_TABLE',				$table_prefix . 'zebra');
 
 // Additional tables
 
+
+// BEGAN - phpBB Gallery mod
+define('GALLERY_ALBUMS_TABLE',			$table_prefix . 'gallery_albums');
+define('GALLERY_ATRACK_TABLE',			$table_prefix . 'gallery_albums_track');
+define('GALLERY_COMMENTS_TABLE',		$table_prefix . 'gallery_comments');
+define('GALLERY_CONFIG_TABLE',			$table_prefix . 'gallery_config');
+define('GALLERY_CONTESTS_TABLE',		$table_prefix . 'gallery_contests');
+define('GALLERY_FAVORITES_TABLE',		$table_prefix . 'gallery_favorites');
+define('GALLERY_IMAGES_TABLE',			$table_prefix . 'gallery_images');
+define('GALLERY_MODSCACHE_TABLE',		$table_prefix . 'gallery_modscache');
+define('GALLERY_PERMISSIONS_TABLE',		$table_prefix . 'gallery_permissions');
+define('GALLERY_RATES_TABLE',			$table_prefix . 'gallery_rates');
+define('GALLERY_REPORTS_TABLE',			$table_prefix . 'gallery_reports');
+define('GALLERY_ROLES_TABLE',			$table_prefix . 'gallery_roles');
+define('GALLERY_USERS_TABLE',			$table_prefix . 'gallery_users');
+define('GALLERY_WATCH_TABLE',			$table_prefix . 'gallery_watch');
+// ENDED - phpBB Gallery mod
 
 ?>

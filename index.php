@@ -134,6 +134,27 @@ if ($config['load_birthdays'] && $config['allow_birthdays'] && $auth->acl_gets('
 	$db->sql_freeresult($result);
 }
 
+
+// BEGAN - phpBB Gallery mod
+if (class_exists('phpbb_gallery_integration'))
+{
+	phpbb_gallery_integration::index_total_images();
+}
+/**
+* RRC of phpbb gallery
+* http://www.flying-bits.org/rrc_configurator.php
+*/
+$gallery_block = new phpbb_gallery_block();
+$gallery_block->set_modes(array('recent', 'comment'));
+$gallery_block->set_display_options(array('albumname', 'imagename', 'imagetime', 'imageviews', 'username', 'ratings', 'ip'));
+$gallery_block->set_nums(array('rows' => 3, 'columns' => 1, 'comments' => 1, 'contests' => 0));
+$gallery_block->set_toggle(false);
+$gallery_block->set_pegas(true);
+//$gallery_block->add_albums(array(1, 2, 3));
+//$gallery_block->add_users(array(4, 5, 6));
+$gallery_block->display();
+// ENDED - phpBB Gallery mod
+
 // Assign index specific vars
 $template->assign_vars(array(
 	'TOTAL_POSTS'	=> sprintf($user->lang[$l_total_post_s], $total_posts),
@@ -149,6 +170,7 @@ $template->assign_vars(array(
 	'FORUM_LOCKED_IMG'		=> $user->img('forum_read_locked', 'NO_UNREAD_POSTS_LOCKED'),
 	'FORUM_UNREAD_LOCKED_IMG'	=> $user->img('forum_unread_locked', 'UNREAD_POSTS_LOCKED'),
 
+	'S_IN_BOARD_INDEX'			=> true,
 	'S_LOGIN_ACTION'			=> append_sid("{$phpbb_root_path}ucp.$phpEx", 'mode=login'),
 	'S_DISPLAY_BIRTHDAY_LIST'	=> ($config['load_birthdays']) ? true : false,
 

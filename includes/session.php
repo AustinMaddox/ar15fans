@@ -131,6 +131,9 @@ class session
 
 			'page'				=> $page,
 			'forum'				=> (isset($_REQUEST['f']) && $_REQUEST['f'] > 0) ? (int) $_REQUEST['f'] : 0,
+// BEGAN - phpBB Gallery mod
+			'album'				=> (isset($_REQUEST['album_id']) && $_REQUEST['album_id'] > 0) ? (int) $_REQUEST['album_id'] : 0,
+// ENDED - phpBB Gallery mod
 		);
 
 		return $page_array;
@@ -420,6 +423,9 @@ class session
 							{
 								$sql_ary['session_page'] = substr($this->page['page'], 0, 199);
 								$sql_ary['session_forum_id'] = $this->page['forum'];
+// BEGAN - phpBB Gallery mod
+								$sql_ary['session_album_id'] = $this->page['album'];
+// ENDED - phpBB Gallery mod
 							}
 
 							$db->sql_return_on_error(true);
@@ -429,6 +435,20 @@ class session
 							$result = $db->sql_query($sql);
 
 							$db->sql_return_on_error(false);
+
+// BEGAN - phpBB Gallery mod
+							if ($result === false)
+							{
+								unset($sql_ary['session_album_id']);
+								$db->sql_return_on_error(true);
+
+								$sql = 'UPDATE ' . SESSIONS_TABLE . ' SET ' . $db->sql_build_array('UPDATE', $sql_ary) . "
+									WHERE session_id = '" . $db->sql_escape($this->session_id) . "'";
+								$result = $db->sql_query($sql);
+
+								$db->sql_return_on_error(false);
+							}
+// ENDED - phpBB Gallery mod
 
 							// If the database is not yet updated, there will be an error due to the session_forum_id
 							// @todo REMOVE for 3.0.2
@@ -706,6 +726,9 @@ class session
 					{
 						$sql_ary['session_page'] = substr($this->page['page'], 0, 199);
 						$sql_ary['session_forum_id'] = $this->page['forum'];
+// BEGAN - phpBB Gallery mod
+						$sql_ary['session_album_id'] = $this->page['album'];
+// ENDED - phpBB Gallery mod
 					}
 
 					$sql = 'UPDATE ' . SESSIONS_TABLE . ' SET ' . $db->sql_build_array('UPDATE', $sql_ary) . "
@@ -751,6 +774,9 @@ class session
 		{
 			$sql_ary['session_page'] = (string) substr($this->page['page'], 0, 199);
 			$sql_ary['session_forum_id'] = $this->page['forum'];
+// BEGAN - phpBB Gallery mod
+			$sql_ary['session_album_id'] = $this->page['album'];
+// ENDED - phpBB Gallery mod
 		}
 
 		$db->sql_return_on_error(true);
@@ -800,6 +826,9 @@ class session
 		$sql_ary['session_id'] = (string) $this->session_id;
 		$sql_ary['session_page'] = (string) substr($this->page['page'], 0, 199);
 		$sql_ary['session_forum_id'] = $this->page['forum'];
+// BEGAN - phpBB Gallery mod
+		$sql_ary['session_album_id'] = $this->page['album'];
+// ENDED - phpBB Gallery mod
 
 		$sql = 'INSERT INTO ' . SESSIONS_TABLE . ' ' . $db->sql_build_array('INSERT', $sql_ary);
 		$db->sql_query($sql);
@@ -1854,7 +1883,9 @@ class user extends session
 		}
 
 		// Is board disabled and user not an admin or moderator?
-		if ($config['board_disable'] && !defined('IN_LOGIN') && !$auth->acl_gets('a_', 'm_') && !$auth->acl_getf_global('m_'))
+		// Austin changed to disable site for everyone except Admin
+//		if ($config['board_disable'] && !defined('IN_LOGIN') && !$auth->acl_gets('a_', 'm_') && !$auth->acl_getf_global('m_'))
+		if ($config['board_disable'] && !defined('IN_LOGIN') && !$auth->acl_get('a_'))
 		{
 			if ($this->data['is_bot'])
 			{
