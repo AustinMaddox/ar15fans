@@ -198,6 +198,20 @@ $seo_meta->collect('keywords', $forum_data['forum_name'] . ' ' . $seo_meta->meta
 // www.phpBB-SEO.com SEO TOOLKIT END - META
 page_header($forum_data['forum_name'] . $extra_title, true, $forum_id);
 // www.phpBB-SEO.com SEO TOOLKIT END - TITLE
+// BEGAN - phpBB Gallery mod
+/**
+* RRC of phpbb gallery
+* See http://www.flying-bits.org/rrc_configurator.php for more information
+*/
+$gallery_block = new phpbb_gallery_block();
+$gallery_block->set_modes(array('random'));
+$gallery_block->set_display_options(array('albumname', 'imagename', 'username', 'ratings', 'ip'));
+$gallery_block->set_nums(array('rows' => 1, 'columns' => 4, 'comments' => 1, 'contests' => 0));
+$gallery_block->set_pegas(true);
+//$gallery_block->add_albums(array(1, 2, 3));
+//$gallery_block->add_users(array(4, 5, 6));
+$gallery_block->display(); 
+// ENDED - phpBB Gallery mod
 
 $template->set_filenames(array(
 	'body' => 'viewforum_body.html')
@@ -362,6 +376,7 @@ $template->assign_vars(array(
 	'FOLDER_ANNOUNCE_IMG'		=> $user->img('announce_read', 'POST_ANNOUNCEMENT'),
 	'FOLDER_ANNOUNCE_UNREAD_IMG'=> $user->img('announce_unread', 'POST_ANNOUNCEMENT'),
 	'FOLDER_MOVED_IMG'			=> $user->img('topic_moved', 'TOPIC_MOVED'),
+	'FORUM_IMAGE'				=> ($forum_data['forum_image']) ? '<img src="' . $phpbb_root_path . $forum_data['forum_image'] . '" alt="' . $forum_data['forum_name'] .  '" />' : '',
 	'REPORTED_IMG'				=> $user->img('icon_topic_reported', 'TOPIC_REPORTED'),
 	'UNAPPROVED_IMG'			=> $user->img('icon_topic_unapproved', 'TOPIC_UNAPPROVED'),
 	'GOTO_PAGE_IMG'				=> $user->img('icon_post_target', 'GOTO_PAGE'),

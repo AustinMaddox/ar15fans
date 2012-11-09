@@ -1299,7 +1299,7 @@ if ($auth->acl_get('a_search'))
 				ORDER BY search_time DESC';
 		break;
 	}
-	$result = $db->sql_query_limit($sql, 5);
+	$result = $db->sql_query_limit($sql, 15);
 
 	while ($row = $db->sql_fetchrow($result))
 	{

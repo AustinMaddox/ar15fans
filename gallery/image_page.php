@@ -238,7 +238,7 @@ $template->assign_vars(array(
 	'CONTEST_RANK'		=> ($image_data['image_contest_rank']) ? $user->lang['CONTEST_RESULT_' . $image_data['image_contest_rank']] : '',
 	'IMAGE_NAME'		=> $image_data['image_name'],
 	'IMAGE_DESC'		=> $image_desc,
-	'IMAGE_BBCODE'		=> ($config['allow_bbcode']) ? '[album]' . $image_id . '[/album]' : '',
+	'IMAGE_BBCODE'		=> ($config['allow_bbcode']) ? '[gallery]' . $image_id . '[/gallery]' : '',
 	'IMAGE_IMGURL_BBCODE'	=> (phpbb_gallery_config::get('disp_image_url')) ? '[url=' . phpbb_gallery_url::append_sid('full', 'image', "album_id=$album_id&amp;image_id=$image_id", true, '') . '][img]' . phpbb_gallery_url::append_sid('full', 'image', "album_id=$album_id&amp;image_id=$image_id&amp;mode=thumbnail", true, '') . '[/img][/url]' : '',
 	'IMAGE_URL'			=> (phpbb_gallery_config::get('disp_image_url')) ? phpbb_gallery_url::append_sid('full', 'image', "album_id=$album_id&amp;image_id=$image_id", true, '') : '',
 	'IMAGE_TIME'		=> $user->format_date($image_data['image_time']),
@@ -620,7 +620,7 @@ $template->assign_vars(array(
 	'GALLERY_IMG'		=> $user->img('icon_contact_gallery', 'PERSONAL_ALBUM'),
 ));
 
-page_header($user->lang['VIEW_IMAGE'] . ' - ' . $image_data['image_name'], false);
+page_header($image_data['image_name'], false);
 
 $template->set_filenames(array(
 	'body' => 'gallery/viewimage_body.html')
