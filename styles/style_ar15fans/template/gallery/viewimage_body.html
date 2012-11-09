@@ -28,44 +28,48 @@
 			<hr />
 
 			<fieldset class="fields1 anti-postbody">
+				<dl>
+					<dt><label>{L_UPLOADED_ON_DATE}:</label></dt>
+					<dd>{IMAGE_TIME}</dd>
+				</dl>
+				<dl>
+					<dt><label>{L_GALLERY_VIEWS}:</label></dt>
+					<dd>{IMAGE_VIEW}</dd>
+				</dl>
+				<!-- IF S_VIEW_RATE -->
+				<dl>
+					<dt><label>{L_RATING}:</label></dt>
+					<dd><!-- IF CONTEST_RESULT_HIDDEN -->{CONTEST_RESULT_HIDDEN}<!-- ELSE -->{IMAGE_RATING}<!-- ENDIF --><!-- IF S_YOUR_RATING --> ({L_YOUR_RATING}: {S_YOUR_RATING})<!-- ENDIF --></dd>
+				</dl>
+				<!-- ENDIF -->
 				<!-- IF CONTEST_RANK -->
-				<dl class="column1">
+				<dl>
 					<dt><label>{L_CONTEST_RESULT}:</label></dt>
 					<dd>{CONTEST_RANK}</dd>
 				</dl>
 				<!-- ENDIF -->
-				<dl class="column2">
-					<dt><label>{L_UPLOADED_ON_DATE}:</label></dt>
-					<dd>{IMAGE_TIME}</dd>
+				<!-- IF S_BBCODE_ALLOWED -->
+				<dl>
+					<dt><label>{L_IMAGE_BBCODE}:</label><br /><span>{L_IMAGE_BBCODE_EXPLAIN}</span></dt>
+					<dd><input type="text" size="20" value="{IMAGE_BBCODE}" class="inputbox autowidth" onclick="this.focus();this.select();" /></dd>
 				</dl>
+				<!-- ENDIF -->
 				<!-- IF IMAGE_URL -->
-				<dl class="column1">
+				<dl>
 					<dt><label>{L_IMAGE_URL}:</label></dt>
-					<dd><input type="text" size="28" value="{IMAGE_URL}" class="inputbox autowidth-gallery" onclick="this.focus();this.select();" /></dd>
+					<dd><input type="text" style="width:98%" value="{IMAGE_URL}" class="inputbox" onclick="this.focus();this.select();" /></dd>
 				</dl>
 				<!-- ENDIF -->
-				<dl class="column2">
-					<dt><label>{L_GALLERY_VIEWS}:</label></dt>
-					<dd>{IMAGE_VIEW}</dd>
-				</dl>
-				<!-- IF IMAGE_BBCODE -->
-				<dl class="column1">
-					<dt><label>{L_IMAGE_BBCODE}:</label></dt>
-					<dd><input type="text" size="28" value="{IMAGE_BBCODE}" class="inputbox autowidth-gallery" onclick="this.focus();this.select();" /></dd>
 					<!-- IF IMAGE_IMGURL_BBCODE -->
-						<dd><input type="text" size="28" value="{IMAGE_IMGURL_BBCODE}" class="inputbox autowidth-gallery" onclick="this.focus();this.select();" /></dd>
-					<!-- ENDIF -->
-				</dl>
-				<!-- ENDIF -->
-				<!-- IF S_VIEW_RATE -->
-				<dl class="column2">
-					<dt><label>{L_RATING}:</label></dt>
-					<dd><!-- IF CONTEST_RESULT_HIDDEN -->{CONTEST_RESULT_HIDDEN}<!-- ELSE -->{IMAGE_RATING}<!-- ENDIF --><!-- IF S_YOUR_RATING --> ({L_YOUR_RATING}: {S_YOUR_RATING})<!-- ENDIF --></dd>
+                <dl>
+	                <dt><label>{L_IMAGE_IMGURL_BBCODE}:</label></dt>
+					<dd><input type="text" style="width:98%" value="{IMAGE_IMGURL_BBCODE}" class="inputbox" onclick="this.focus();this.select();" /></dd>
 				</dl>
 				<!-- ENDIF -->
 			</fieldset>
 
 			<!-- IF .exif_value -->
+            <hr />
 			<h3 class="anti-postbody">{L_EXIF-DATA}<!-- IF not S_VIEWEXIF --> - <a href="javascript: dE('exif_data_fieldset');">{L_SHOW_EXIF}</a><!-- ENDIF --></h3>
 			<fieldset class="fields1 anti-postbody" id="exif_data_fieldset"<!-- IF not S_VIEWEXIF --> style="display: none;"<!-- ENDIF -->>
 				<!-- BEGIN exif_value -->
@@ -87,9 +91,6 @@
 			</dt>
 
 			<!-- IF POSTER_RANK_TITLE or POSTER_RANK_IMG --><dd>{POSTER_RANK_TITLE}<!-- IF POSTER_RANK_TITLE and POSTER_RANK_IMG --><br /><!-- ENDIF -->{POSTER_RANK_IMG}</dd><!-- ENDIF -->
-
-			<dd>&nbsp;</dd>
-
 			<!-- IF POSTER_POSTS != '' --><dd><strong>{L_POSTS}:</strong> {POSTER_POSTS}</dd><!-- ENDIF -->
 			<!-- IF POSTER_GALLERY_IMAGES != '' --><dd><strong>{L_IMAGES}:</strong> <!-- IF U_POSTER_GALLERY_SEARCH --><a href="{U_POSTER_GALLERY_SEARCH}">{POSTER_GALLERY_IMAGES}</a><!-- ELSE -->{POSTER_GALLERY_IMAGES}<!-- ENDIF --></dd><!-- ENDIF -->
 			<!-- IF POSTER_JOINED --><dd><strong>{L_JOINED}:</strong> {POSTER_JOINED}</dd><!-- ENDIF -->

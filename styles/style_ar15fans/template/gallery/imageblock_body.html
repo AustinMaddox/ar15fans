@@ -4,27 +4,27 @@
 		<span class="corners-top"><span></span></span>
 		<ul class="topiclist">
 			<li class="header">
-				<dl class="icon">
-					<dt><!-- IF imageblock.U_BLOCK --><a href="{imageblock.U_BLOCK}">{imageblock.BLOCK_NAME}</a><!-- ELSE -->{imageblock.BLOCK_NAME}<!-- ENDIF --></dt>
+				<dl>
+					<dd><!-- IF imageblock.U_BLOCK --><a href="{imageblock.U_BLOCK}">{imageblock.BLOCK_NAME}</a><!-- ELSE -->{imageblock.BLOCK_NAME}<!-- ENDIF --></dd>
 				</dl>
 			</li>
 		</ul>
 		<ul class="topiclist topics">
-			<li class="bg2">
-				<table width="100%" cellpadding="2" cellspacing="10" border="0" class="forumline">
+			<li class="bg2" style="overflow:auto;">
+				<table width="100%" cellpadding="2" cellspacing="2" border="0" class="forumline">
 					<!-- BEGIN imagerow -->
 					<tr>
 						<!-- BEGIN image -->
-						<td class="bg2" valign="top" style="width: {imageblock.S_COL_WIDTH};">
-							<table width="100%" cellpadding="2" cellspacing="5" border="0" class="forumline">
+						<td class="bg1" valign="top" style="width: {imageblock.S_COL_WIDTH};">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" class="forumline">
 								<tr>
 									<td align="center" style="height: {S_THUMBNAIL_SIZE}px;" class="bg1<!-- IF imageblock.imagerow.image.S_UNAPPROVED --> g_unapproved<!-- ENDIF --><!-- IF imageblock.imagerow.image.S_LOCKED --> g_locked<!-- ENDIF --><!-- IF imageblock.imagerow.image.S_REPORTED --> g_reported<!-- ENDIF -->">
 										<span class="genmed">{imageblock.imagerow.image.UC_THUMBNAIL}</span>
 									</td>
 								</tr>
 								<tr>
-									<td class="bg2" valign="top">
-										<div class="gensmall" style="overflow: hidden;">
+									<td class="bg1" valign="top">
+										<div class="gensmall" style="padding:4px;">
 											<!-- IF imageblock.imagerow.image.CONTEST_RANK -->{L_CONTEST_RESULT}: <strong>{imageblock.imagerow.image.CONTEST_RANK}</strong><br /><!-- ENDIF -->
 											<!-- IF imageblock.imagerow.image.UC_IMAGE_NAME -->{L_IMAGE_NAME}: {imageblock.imagerow.image.UC_IMAGE_NAME}<br /><!-- ENDIF -->
 											<!-- IF imageblock.imagerow.image.U_ALBUM -->{L_ALBUM_NAME}: <a href="{imageblock.imagerow.image.U_ALBUM}" style="font-weight: bold;" title="{imageblock.imagerow.image.ALBUM_NAME_FULL}">{imageblock.imagerow.image.ALBUM_NAME}</a><br /><!-- ENDIF -->
