@@ -1,0 +1,87 @@
+/* side column container */
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;	/* This chops off any overhanging divs */
+}
+
+/* holy grail 3 column settings */
+.holygrail {
+							/* Right column background colour */
+}
+.holygrail .colmid {
+	float:left;
+	width:200%;
+	margin-left:-216px; 	/* Width of right column */
+	position:relative;
+	right:100%;
+}
+.holygrail .colleft {
+	float:left;
+	width:100%;
+	margin-left:-50%;
+	position:relative;
+	left:366px;         	/* Left column width + right column width */
+}
+.holygrail .col1wrap {
+	float:left;
+	width:50%;
+	position:relative;
+	right:150px;        	/* Width of left column */
+	padding-bottom:100px; 	/* Centre column bottom padding. Leave it out if it's zero */
+}
+.holygrail .col1 {
+	margin:0 218px 0 152px;	/* Centre column side padding:
+							Left padding = left column width + centre column left padding width
+							Right padding = right column width + centre column right padding width */
+	position:relative;
+	left:200%;
+	overflow:hidden;
+}
+.holygrail .col2 {
+	float:left;
+	float:right;			/* This overrides the float:left above */
+	width:150px;        	/* Width of left column content (left column width minus left and right padding) */
+	position:relative;
+	right:0px;         		/* Width of the left-hand side padding on the left column */
+}
+.holygrail .col3 {
+	float:left;
+	float:right;			/* This overrides the float:left above */
+	width:216px;        	/* Width of right column content (right column width minus left and right padding) */
+	margin-right:0px;  		/* Width of right column right-hand padding + left column left and right padding */
+	position:relative;
+	left:50%;
+}
+
+/* 2-column right menu sidebar settings */
+.rightmenu {
+	background:#fff;
+}
+.rightmenu .colleft {
+	float:left;
+	width:200%;
+	margin-left:-216px;
+	position:relative;
+	right:100%;
+	background:#fff;
+}
+.rightmenu .col1wrap {
+	float:left;
+	width:50%;
+	position:relative;
+	left:50%;
+	padding-bottom:1em;
+}
+.rightmenu .col1 {
+	margin:0 2px 2px 216px;
+	overflow:hidden;
+}
+.rightmenu .col2 {
+	float:right;
+	width:216px;
+	position:relative;
+	left:216px;
+}

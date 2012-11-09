@@ -1,0 +1,100 @@
+<!-- IF S_IN_BOARD_INDEX -->
+<!-- INCLUDE gallery/imageblock_body.html -->
+<!-- ENDIF -->
+
+<div class="forabg">
+    <div class="inner"><span class="corners-top"><span></span></span>
+        <table class="table1" cellspacing="1">
+            <thead>
+                <tr>
+                    <th colspan="2">{L_SPONSORS}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="panel">
+                    <td style="text-align:center;">
+                       Sponsor
+                    </td>
+                </tr>
+        	</tbody>
+        </table>
+    <span class="corners-bottom"><span></span></span></div>
+</div>
+
+<!-- IF not S_IS_BOT -->
+<div style="margin-left:4px;">
+
+<!-- IF S_IN_BOARD_INDEX -->
+    <!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+        <h3>{L_BIRTHDAYS}</h3>
+        <p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
+    <!-- ENDIF -->
+    
+    <!-- IF NEWEST_USER -->
+        <h3>{L_STATISTICS}</h3>
+        <p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS}<!-- IF TOTAL_IMAGES --> &bull; {TOTAL_IMAGES}<!-- ENDIF --> &bull; {TOTAL_USERS} &bull; {NEWEST_USER}</p>
+    <!-- ENDIF -->
+    
+    <!-- IF S_DISPLAY_ONLINE_LIST -->
+        <!-- IF U_VIEWONLINE --><h3><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3>{L_WHO_IS_ONLINE}</h3><!-- ENDIF -->
+        <p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}</p>
+    <!-- ENDIF -->
+<!-- ENDIF -->
+
+</div>
+<!-- ENDIF -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- IF TURNED_OFF and S_IN_BOARD_INDEX -->
+<div class="forumbg">
+    <div class="inner"><span class="corners-top"><span></span></span>
+        <ul class="topiclist">
+            <li class="header"><dl><dd>FORUMBG</dd></dl></li>
+        </ul>
+        <div class="panel">
+            <h2>Equal height columns</h2>
+            <p>It doesn't matter which column has the longest content, the background colour of all columns will stretch down to meet the footer. This feature was traditionally only available with table based layouts but now with a little CSS trickery we can do exactly the same with divs. Say goodbye to annoying short columns!</p>
+		</div>
+    <span class="corners-bottom"><span></span></span> </div>
+</div>
+
+<div class="forabg">
+    <div class="inner"><span class="corners-top"><span></span></span>
+        <table class="table1" cellspacing="1">
+        <thead>
+            <tr>
+                <th>FORABG</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="panel">
+                <td>
+                    <h2>No CSS hacks</h2>
+                    <p>The CSS used for this layout is 100% valid and hack free. To overcome Internet Explorer's broken box model, no horizontal padding or margins are used. Instead, this design uses pixel widths and clever relative positioning.</p>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    <span class="corners-bottom"><span></span></span></div>
+</div>
+<!-- ENDIF -->

@@ -1,0 +1,66 @@
+<div class="forabg">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<table class="table1" cellspacing="1">
+		<thead>
+			<tr>
+				<th style="text-align:left;" colspan="{COLSPAN}">{L_ATTACHED_RANDOM_IMAGE}</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!-- IF VERTICAL -->
+		<!-- BEGIN attached_random_images -->
+			<tr class="<!-- IF attached_random_images.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg3<!-- ENDIF -->">
+				<td valign="top">
+					<div style="text-align:center; padding-bottom:4px;">
+					<a href="{attached_random_images.U_ATTACHMENT_POST}"><img src="{attached_random_images.U_ATTACHED_IMG}" height="{attached_random_images.ATTACHED_IMG_HEIGHT}" width="{attached_random_images.ATTACHED_IMG_WIDTH}" alt="{attached_random_images.TOPIC_TITLE}"/></a><br />
+					<a href="{attached_random_images.U_VIEW_TOPIC}" class="topictitle">{attached_random_images.TOPIC_TITLE}</a>
+					</div>
+					
+					<div style="float:left; text-align:center; padding:0 8px 0 1px;">
+                        {L_ATTACHED_BY}<br />
+                        <!-- IF attached_random_images.POSTER_AVATAR --><a href="{attached_random_images.U_POSTER}">{attached_random_images.POSTER_AVATAR}</a><br /><!-- ENDIF -->
+                        {attached_random_images.POSTER_NAME_FULL}<br />
+                        {L_IN} <a href="{attached_random_images.U_FORUM}" style="font-weight:bold;">{attached_random_images.FORUM_NAME}</a>
+					</div>
+					
+					<div style="padding:0 0 0 90px;">
+					<span class="syntaxhtml">{L_ATTACHMENT_VIEWS}</span> {attached_random_images.ATTACHMENT_VIEWS}<br />
+					<span class="syntaxhtml">{L_ATTACHMENT_REPLIES}</span> {attached_random_images.ATTACHMENT_REPLIES}<br />
+					<span class="syntaxhtml">{L_ATTACHMENT_DATE}</span> {attached_random_images.ATTACHMENT_DATE}<br />
+					<span class="syntaxhtml">{L_ATTACHMENT_TIME}</span> {attached_random_images.ATTACHMENT_TIME}<br />
+					&#187; <a href="{attached_random_images.U_TOPIC_LAST_POST}">{L_ATTACHMENT_LAST_COMMENT}</a>
+					</div>
+				</td>
+			</tr>
+		<!-- END attached_random_images -->
+		<!-- ELSE -->
+			<tr>
+		<!-- BEGIN attached_random_images -->
+				<td valign="top" class="<!-- IF attached_random_images.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg3<!-- ENDIF -->">
+					<div style="text-align:center; padding-bottom:4px;">
+					<a href="{attached_random_images.U_ATTACHMENT_POST}"><img src="{attached_random_images.U_ATTACHED_IMG}" height="{attached_random_images.ATTACHED_IMG_HEIGHT}" width="{attached_random_images.ATTACHED_IMG_WIDTH}" alt="{attached_random_images.TOPIC_TITLE}"/></a><br />
+					<a href="{attached_random_images.U_VIEW_TOPIC}" class="topictitle">{attached_random_images.TOPIC_TITLE}</a>
+					</div>
+					
+					<div style="float:left; text-align:center; width:80px; padding:0 8px 0 1px;">
+                        {L_ATTACHED_BY}<br />
+                        <!-- IF attached_random_images.POSTER_AVATAR --><a href="{attached_random_images.U_POSTER}">{attached_random_images.POSTER_AVATAR}</a><br /><!-- ENDIF -->
+                        {attached_random_images.POSTER_NAME_FULL}<br />
+                        {L_IN} <a href="{attached_random_images.U_FORUM}" style="font-weight:bold;">{attached_random_images.FORUM_NAME}</a>
+					</div>
+					
+					<div style="padding:0 0 0 90px;">
+					<span class="syntaxhtml">{L_ATTACHMENT_VIEWS}</span> {attached_random_images.ATTACHMENT_VIEWS}<br />
+					<span class="syntaxhtml">{L_ATTACHMENT_REPLIES}</span> {attached_random_images.ATTACHMENT_REPLIES}<br />
+					<span class="syntaxhtml">{L_ATTACHMENT_DATE}</span> {attached_random_images.ATTACHMENT_DATE}<br />
+					<span class="syntaxhtml">{L_ATTACHMENT_TIME}</span> {attached_random_images.ATTACHMENT_TIME}<br />
+					&#187; <a href="{attached_random_images.U_TOPIC_LAST_POST}">{L_ATTACHMENT_LAST_COMMENT}</a>
+					</div>
+				</td>
+		<!-- END attached_random_images -->
+			</tr>
+		<!-- ENDIF -->
+		</tbody>
+		</table>	
+	<span class="corners-bottom"><span></span></span></div>
+</div>

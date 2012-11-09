@@ -21,7 +21,7 @@ body {
 	/*font-size: 62.5%;			 This sets the default font size to be equivalent to 10px */
 	font-size: 10px;
 	margin: 0;
-	padding: 12px 0;
+	padding: 2px 0;
 }
 
 h1 {
@@ -102,7 +102,7 @@ p.right {
 /* Main blocks
 ---------------------------------------- */
 #wrap {
-	padding: 0 20px;
+	padding: 0 2px;
 	min-width: 650px;
 }
 

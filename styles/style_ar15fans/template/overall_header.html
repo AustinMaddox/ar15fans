@@ -23,13 +23,6 @@
 	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
 <!-- ENDIF -->
 
-<!--
-	phpBB style name: prosilver
-	Based on style:   prosilver (this is the default phpBB3 style)
-	Original author:  Tom Beddard ( http://www.subBlue.com/ )
-	Modified by:
--->
-
 <script type="text/javascript">
 // <![CDATA[
 	var jump_page = '{LA_JUMP_PAGE}:';
@@ -99,9 +92,21 @@
 	<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
 <!-- ENDIF -->
 
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+<!-- INCLUDE gallery/plugins_header.html -->
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<!-- IF S_VIEWTOPIC -->
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<!-- ENDIF -->
+
 </head>
 
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
+<!-- INCLUDE nav.html -->
 
 <div id="wrap">
 	<a id="top" name="top" accesskey="t"></a>
@@ -111,8 +116,6 @@
 
 			<div id="site-description">
 				<a href="{U_INDEX}" title="{L_INDEX}" id="logo">{SITE_LOGO_IMG}</a>
-				<h1>{SITENAME}</h1>
-				<p>{SITE_DESCRIPTION}</p>
 				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 			</div>
 
@@ -138,35 +141,6 @@
 				<li class="icon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> <strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></li>
 
 				<li class="rightside"><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" class="fontsize" title="{L_CHANGE_FONT_SIZE}">{L_CHANGE_FONT_SIZE}</a></li>
-
-				<!-- IF U_EMAIL_TOPIC --><li class="rightside"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
-				<!-- IF U_EMAIL_PM --><li class="rightside"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
-				<!-- IF U_PRINT_TOPIC --><li class="rightside"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
-				<!-- IF U_PRINT_PM --><li class="rightside"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
-			</ul>
-
-			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-			<ul class="linklist leftside">
-				<li class="icon-ucp">
-					<a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a>
-						<!-- IF S_DISPLAY_PM --> (<a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a>)<!-- ENDIF -->
-					<!-- IF S_DISPLAY_SEARCH --> &bull;
-					<a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a>
-					<!-- ENDIF -->
-					<!-- IF U_RESTORE_PERMISSIONS --> &bull;
-					<a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
-					<!-- ENDIF -->
-				</li>
-			</ul>
-			<!-- ENDIF -->
-
-			<ul class="linklist rightside">
-				<li class="icon-faq"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
-				<!-- IF not S_IS_BOT -->
-					<!-- IF S_DISPLAY_MEMBERLIST --><li class="icon-members"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
-					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="icon-register"><a href="{U_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
-					<li class="icon-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a></li>
-				<!-- ENDIF -->
 			</ul>
 
 			<span class="corners-bottom"><span></span></span></div>
@@ -183,3 +157,19 @@
 			<span class="corners-bottom"><span></span></span></div>
 		</div>
 		<!-- ENDIF -->
+
+<!-- IF S_IN_BOARD_INDEX -->
+        <div class="colmask holygrail">
+            <div class="colmid">
+                <div class="colleft">
+                
+                    <div class="col1wrap">
+                        <div class="col1">
+                            <!-- Column 1 start -->
+<!-- ELSE -->
+        <div class="colmask rightmenu">
+            <div class="colleft">
+                <div class="col1wrap">
+                    <div class="col1">
+                        <!-- Column 1 start -->
+<!-- ENDIF -->
