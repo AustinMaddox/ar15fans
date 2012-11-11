@@ -1,0 +1,23 @@
+<div class="forabg">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<table class="table1" cellspacing="1">
+			<thead>
+				<tr>
+					<th colspan="2">{L_TOP_LATEST_ACTIVE} {L_TOP_LATEST_ACTIVE_24}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- BEGIN top_latest_active_24 -->
+				<tr class="<!-- IF top_latest_active_24.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+					<td>{top_latest_active_24.USERNAME_FULL}</td>
+					<td><a href="{top_latest_active_24.S_SEARCH_ACTION}">{top_latest_active_24.POSTS}</a> {L_POSTS}</td>
+				</tr>
+				<!-- BEGINELSE -->
+				<tr class="panel">
+					<td>{L_NO_ACTIVITY}</td>
+				</tr>
+				<!-- END top_latest_active_24 -->
+			</tbody>
+		</table>
+	<span class="corners-bottom"><span></span></span></div>
+</div>

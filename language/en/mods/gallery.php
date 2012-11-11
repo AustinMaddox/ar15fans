@@ -137,9 +137,9 @@ $lang = array_merge($lang, array(
 
 	'IGNORE_NOTUPTODATE_MESSAGE'		=> 'Remind me in 7 days',
 
-	'GALLERY_DESC'					=> 'The Gallery is a photo album that contains a collection of photographs of, or pertaining to, Astro and Safari vans.',
-	'GALLERY_DESC_BOTTOM'			=> 'Each member of the site is designated an area of the photo album in which they can upload their own photos relating to astro or safari vans.',
-	
+	'GALLERY_DESC'					=> 'The Gallery is a photo album that contains a collection of photographs of, or pertaining to, AR-15 rifles.',
+	'GALLERY_DESC_BOTTOM'			=> 'Each member of the site is designated an area of the photo album in which they can upload their own photos relating to AR-15 rifles.',
+
 	'GALLERY_PERSONAL_DESC'			=> 'Personal photo albums where each member has his/her own user-Gallery.',
 
 	'IMAGE'								=> 'Image',

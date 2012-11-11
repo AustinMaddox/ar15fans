@@ -1,0 +1,23 @@
+<!-- IF S_NUM_POSTS gt 2 -->
+   <div class="forabg">
+       <div class="inner"><span class="corners-top"><span></span></span>
+           <table class="table1" cellspacing="1">
+               <thead>
+                   <tr>
+                       <th style="text-align:left;">{L_RANDOM_TOPICS}</th>
+                   </tr>
+               </thead>
+               <tbody>
+			<!-- BEGIN random_topics -->
+                   <tr class="panel<!-- IF random_topics.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->" title="{random_topics.TOPIC_TITLE_RAND_ALT}">
+                       <td valign="top" style="padding-left:4px;">
+						<a href="{random_topics.U_TOPIC_RAND}" class="topictitle">{random_topics.TOPIC_TITLE_RAND}</a><br />
+                           {L_IN} <a href="{random_topics.U_FORUM_RAND}" style="font-weight:bold;">{random_topics.FORUM_NAME_RAND}</a>
+                       </td>
+                   </tr>
+			<!-- END random_topics -->
+               </tbody>
+           </table>
+       <span class="corners-bottom"><span></span></span> </div>
+   </div>
+<!-- ENDIF -->

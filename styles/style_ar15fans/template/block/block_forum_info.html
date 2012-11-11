@@ -1,0 +1,34 @@
+<!-- IF FORUM_DESC or FORUM_SEO_KEY -->
+<div class="forabg">
+    <div class="inner"><span class="corners-top"><span></span></span>
+        <table class="table1" cellspacing="1">
+        <thead>
+            <tr>
+                <th>{FORUM_NAME}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- IF FORUM_DESC -->
+            <tr class="bg2">
+                <td valign="top">{FORUM_DESC}</td>
+            </tr>
+            <!-- ENDIF -->
+			
+            <!-- IF MODERATORS -->
+            <tr class="bg1">
+            	<td><strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->:</strong> {MODERATORS}</td>
+            </tr>
+            <!-- ENDIF -->
+
+            <!-- IF FORUM_SEO_KEY -->
+            <tr class="bg2">
+                <td valign="top">
+                {L_KEY_TERMS}: {FORUM_SEO_KEY}</td>
+            </tr>
+            <!-- ENDIF -->
+        </tbody>
+        </table>
+
+    <span class="corners-bottom"><span></span></span></div>
+</div>
+<!-- ENDIF -->

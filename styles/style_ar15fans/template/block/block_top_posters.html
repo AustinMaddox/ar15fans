@@ -1,0 +1,25 @@
+<div class="forabg">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<table class="table1" cellspacing="1">
+			<thead>
+				<tr>
+					<th colspan="3">{L_TOP_LATEST_ACTIVE}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="bg3">
+					<th style="width:40px;">{L_SORT_RANK}</th>
+					<th>{L_USERNAME}</th>
+				<th style="width:50px;">{L_POSTS}</th>
+				</tr>
+				<!-- BEGIN top_latest_active -->
+				<tr class="<!-- IF top_latest_active.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->"<!-- IF top_latest_active.S_ROW_COUNT == 0 --> style="background-color:#ffb"<!-- ENDIF -->>
+					<td style="text-align:center;"><!-- IF top_latest_active.S_ROW_COUNT == 0 --><span style="font-weight:bold; font-size:16px; color:#f00;">{top_latest_active.RANKING}</span><!-- ELSE -->{top_latest_active.RANKING}<!-- ENDIF --></td>
+					<td>{top_latest_active.USERNAME_FULL}</td>
+					<td style="text-align:center;"><a href="{top_latest_active.S_SEARCH_ACTION}"<!-- IF top_latest_active.S_ROW_COUNT == 0 --> style="font-weight:bold; color:#f00;"<!-- ENDIF -->>{top_latest_active.POSTS}</a></td>
+				</tr>
+				<!-- END top_latest_active -->
+			</tbody>
+		</table>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
