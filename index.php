@@ -178,6 +178,17 @@ $template->assign_vars(array(
 	'U_MCP'				=> ($auth->acl_get('m_') || $auth->acl_getf_global('m_')) ? append_sid("{$phpbb_root_path}mcp.$phpEx", 'i=main&amp;mode=front', true, $user->session_id) : '')
 );
 
+// BEGAN - NV Recent Topics mod
+if ($config['rt_index'])
+{
+	if (!function_exists('display_recent_topics'))
+	{
+		include($phpbb_root_path . 'includes/functions_recenttopics.' . $phpEx);
+	}
+	display_recent_topics($config['rt_number'], $config['rt_page_number'], $config['rt_anti_topics'], 'recent_topics', request_var('f', 0), true, $config['rt_parents']);
+}
+// ENDED - NV Recent Topics mod
+
 // Output page
 // www.phpBB-SEO.com SEO TOOLKIT BEGIN - META
 $seo_meta->collect('description', $config['sitename'] . ' : ' .  $config['site_desc']);

@@ -30,6 +30,9 @@ class acp_forums
 		global $config, $phpbb_admin_path, $phpbb_root_path, $phpEx;
 
 		$user->add_lang('acp/forums');
+// BEGAN - NV Recent Topics mod
+		$user->add_lang('mods/info_acp_recenttopics');
+// ENDED - NV Recent Topics mod
 		$this->tpl_name = 'acp_forums';
 		$this->page_title = 'ACP_MANAGE_FORUMS';
 
@@ -135,6 +138,9 @@ class acp_forums
 						'display_subforum_list'	=> request_var('display_subforum_list', false),
 						'display_on_index'		=> request_var('display_on_index', false),
 						'forum_topics_per_page'	=> request_var('topics_per_page', 0),
+// BEGAN - NV Recent Topics mod
+						'forum_recent_topics'	=> request_var('forum_recent_topics', 1),
+// ENDED - NV Recent Topics mod
 						'enable_indexing'		=> request_var('enable_indexing', true),
 						'enable_icons'			=> request_var('enable_icons', false),
 						'enable_prune'			=> request_var('enable_prune', false),
@@ -434,6 +440,9 @@ class acp_forums
 							'display_subforum_list'	=> true,
 							'display_on_index'		=> true,
 							'forum_topics_per_page'	=> 0,
+// BEGAN - NV Recent Topics mod
+							'forum_recent_topics'	=> 1,
+// ENDED - NV Recent Topics mod
 							'enable_indexing'		=> true,
 							'enable_icons'			=> true,
 							'enable_prune'			=> false,
@@ -602,6 +611,9 @@ class acp_forums
 					'PRUNE_DAYS'				=> $forum_data['prune_days'],
 					'PRUNE_VIEWED'				=> $forum_data['prune_viewed'],
 					'TOPICS_PER_PAGE'			=> $forum_data['forum_topics_per_page'],
+// BEGAN - NV Recent Topics mod
+					'RECENT_TOPICS'				=> $forum_data['forum_recent_topics'],
+// ENDED - NV Recent Topics mod
 					'FORUM_RULES_LINK'			=> $forum_data['forum_rules_link'],
 					'FORUM_RULES'				=> $forum_data['forum_rules'],
 					'FORUM_RULES_PREVIEW'		=> $forum_rules_preview,
