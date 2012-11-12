@@ -4,30 +4,11 @@
 		<div class="col1wrap">
 			<div class="col1">
 			<!-- Column 1 start -->
-			<!-- IF U_MCP --><p>[&nbsp;<a href="{U_MCP}">{L_MCP}</a>&nbsp;]</p><!-- ENDIF -->
 			<h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2>
 			<!-- IF GYM_LINKS_CAT --><h3>{GYM_HTML_FORUM_NEWS_LINK} {GYM_HTML_FORUM_MAP_LINK} {GYM_RSS_FORUM_LINK} {GYM_GOOGLE_FORUM_LINK}</h3><!-- ENDIF -->
-			<!-- IF FORUM_DESC or MODERATORS or U_MCP -->
-			<div>
-				<!-- NOTE: remove the style="display: none" when you want to have the forum description on the forum body -->
-				<!-- IF FORUM_DESC --><div style="display: none !important;">{FORUM_DESC}<br /></div><!-- ENDIF -->
-				<!-- IF MODERATORS --><p><strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->:</strong> {MODERATORS}</p><!-- ENDIF -->
-			</div>
-			<!-- ENDIF -->
 			
 			<!-- IF S_FORUM_RULES -->
-				<div class="rules">
-					<div class="inner"><span class="corners-top"><span></span></span>
-			
-					<!-- IF U_FORUM_RULES -->
-						<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
-					<!-- ELSE -->
-						<strong>{L_FORUM_RULES}</strong><br />
-						{FORUM_RULES}
-					<!-- ENDIF -->
-			
-					<span class="corners-bottom"><span></span></span></div>
-				</div>
+				<!-- INCLUDE block/block_rules.html -->
 			<!-- ENDIF -->
 			
 			<!-- IF S_HAS_SUBFORUM -->
@@ -210,17 +191,6 @@
 			<!-- ENDIF -->
 			
 			<!-- INCLUDE jumpbox.html -->
-			
-			<!-- IF S_DISPLAY_ONLINE_LIST -->
-				<h3><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h3>
-				<p>{LOGGED_IN_USER_LIST}</p>
-			<!-- ENDIF -->
-			
-			<!-- IF S_DISPLAY_POST_INFO -->
-				<h3>{L_FORUM_PERMISSIONS}</h3>
-				<p><!-- BEGIN rules -->{rules.RULE}<br /><!-- END rules --></p>
-			<!-- ENDIF -->
-			
 			<!-- Column 1 end -->
 			</div>
 		</div><!-- /col1wrap -->
@@ -228,6 +198,13 @@
 		<!-- Column 2 start -->
 		<!-- INCLUDE block/block_forum_info.html -->
 		<!-- INCLUDE block/block_forum_actions.html -->
+		<!-- IF GYM_LINKS -->
+			<!-- INCLUDE block/block_gym_links.html -->
+		<!-- ENDIF -->
+		<!-- IF S_DISPLAY_POST_INFO -->
+			<!-- INCLUDE block/block_forum_permissions.html -->
+		<!-- ENDIF -->
+		<!-- INCLUDE block/block_whos_online.html -->
 		<!-- Column 2 end -->
 		</div>
 	</div><!-- /colleft -->

@@ -161,14 +161,29 @@
 	left: 185px;
 }
 
-/* 1 column full page settings */
-.fullpage {
-	background: #fff;
+/* 2 Column (double page) settings */
+.doublepage {
+	
 }
-.fullpage .col1 {
-	margin: 0 15px;
+.doublepage .colleft {
+	width: 100%;
+	position: relative;
+	right: 50%;			/* right column width */
 }
-
+.doublepage .col1 {
+	float: left;
+	position: relative;
+	overflow: hidden;
+	width: 50%;			/* left column content width (column width minus left and right padding) */
+	left: 50%;			/* right column width plus left column left padding */
+}
+.doublepage .col2 {
+	float: left;
+	position: relative;
+	overflow: hidden;
+	width: 50%;			/* right column content width (column width minus left and right padding) */
+	left: 50%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
 
 
 

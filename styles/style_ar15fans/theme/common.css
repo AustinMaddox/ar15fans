@@ -40,7 +40,7 @@ h2 {
 	font-weight: normal;
 	color: #3f3f3f;
 	font-size: 2em;
-	margin: 0.8em 0 0.2em 0;
+	margin: 0;
 }
 
 h2.solo {
@@ -606,7 +606,7 @@ div.rules {
 	background-color: #ececec;
 	color: #bcbcbc;
 	padding: 0 10px;
-	margin: 10px 0;
+	margin: 0;
 	font-size: 1.1em;
 }
 
