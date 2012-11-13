@@ -32,7 +32,6 @@
 	width:  50%;
 	position:  relative;
 	right:  200px;        	/* Width of left column */
-	padding-bottom:  1em; 	/* Center column bottom padding. Leave it out if it's zero */
 }
 .holygrail .col1 {
 	margin:  0 215px;     	/* Center column side padding:  
@@ -64,7 +63,7 @@
 .blogstyle .colmid {
 	float: left;
 	width: 200%;
-	margin-left: -200px; 	/* Width of right column */
+	margin-left: -222px; 	/* Width of right column */
 	position: relative;
 	right: 100%;
 	background: #FFD8B7;    	/* Center column background colour */
@@ -72,16 +71,15 @@
 .blogstyle .colleft {
 	float: left;
 	width: 100%;
-	margin-left: -200px; 	/* Width of Center column */
+	margin-left: -222px; 	/* Width of Center column */
 	background: #fff;    	/* Left column background colour */
 }
 .blogstyle .col1wrap {
 	float: left;
 	width: 50%;
-	padding-bottom: 1em; 	/* Center column bottom padding. Leave it out if it's zero */
 }
 .blogstyle .col1 {
-	margin: 0 15px 0 415px;	/* Center column side padding:
+	margin: 0 2px 0 444px;	/* Center column side padding:
 							Left padding = left column width + Center column left padding width
 							Right padding = right column width + Center column right padding width */
 	position: relative;
@@ -90,15 +88,15 @@
 }
 .blogstyle .col2 {
 	float: right;
-	width: 170px;        	/* Width of left column content (left column width minus left and right padding) */
+	width: 222px;        	/* Width of left column content (left column width minus left and right padding) */
 	position: relative;
-	left: 185px;         	/* Width of the left-hand side padding on the left column */
+	left: 222px;         	/* Width of the left-hand side padding on the left column */
 }
 .blogstyle .col3 {
 	float: right;
-	width: 170px;        	/* Width of right column content (right column width minus left and right padding) */
+	width: 222px;        	/* Width of right column content (right column width minus left and right padding) */
 	position: relative;
-	left: 555px;
+	left: 666px;
 }
 
 /* 2 column left menu settings */
@@ -117,7 +115,6 @@
 	width: 50%;
 	position: relative;
 	right: 200px;
-	padding-bottom: 1em;
 }
 .leftmenu .col1 {
 	margin: 0 15px 0 215px;
@@ -138,7 +135,7 @@
 .rightmenu .colleft {
 	float: left;
 	width: 200%;
-	margin-left: -200px;
+	margin-left: -222px;
 	position: relative;
 	right: 100%;
 	background: #fff;
@@ -148,17 +145,16 @@
 	width: 50%;
 	position: relative;
 	left: 50%;
-	padding-bottom: 1em;
 }
 .rightmenu .col1 {
-	margin: 0 15px 0 215px;
+	margin: 0 2px 0 222px;
 	overflow: hidden;
 }
 .rightmenu .col2 {
 	float: right;
-	width: 170px;
+	width: 222px;
 	position: relative;
-	left: 185px;
+	left: 222px;
 }
 
 /* 2 Column (double page) settings */

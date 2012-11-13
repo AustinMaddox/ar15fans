@@ -196,14 +196,14 @@ a#logo:hover {
 
 .forabg {
 	background: #b1b1b1 none repeat-x 0 0;
-	margin-bottom: 4px;
+	margin-bottom: 2px;
 	padding: 0 5px;
 	clear: both;
 }
 
 .forumbg {
 	background: #ebebeb none repeat-x 0 0;
-	margin-bottom: 4px;
+	margin-bottom: 2px;
 	padding: 0 5px;
 	clear: both;
 }
@@ -319,9 +319,6 @@ ul.linklist li.rightside, p.rightside {
 }
 
 ul.navlinks {
-	padding-bottom: 1px;
-	margin-bottom: 1px;
-	border-bottom: 1px solid #FFFFFF;
 	font-weight: bold;
 }
 
