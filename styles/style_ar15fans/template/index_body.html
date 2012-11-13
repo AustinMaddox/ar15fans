@@ -6,7 +6,7 @@
 				<div class="col1">
 				<!-- Column 1 start -->
 				<!-- IF RECENT_TOPICS_DISPLAY -->
-				<!-- INCLUDE recent_topics_body.html -->
+					<!-- INCLUDE recent_topics_body.html -->
 				<!-- ENDIF -->
 				<!-- Column 1 end -->
 				</div>
@@ -61,6 +61,12 @@
 		<div class="col2">
 		<!-- Column 2 start -->
 		<!-- INCLUDE gallery/imageblock_body.html -->
+		<!-- IF (RECENT_ATTACHMENTS_EXIST and not S_VIEWTOPIC) or (RECENT_ATTACHMENTS_EXIST and S_VIEWTOPIC and S_NUM_POSTS > 1) -->
+			<!-- INCLUDE attached_recent_images.html -->
+		<!-- ENDIF -->
+		<!-- IF RANDOM_ATTACHMENTS_EXIST and S_VIEWFORUM -->
+			<!-- INCLUDE attached_random_images.html -->
+		<!-- ENDIF -->
 		<!-- INCLUDE block/block_top_posters.html -->
 		<!-- INCLUDE block/block_top_posters_era.html -->
 			<div class="forumbg">

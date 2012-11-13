@@ -43,6 +43,28 @@ if ( !$phpbb_seo->seo_opt['zero_dupe']['strict'] ) { // strict mode is here a bi
 }
 $phpbb_seo->seo_chk_dupe();
 // www.phpBB-SEO.com SEO TOOLKIT END -> Zero dupe
+
+// BEGAN - Attached Images Block mod
+if (!function_exists('attached_recent_images') || !function_exists('attached_random_images'))
+{
+	include($phpbb_root_path . 'includes/functions_attached_images.' . $phpEx);
+}
+$sql = 'SELECT forum_id
+		FROM ' . FORUMS_TABLE . '
+		WHERE forum_type = 1';
+$result = $db->sql_query($sql);
+$forum_id = '';
+while ($row = $db->sql_fetchrow($result))
+{
+	$forum_id .= $row['forum_id'] . ',';
+}
+$db->sql_freeresult($result);
+
+/* RECENT function
+ attached_recent_images($forum_ids, $max_limit_arg, $orientation_arg, $num_chars, $max_width, $resize_after)
+*/	attached_recent_images($forum_id, 5, 'vertical', 32, 200, 201);
+// ENDED - Attached Images Block mod
+
 display_forums('', $config['load_moderators']);
 
 // Set some stats, get posts count from forums data if we... hum... retrieve all forums data
