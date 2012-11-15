@@ -166,12 +166,13 @@ pip-log.txt
 ## phpBB
 #############
 *~
-/cache/*.html
-/cache/*.php
-/cache/*.lock
+/cache/*
 /files/*
-/images/avatars/gallery/*
 /images/avatars/upload/*
 /phpbb_seo/cache/*
 /store/*
+/gallery/images/cache/*
+/gallery/images/import/*
+/gallery/images/medium/*
+/gallery/images/upload/*
 /config.php

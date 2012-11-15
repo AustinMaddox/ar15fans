@@ -56,6 +56,7 @@
 	position: relative;
 	left: 50%;
 }
+
 /* 3 column blog style settings */
 .blogstyle {
 	background: #ff9;    	/* Right column background colour */
@@ -128,6 +129,7 @@
 	position: relative;
 	right: 185px;
 }
+
 /* 2 column right menu settings */
 .rightmenu {
 	background: #ff9;
