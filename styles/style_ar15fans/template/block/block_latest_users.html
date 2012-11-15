@@ -3,7 +3,7 @@
 		<table class="table1" cellspacing="1">
 			<thead>
 				<tr>
-					<th colspan="2">{L_TOP_LATEST_NEWEST}</th>
+					<th colspan="2">{L_LATEST_USERS}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -11,12 +11,12 @@
 					<th>{L_USERNAME}</th>
 					<th >{L_JOINED}</th>
 				</tr>
-				<!-- BEGIN top_latest_newest -->
-				<tr class="<!-- IF top_latest_newest.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-					<td>{top_latest_newest.USERNAME_FULL}</td>
-					<td>{top_latest_newest.REG_DATE}</td>
+				<!-- BEGIN latest_users -->
+				<tr class="<!-- IF latest_users is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+					<td>{latest_users.USERNAME_FULL}</td>
+					<td>{latest_users.REG_DATE}</td>
 				</tr>
-				<!-- END top_latest_newest -->
+				<!-- END latest_users -->
 			</tbody>
 		</table>
 	<span class="corners-bottom"><span></span></span></div>

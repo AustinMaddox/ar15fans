@@ -62,7 +62,8 @@ $db->sql_freeresult($result);
 
 /* RECENT function
  attached_recent_images($forum_ids, $max_limit_arg, $orientation_arg, $num_chars, $max_width, $resize_after)
-*/	attached_recent_images($forum_id, 5, 'vertical', 32, 200, 201);
+*/
+attached_recent_images($forum_id, 5, 'vertical', 32, 200, 201);
 // ENDED - Attached Images Block mod
 
 display_forums('', $config['load_moderators']);
@@ -199,6 +200,14 @@ $template->assign_vars(array(
 	'U_MARK_FORUMS'		=> ($user->data['is_registered'] || $config['load_anon_lastread']) ? append_sid("{$phpbb_root_path}index.$phpEx", 'hash=' . generate_link_hash('global') . '&amp;mark=forums') : '',
 	'U_MCP'				=> ($auth->acl_get('m_') || $auth->acl_getf_global('m_')) ? append_sid("{$phpbb_root_path}mcp.$phpEx", 'i=main&amp;mode=front', true, $user->session_id) : '')
 );
+
+// BEGAN - Latest Users
+if (!function_exists('get_latest_users'))
+{
+	include($phpbb_root_path . 'includes/latest_users.' . $phpEx);
+	get_latest_users(10, 300);
+}
+// ENDED - Latest Users
 
 // BEGAN - NV Recent Topics mod
 if ($config['rt_index'])
