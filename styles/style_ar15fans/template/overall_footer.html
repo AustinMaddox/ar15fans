@@ -1,43 +1,63 @@
 	</div><!-- page-body -->
 
 	<div id="page-footer">
-
-		<div class="navbar">
-			<div class="inner"><span class="corners-top"><span></span></span>
-				<ul class="linklist<!-- IF GYM_LINKS --> navlinks<!-- ENDIF -->">
-					<li class="icon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
-					<!-- IF not S_IS_BOT -->
-					<!-- IF S_WATCH_FORUM_LINK --><li <!-- IF S_WATCHING_FORUM -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-					<!-- IF U_WATCH_TOPIC --><li <!-- IF S_WATCHING_TOPIC -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_BOOKMARK_TOPIC --><li class="icon-bookmark"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
-					<!-- IF U_BUMP_TOPIC --><li class="icon-bump"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
-					<!-- ENDIF -->
-					<li class="rightside"><!-- IF not S_IS_BOT --><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a> &bull; <!-- ENDIF -->{S_TIMEZONE}</li>
-				</ul>
-				<!-- IF GYM_LINKS -->
-				<ul class="linklist">
-					<!-- IF GYM_HTML_NEWS_LINK --><li class="leftside">{GYM_HTML_NEWS_LINK}</li><!-- ENDIF -->
-					<!-- IF GYM_HTML_MAP_LINK --><li class="leftside">{GYM_HTML_MAP_LINK}</li><!-- ENDIF -->
-					<!-- IF GYM_GOOGLE_LINK --><li class="leftside">{GYM_GOOGLE_LINK}</li><!-- ENDIF -->
-					<!-- IF GYM_RSS_LINK --><li class="leftside">{GYM_RSS_LINK}</li><!-- ENDIF -->
-					<!-- IF GYM_RSS_CHAN_LINK --><li class="leftside">{GYM_RSS_CHAN_LINK}</li><!-- ENDIF -->
-				</ul>
-				<!-- ENDIF -->
-			<span class="corners-bottom"><span></span></span></div>
-		</div>
-
-		<div class="copyright">
-			Copyright&copy; 2011-{CURRENT_YEAR}	{SITENAME} - a <a href="http://whoa.co" title="Whoa.Co Entrepreneurial Web Ventures">Whoa.Co</a> venture. All rights reserved.<br />
-			Powered by phpBB&reg; Forum Software.<br />
-			<div>
-				<a href="http://www.astrosafari.com" title="Chevy Astro and GMC Safari van specific community.">Chevy Astro Van Forum</a> &bull; 
-				<a href="http://www.silveradosierra.com" title="Chevy Silverado and GMC Sierra truck specific community.">Chevy Truck Forum</a>
-			</div>
-			<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
-			<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
-			<br /><a href="http://validator.w3.org/check?uri=referer"><img src="{T_IMAGESET_PATH}/w3c_xhtml.png" alt="Valid XHTML 1.0 Strict" /></a>        
-			<!-- IF U_ACP --><br /><strong><a href="{U_ACP}">{L_ACP}</a></strong><!-- ENDIF -->
-		</div>
+	
+		<div class="colmask holygrail">
+			<div class="colmid">
+				<div class="colleft">
+					<div class="col1wrap">
+						<div class="col1">
+						<!-- Column 1 start -->
+						<div class="navbar">
+							<div class="inner"><span class="corners-top"><span></span></span>
+								<ul class="linklist<!-- IF GYM_LINKS --> navlinks<!-- ENDIF -->">
+									<li class="icon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+									<!-- IF not S_IS_BOT -->
+									<!-- IF S_WATCH_FORUM_LINK --><li <!-- IF S_WATCHING_FORUM -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+									<!-- IF U_WATCH_TOPIC --><li <!-- IF S_WATCHING_TOPIC -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+									<!-- IF U_BOOKMARK_TOPIC --><li class="icon-bookmark"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+									<!-- IF U_BUMP_TOPIC --><li class="icon-bump"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+									<!-- ENDIF -->
+									<li class="rightside"><!-- IF not S_IS_BOT --><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a> &bull; <!-- ENDIF -->{S_TIMEZONE}</li>
+								</ul>
+								<!-- IF GYM_LINKS -->
+								<ul class="linklist">
+									<!-- IF GYM_HTML_NEWS_LINK --><li class="leftside">{GYM_HTML_NEWS_LINK}</li><!-- ENDIF -->
+									<!-- IF GYM_HTML_MAP_LINK --><li class="leftside">{GYM_HTML_MAP_LINK}</li><!-- ENDIF -->
+									<!-- IF GYM_GOOGLE_LINK --><li class="leftside">{GYM_GOOGLE_LINK}</li><!-- ENDIF -->
+									<!-- IF GYM_RSS_LINK --><li class="leftside">{GYM_RSS_LINK}</li><!-- ENDIF -->
+									<!-- IF GYM_RSS_CHAN_LINK --><li class="leftside">{GYM_RSS_CHAN_LINK}</li><!-- ENDIF -->
+								</ul>
+								<!-- ENDIF -->
+							<span class="corners-bottom"><span></span></span></div>
+						</div><!-- /navbar -->
+						<div>
+							<a href="http://www.astrosafari.com" title="Chevy Astro and GMC Safari van specific community.">Chevy Astro Van Forum</a> &bull; 
+							<a href="http://www.silveradosierra.com" title="Chevy Silverado and GMC Sierra truck specific community.">Chevy Truck Forum</a>
+						</div>
+						<!-- Column 1 end -->
+						</div>
+					</div><!-- /col1wrap -->
+					<div class="col2">
+					<!-- Column 2 start -->
+					<div class="copyright">
+						Copyright&copy; 2011-{CURRENT_YEAR}	{SITENAME} - a <a href="http://whoa.co" title="Whoa.Co Entrepreneurial Web Ventures">Whoa.Co</a> venture. All rights reserved.<br />
+						Powered by phpBB&reg; Forum Software.<br />
+						<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
+						<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
+						<br /><a href="http://validator.w3.org/check?uri=referer"><img src="{T_IMAGESET_PATH}/w3c_xhtml.png" alt="Valid XHTML 1.0 Strict" /></a>        
+						<!-- IF U_ACP --><br /><strong><a href="{U_ACP}">{L_ACP}</a></strong><!-- ENDIF -->
+					</div>
+					<!-- Column 2 end -->
+					</div>
+					<div class="col3">
+					<!-- Column 3 start -->
+					Column 3
+					<!-- Column 3 end -->
+					</div>
+				</div><!-- /colleft -->
+			</div><!-- /colmid -->
+		</div><!-- /colmask holygrail -->
 
 	</div><!-- /page-footer -->
 
