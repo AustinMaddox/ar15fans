@@ -25,6 +25,23 @@
 	</div><!-- /colmid -->
 </div><!-- /colmask blogstyle -->
 
+<div class="colmask leftmenu">
+	<div class="colright">
+		<div class="col1wrap">
+			<div class="col1">
+			<!-- Column 1 start -->
+			<!-- INCLUDE gallery/imageblock_body.html -->
+			<!-- Column 1 end -->
+			</div>
+		</div><!-- /col1wrap -->
+		<div class="col2">
+		<!-- Column 2 start -->
+		Col 2
+		<!-- Column 2 end -->
+		</div>
+	</div><!-- /colright -->
+</div><!-- /colmask leftmenu -->
+
 <div class="colmask rightmenu">
 	<div class="colleft">
 		<div class="col1wrap">
@@ -34,8 +51,12 @@
 			
 			<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
 			<ul class="linklist">
-					<li>&nbsp;</li>
-				<!-- IF not S_IS_BOT and U_MARK_FORUMS --><li class="rightside"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li><!-- ENDIF -->
+				<!-- IF LEGEND -->
+				<li><em>{L_LEGEND}: {LEGEND}</em></li>
+				<!-- ENDIF -->
+				<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+				<li class="rightside"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
+				<!-- ENDIF -->
 			</ul>
 			<!-- ENDIF -->
 			
@@ -53,22 +74,20 @@
 					</fieldset>
 				</form>
 			<!-- ENDIF -->
-			
-			<!-- IF LEGEND --><p><em>{L_LEGEND}: {LEGEND}</em></p><!-- ENDIF -->
 			<!-- Column 1 end -->
 			</div>
 		</div><!-- /col1wrap -->
 		<div class="col2">
 		<!-- Column 2 start -->
-		<!-- INCLUDE gallery/imageblock_body.html -->
+		<!-- INCLUDE block/block_top_posters.html -->
+		<!-- INCLUDE block/block_top_posters_era.html -->
 		<!-- IF (RECENT_ATTACHMENTS_EXIST and not S_VIEWTOPIC) or (RECENT_ATTACHMENTS_EXIST and S_VIEWTOPIC and S_NUM_POSTS > 1) -->
 			<!-- INCLUDE attached_recent_images.html -->
 		<!-- ENDIF -->
 		<!-- IF RANDOM_ATTACHMENTS_EXIST and S_VIEWFORUM -->
 			<!-- INCLUDE attached_random_images.html -->
 		<!-- ENDIF -->
-		<!-- INCLUDE block/block_top_posters.html -->
-		<!-- INCLUDE block/block_top_posters_era.html -->
+		<!-- IF TURNED_OFF -->
 			<div class="forumbg">
 				<div class="inner"><span class="corners-top"><span></span></span>
 					<ul class="topiclist">
@@ -104,9 +123,50 @@
 					</table>
 				<span class="corners-bottom"><span></span></span></div>
 			</div>
+		<!-- ENDIF -->
 		<!-- Column 2 end -->
 		</div>
 	</div><!-- /colleft -->
 </div><!-- /colmask rightmenu -->
+
+<!-- IF not S_IS_BOT -->
+<div class="colmask blogstyle_fluid">
+	<div class="colmid">
+		<div class="colleft">
+			<div class="col1">
+				<!-- Column 1 start -->
+				<!-- IF S_DISPLAY_ONLINE_LIST -->
+				<!-- IF U_VIEWONLINE -->
+				<h3><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3>
+				<!-- ELSE -->
+				<h3>{L_WHO_IS_ONLINE}</h3>
+				<!-- ENDIF -->
+				<p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}</p>
+				<!-- ENDIF -->
+				<!-- Column 1 end -->
+			</div>
+			<div class="col2">
+				<!-- Column 2 start -->
+				<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+				<h3>{L_BIRTHDAYS}</h3>
+				<p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
+				<!-- ENDIF -->
+				
+				<!-- IF NEWEST_USER -->
+				<h3>{L_STATISTICS}</h3>
+				<p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS}<!-- IF TOTAL_IMAGES --> &bull; {TOTAL_IMAGES}<!-- ENDIF --> &bull; {TOTAL_USERS} &bull; {NEWEST_USER}</p>
+				<!-- ENDIF -->
+
+				<!-- Column 2 end -->
+			</div>
+			<div class="col3">
+				<!-- Column 3 start -->
+				col 3
+				<!-- Column 3 end -->
+			</div>
+		</div><!-- /colleft -->
+	</div><!-- /colmid -->
+</div><!-- /colmask blogstyle_fluid -->
+<!-- ENDIF -->
 
 <!-- INCLUDE overall_footer.html -->

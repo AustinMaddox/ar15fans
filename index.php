@@ -169,8 +169,8 @@ if (class_exists('phpbb_gallery_integration'))
 */
 $gallery_block = new phpbb_gallery_block();
 $gallery_block->set_modes(array('recent', 'comment'));
-$gallery_block->set_display_options(array('albumname', 'imagename', 'imagetime', 'imageviews', 'username', 'ratings', 'ip'));
-$gallery_block->set_nums(array('rows' => 3, 'columns' => 1, 'comments' => 1, 'contests' => 0));
+$gallery_block->set_display_options(array('imagename', 'username'));
+$gallery_block->set_nums(array('rows' => 1, 'columns' => 3, 'comments' => 1, 'contests' => 0));
 $gallery_block->set_toggle(false);
 $gallery_block->set_pegas(true);
 //$gallery_block->add_albums(array(1, 2, 3));
@@ -205,9 +205,18 @@ $template->assign_vars(array(
 if (!function_exists('get_latest_users'))
 {
 	include($phpbb_root_path . 'includes/latest_users.' . $phpEx);
-	get_latest_users(10, 300);
 }
+get_latest_users(10, 300);
 // ENDED - Latest Users
+
+// BEGAN - Top Posters
+if (!function_exists('get_top_posters'))
+{
+	include($phpbb_root_path . 'includes/top_posters.' . $phpEx);
+}
+get_top_posters(10, 300);
+get_top_posters_era(10, 300, 24);
+// ENDED - Top Posters
 
 // BEGAN - NV Recent Topics mod
 if ($config['rt_index'])

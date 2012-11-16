@@ -3,20 +3,20 @@
 		<table class="table1" cellspacing="1">
 			<thead>
 				<tr>
-					<th colspan="2">{L_TOP_LATEST_ACTIVE} {L_TOP_LATEST_ACTIVE_24}</th>
+					<th colspan="2">{L_TOP_POSTERS_ERA}</th>
 				</tr>
 			</thead>
 			<tbody>
-				<!-- BEGIN top_latest_active_24 -->
-				<tr class="<!-- IF top_latest_active_24.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-					<td>{top_latest_active_24.USERNAME_FULL}</td>
-					<td><a href="{top_latest_active_24.S_SEARCH_ACTION}">{top_latest_active_24.POSTS}</a> {L_POSTS}</td>
+				<!-- BEGIN top_posters_era -->
+				<tr class="<!-- IF top_posters_era.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+					<td>{top_posters_era.USERNAME_FULL}</td>
+					<td><a href="{top_posters_era.S_SEARCH_ACTION}">{top_posters_era.POSTS}</a> {L_POSTS}</td>
 				</tr>
 				<!-- BEGINELSE -->
 				<tr class="panel">
-					<td>{L_NO_ACTIVITY}</td>
+					<td>{TOP_POSTERS_ERA_NO_ACTIVITY}</td>
 				</tr>
-				<!-- END top_latest_active_24 -->
+				<!-- END top_posters_era -->
 			</tbody>
 		</table>
 	<span class="corners-bottom"><span></span></span></div>
