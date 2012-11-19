@@ -175,4 +175,5 @@ pip-log.txt
 /gallery/images/import/*
 /gallery/images/medium/*
 /gallery/images/upload/*
+/gym_sitemaps/cache/*
 /config.php

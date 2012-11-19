@@ -1,75 +1,251 @@
-<div id="floatmenu_expanse">
-    <div id="floatmenu">
+<div id="nav-expanse">
+    <div id="nav-wrap">
+    
         <ul id="nav">
-			<li class="icon-home"><a href="{U_INDEX}" title="{L_HOME}" accesskey="h">{L_HOME}</a></li>
-			<li class="icon-topicality"><a href="#" style="cursor:default;" onclick="return false;" title="{L_TOPICALITY_EXPLAIN}">{L_TOPICALITY}</a>
+			<li><a href="{U_INDEX}" title="{L_HOME}" accesskey="h">{L_HOME}</a></li>
+			<li><a href="#">{L_SEARCH}</a>
 				<ul>
-					<li><a href="{U_NEW_TOPIC}" title="{L_NEW_TOPIC_EXPLAIN}" class="newTopicLink"><img src="{T_THEME_PATH}/images/icon_new_topic.png" alt="{L_NEW_TOPIC}" /> {L_NEW_TOPIC}</a></li>
-					<li class="newTopicListItem" style="background-color:#EBEADD; border:1px solid navy; padding:2px; color:navy; display:none;"><strong>To Create a New Topic:</strong><br />First, go to the forum you'd like to create a topic in.<br />Then, click the <em>New Topic</em> button.</li>
 					<!-- IF S_DISPLAY_SEARCH -->
-					<li><a href="{U_SEARCH_UNANSWERED}"><img src="{T_THEME_PATH}/images/icon_unanswered_posts.png" alt="{L_SEARCH_UNANSWERED}" /> {L_SEARCH_UNANSWERED}</a></li>
+					<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
 					<!-- IF S_USER_LOGGED_IN -->
-					<li><a href="{U_SEARCH_UNREAD}"><img src="{T_THEME_PATH}/images/icon_unread_posts.png" alt="{L_SEARCH_UNREAD}" /> {L_SEARCH_UNREAD}</a></li>
-					<li><a href="{U_SEARCH_NEW}"><img src="{T_THEME_PATH}/images/icon_new_posts.png" alt="{L_SEARCH_NEW}" /> {L_SEARCH_NEW}</a>
+					<li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li>
+					<li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a>
 					<!-- ENDIF -->
-					<li><a href="{U_SEARCH_ACTIVE_TOPICS}"><img src="{T_THEME_PATH}/images/icon_active_topics.png" alt="{L_SEARCH_ACTIVE_TOPICS}" /> {L_SEARCH_ACTIVE_TOPICS}</a></li>
+					<li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
 					<!-- ENDIF -->
                     <!-- IF not S_IS_BOT -->
-                    <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><img src="{T_THEME_PATH}/images/icon_search.png" alt="{L_SEARCH_ADV_EXPLAIN}" /> {L_SEARCH}</a></li>
+                    <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li>
                     <!-- ENDIF -->
 				</ul>
 			</li>
-			<li class="icon-gallery"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a>
+			<li><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a>
 				<ul>
-					<li class="dashed_top"><a href="{U_G_SEARCH_RECENT}"><img src="{T_THEME_PATH}/images/icon_gallery_recent_images.png" alt="{L_VIEW_SEARCH_RECENT}" /> {L_VIEW_SEARCH_RECENT}</a></li>
-					<li><a href="{U_G_SEARCH_RANDOM}"><img src="{T_THEME_PATH}/images/icon_gallery_random_images.png" alt="{L_VIEW_SEARCH_RANDOM}" /> {L_VIEW_SEARCH_RANDOM}</a></li>
-					<li><a href="{U_G_SEARCH_COMMENTED}"><img src="{T_THEME_PATH}/images/icon_gallery_recent_comments.png" alt="{L_VIEW_SEARCH_COMMENTED}" /> {L_VIEW_SEARCH_COMMENTED}</a></li>
-					<li><a href="{U_G_SEARCH_TOPRATED}"><img src="{T_THEME_PATH}/images/icon_gallery_top_rated.png" alt="{L_VIEW_SEARCH_TOPRATED}" /> {L_VIEW_SEARCH_TOPRATED}</a></li>
+					<li><a href="{U_G_SEARCH_RECENT}">{L_VIEW_SEARCH_RECENT}</a></li>
+					<li><a href="{U_G_SEARCH_RANDOM}">{L_VIEW_SEARCH_RANDOM}</a></li>
+					<li><a href="{U_G_SEARCH_COMMENTED}">{L_VIEW_SEARCH_COMMENTED}</a></li>
+					<li><a href="{U_G_SEARCH_TOPRATED}">{L_VIEW_SEARCH_TOPRATED}</a></li>
 					<!-- IF U_G_SEARCH_CONTESTS -->
-                    <li><a href="{U_G_SEARCH_CONTESTS}"><img src="{T_THEME_PATH}/images/icon_gallery_contest_winners.png" alt="{L_VIEW_SEARCH_CONTESTS}" /> {L_VIEW_SEARCH_CONTESTS}</a></li>
+                    <li><a href="{U_G_SEARCH_CONTESTS}">{L_VIEW_SEARCH_CONTESTS}</a></li>
                     <!-- ENDIF -->
-                    <li><a href="{U_G_SEARCH}"><img src="{T_THEME_PATH}/images/icon_gallery_search.png" alt="{L_GALLERY_SEARCH}" /> {L_GALLERY_SEARCH}</a></li>
-					<li><a href="{U_USERS_PERSONAL_GALLERIES}"><img src="{T_THEME_PATH}/images/icon_gallery_user_albums.png" alt="{L_VIEW_USER_ALBUMS}" /> {L_VIEW_USER_ALBUMS}</a></li>
+                    <li><a href="{U_G_SEARCH}">{L_GALLERY_SEARCH}</a></li>
+					<li><a href="{U_USERS_PERSONAL_GALLERIES}">{L_VIEW_USER_ALBUMS}</a></li>
 					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
 					<!-- IF U_YOUR_PERSONAL_GALLERY -->
-					<li class="dashed_top"><a href="{U_YOUR_PERSONAL_GALLERY}"><img src="{T_THEME_PATH}/images/icon_gallery_photos.png" alt="{L_YOUR_PHOTOS}" /> {L_YOUR_PHOTOS}</a></li>
+					<li><a href="{U_YOUR_PERSONAL_GALLERY}">{L_YOUR_PHOTOS}</a></li>
 					<!-- ELSE -->
-					<li class="dashed_top"><a href="{U_MANAGE_PHOTOS}"><img src="{T_THEME_PATH}/images/icon_gallery_photos.png" alt="{L_YOUR_PHOTOS}" /> <span style="text-decoration:line-through; text-decoration:blink; cursor:help;" title="{L_NO_PHOTOS}">{L_YOUR_PHOTOS}</span></a></li>
+					<li><a href="{U_MANAGE_PHOTOS}">{L_YOUR_PHOTOS}</a></li>
 					<!-- ENDIF -->
-					<li><a href="{U_G_SEARCH_SELF}"><img src="{T_THEME_PATH}/images/icon_gallery.gif" alt="{L_VIEW_SEARCH_SELF}" /> {L_VIEW_SEARCH_SELF}</a></li>
-					<li><a href="{U_G_MANAGE_PHOTOS}" title="{L_MANAGE_PHOTOS} Your Photos"><img src="{T_THEME_PATH}/images/icon_gallery_manage_photos.png" alt="{L_MANAGE_PHOTOS} Photos" /> {L_MANAGE_PHOTOS} photos</a></li>
+					<li><a href="{U_G_SEARCH_SELF}">{L_VIEW_SEARCH_SELF}</a></li>
+					<li><a href="{U_G_MANAGE_PHOTOS}">{L_MANAGE_PHOTOS}</a></li>
 					<!-- ENDIF -->
 				</ul>
 			</li>
-			<!-- IF S_MCHAT_ENABLE and U_MCHAT -->
-            <li class="icon-shop-talk"><a href="{U_MCHAT}" title="{L_MCHAT_TITLE}">{L_MCHAT_TITLE}</a></li>
-            <!-- ENDIF -->
-            <li class="icon-about"><a href="{U_ABOUT}" title="{L_ABOUT_EXPLAIN}">{L_ABOUT}</a>
+            <li><a href="{U_ABOUT}">{L_ABOUT}</a>
             	<ul>
-					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><img src="{T_THEME_PATH}/images/icon_faq.png" alt="{L_FAQ}" /> {L_FAQ}</a></li>
-                    <li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><img src="{T_THEME_PATH}/images/icon_members.png" alt="{L_MEMBERLIST}" /> {L_MEMBERLIST}</a></li>
-                    <li><a href="{U_RANKS}" title="{L_RANKS_EXPLAIN}"><img src="{T_THEME_PATH}/images/icon_ranks.gif" alt="{L_RANKS}" /> {L_RANKS}</a></li>
-                    <li><a href="{U_GROUPS}" title="{L_GROUPS_EXPLAIN}"><img src="{T_THEME_PATH}/images/icon_groups.png" alt="{L_GROUPS}" /> {L_GROUPS}</a></li>
+					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
+                    <li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li>
                     <!-- IF U_TEAM -->
-                    <li><a href="{U_TEAM}" title="{L_THE_TEAM_EXPLAIN}"><img src="{T_THEME_PATH}/images/icon_team.png" alt="{L_THE_TEAM}" /> {L_THE_TEAM}</a></li>
-                    <!-- ENDIF -->
-                    <!-- IF U_ACP or U_MCP -->
-                    <li class="dashed_top"><a href="http://www.astrosafari.com/viewforum.php?f=124" title="Staff Room"><img src="{T_THEME_PATH}/images/icon_staff_room.png" alt="Staff Room" /> The ATTIC</a></li>
+                    <li><a href="{U_TEAM}" title="{L_THE_TEAM_EXPLAIN}">{L_THE_TEAM}</a></li>
                     <!-- ENDIF -->
                 </ul>
             </li>
-            <li class="icon-contact"><a href="mailto:support@astrosafari.com">Contact Us</a></li>
+            <li><a href="mailto:support@ar15fans.com">Contact Us</a></li>
             
-	        <!-- IF not S_IS_BOT and not S_USER_LOGGED_IN -->
-			<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
-			<li class="icon-register" style="float:right;"><a href="{U_REGISTER}">{L_REGISTER}</a></li>
-			<!-- ENDIF -->
-            <li class="icon-login" style="float:right;"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a></li>
-            <!-- ENDIF -->
-            <!-- IF S_USER_LOGGED_IN -->
-            <li class="icon-logout" style="float:right;"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l">{L_LOGIN_LOGOUT}</a></li>
-            <!-- ENDIF -->
+			<li><a href="#">User Menu</a>
+				<ul>
+				<!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
+					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li>
+					<!-- IF S_DISPLAY_PM -->
+					<li><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a></li>
+					<!-- ENDIF -->
+					<!-- IF U_YOUR_PROFILE -->
+					<li><a href="{U_YOUR_PROFILE}" title="{L_YOUR_PROFILE_EXPLAIN}">{L_YOUR_PROFILE}</a></li>
+					<!-- ENDIF -->
+					<!-- IF S_DISPLAY_SEARCH and (U_SELF_TOPICS or U_SEARCH_SELF) -->
+					<li><a href="{U_SELF_TOPICS}">{L_SEARCH_SELF_TOPICS}</a></li>
+					<li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+					<!-- ENDIF -->
+					<!-- IF U_YOUR_PERSONAL_GALLERY or L_NO_PHOTOS or U_G_MANAGE_PHOTOS -->
+					<!-- IF U_YOUR_PERSONAL_GALLERY -->
+					<li><a href="{U_YOUR_PERSONAL_GALLERY}">{L_YOUR_PHOTOS}</a></li>
+					<!-- ELSE -->
+					<li><a href="#">{L_YOUR_PHOTOS}</a></li>
+					<!-- ENDIF -->
+					<li><a href="{U_G_MANAGE_PHOTOS}">{L_MANAGE_PHOTOS}</a></li>
+					<!-- ENDIF -->
+					<!-- IF U_RESTORE_PERMISSIONS -->
+					<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
+					<!-- ENDIF -->
+					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l">{L_LOGIN_LOGOUT}</a></li>
+					<!-- ELSE -->
+					<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+					<li><a href="{U_REGISTER}">{L_REGISTER}</a></li>
+					<!-- ENDIF -->
+				<!-- ENDIF -->
+				</ul>
+			</li>
             
-        </ul>
-	</div>
+        </ul><!-- /nav -->
+	</div><!-- /nav-wrap -->
+</div><!-- /floatmenu_expanse -->
+
+<!--
+<div id="nav-wrap">
+	<ul id="nav">
+		<li><a href="/">Home</a></li>
+
+		<li>
+			<a href="">Categories</a>
+			<ul>
+				<li>
+					<a href="">CSS</a>
+					<ul>
+						<li><a href="">Item 11</a></li>
+
+						<li><a href="">Item 12</a></li>
+						<li><a href="">Item 13</a></li>
+						<li><a href="">Item 14</a></li>
+					</ul>				
+				</li>
+				<li>
+					<a href="">Graphic design</a>
+
+					<ul>
+						<li><a href="">Item 21</a></li>
+						<li><a href="">Item 22</a></li>
+						<li><a href="">Item 23</a></li>
+						<li><a href="">Item 24</a></li>
+					</ul>				
+				</li>
+
+				<li>
+					<a href="">Development tools</a>
+					<ul>
+						<li><a href="">Item 31</a></li>
+						<li><a href="">Item 32</a></li>
+						<li><a href="">Item 33</a></li>
+						<li><a href="">Item 34</a></li>
+
+					</ul>				
+				</li>
+				<li>
+					<a href="">Web design</a>				
+					<ul>
+						<li><a href="">Item 41</a></li>
+						<li><a href="">Item 42</a></li>
+						<li><a href="">Item 43</a></li>
+
+						<li><a href="">Item 44</a></li>
+					</ul>	
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="">Work</a>
+			<ul>
+
+				<li>
+					<a href="">Work 1</a>
+					<ul>
+						<li>
+							<a href="">Work 11</a>		
+							<ul>
+								<li><a href="">Work 111</a></li>
+								<li><a href="">Work 112</a></li>
+
+								<li><a href="">Work 113</a></li>
+							</ul>							
+						</li>
+						<li>
+							<a href="">Work 12</a>
+							<ul>
+								<li><a href="">Work 121</a></li>
+								<li><a href="">Work 122</a></li>
+
+								<li><a href="">Work 123</a></li>
+							</ul>							
+						</li>
+						<li>
+							<a href="">Work 13</a>
+							<ul>
+								<li><a href="">Work 131</a></li>
+								<li><a href="">Work 132</a></li>
+
+								<li><a href="">Work 133</a></li>
+							</ul>							
+						</li>
+					</ul>					
+				</li>
+				<li>
+					<a href="">Work 2</a>
+					<ul>
+						<li>
+
+							<a href="">Work 21</a>
+							<ul>
+								<li><a href="">Work 211</a></li>
+								<li><a href="">Work 212</a></li>
+								<li><a href="">Work 213</a></li>
+							</ul>							
+						</li>
+
+						<li>
+							<a href="">Work 22</a>
+							<ul>
+								<li><a href="">Work 221</a></li>
+								<li><a href="">Work 222</a></li>
+								<li><a href="">Work 223</a></li>
+							</ul>							
+						</li>
+
+						<li>
+							<a href="">Work 23</a>
+							<ul>
+								<li><a href="">Work 231</a></li>
+								<li><a href="">Work 232</a></li>
+								<li><a href="">Work 233</a></li>
+							</ul>							
+						</li>
+
+					</ul>					
+				</li>
+				<li>
+					<a href="">Work 3</a>
+					<ul>
+						<li>
+							<a href="">Work 31</a>
+							<ul>
+
+								<li><a href="">Work 311</a></li>
+								<li><a href="">Work 312</a></li>
+								<li><a href="">Work 313</a></li>
+							</ul>							
+						</li>
+						<li>
+							<a href="">Work 32</a>
+
+							<ul>
+								<li><a href="">Work 321</a></li>
+								<li><a href="">Work 322</a></li>
+								<li><a href="">Work 323</a></li>
+							</ul>							
+						</li>
+						<li>
+							<a href="">Work 33</a>
+
+							<ul>
+								<li><a href="">Work 331</a></li>
+								<li><a href="">Work 332</a></li>
+								<li><a href="">Work 333</a></li>
+							</ul>							
+						</li>
+					</ul>					
+				</li>
+
+			</ul>		
+		</li>
+		<li><a href="">About</a></li>
+		<li><a href="">Contact</a></li>
+	</ul>
 </div>
+-->

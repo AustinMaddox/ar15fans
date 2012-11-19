@@ -59,7 +59,7 @@
 
 /* 3 column fixed blog style settings */
 .blogstyle {
-	background: #ff9;		/* Right column background colour */
+	background: #fff;		/* Right column background colour */
 }
 .blogstyle .colmid {
 	float: left;
@@ -67,7 +67,7 @@
 	margin-left: -222px;	/* Width of right column */
 	position: relative;
 	right: 100%;
-	background: #1FD8B7;	/* Center column background colour */
+	background: #fff;	/* Center column background colour */
 	
 }
 .blogstyle .colleft {
@@ -90,15 +90,15 @@
 }
 .blogstyle .col2 {
 	float: right;
-	width: 222px;        	/* Width of left column content (left column width minus left and right padding) */
+	width: 220px;        	/* Width of left column content (left column width minus left and right padding) */
 	position: relative;
-	left: 222px;         	/* Width of the left-hand side padding on the left column */
+	left: 220px;         	/* Width of the left-hand side padding on the left column */
 }
 .blogstyle .col3 {
 	float: right;
 	width: 222px;        	/* Width of right column content (right column width minus left and right padding) */
 	position: relative;
-	left: 666px;
+	left: 664px;
 }
 
 
@@ -144,7 +144,7 @@
 
 /* 2 column left menu settings */
 .leftmenu {
-	background: #FFD8B7;
+	background: #fff;
 }
 .leftmenu .colright {
 	float: left;
@@ -167,14 +167,14 @@
 }
 .leftmenu .col2 {
 	float: left;
-	width: 222px;
+	width: 220px;
 	position: relative;
 	right: 222px;
 }
 
 /* 2 column right menu settings */
 .rightmenu {
-	background: #ff9;
+	background: #fff;
 }
 .rightmenu .colleft {
 	float: left;

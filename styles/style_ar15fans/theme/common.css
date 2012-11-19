@@ -21,7 +21,7 @@ body {
 	/*font-size: 62.5%;			 This sets the default font size to be equivalent to 10px */
 	font-size: 10px;
 	margin: 0;
-	padding: 2px 0;
+	padding: 0;
 }
 
 h1 {
@@ -190,8 +190,7 @@ a#logo:hover {
 }
 
 .navbar {
-	background-color: #ebebeb;
-	padding: 0 10px;
+	padding: 0 4px;
 }
 
 .forabg {
@@ -364,7 +363,7 @@ table.table1 tbody tr {
 }
 
 table.table1 tbody tr:hover, table.table1 tbody tr.hover {
-	background-color: #f6f6f6;
+/* 	background-color: #f6f6f6; */
 	color: #000;
 }
 

@@ -54,7 +54,9 @@ hr.dashed {
 }
 
 .navbar {
-	background-color: #cadceb;
+	background-color: #ffcc00;
+	border-bottom: 1px dotted #111111;
+	border-top: 1px dotted #111111;
 }
 
 .forabg {
@@ -126,7 +128,7 @@ table.table1 tbody tr {
 }
 
 table.table1 tbody tr:hover, table.table1 tbody tr.hover {
-	background-color: #CFE1F6;
+/* 	background-color: #CFE1F6; */
 	color: #000;
 }
 
@@ -405,7 +407,7 @@ li.row strong {
 }
 
 li.row:hover {
-	background-color: #F6F4D0;
+/* 	background-color: #F6F4D0; */
 }
 
 li.row:hover dd {
