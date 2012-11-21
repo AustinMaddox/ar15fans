@@ -57,11 +57,11 @@ RewriteRule ^post([0-9]+)\.html$ viewtopic.php?p=$1 [QSA,L,NC]
 # ACTIVE TOPICS
 RewriteRule ^active-topics(-([0-9]+))?\.html$ search.php?search_id=active_topics&start=$2&sr=topics [QSA,L,NC]
 # UNANSWERED TOPICS
-RewriteRule ^unanswered(-([0-9]+))?\.html$ search.php?search_id=unanswered&start=$2&sr=topics [QSA,L,NC]
+RewriteRule ^unanswered-posts(-([0-9]+))?\.html$ search.php?search_id=unanswered&start=$2&sr=topics [QSA,L,NC]
 # NEW POSTS
-RewriteRule ^newposts(-([0-9]+))?\.html$ search.php?search_id=newposts&start=$2&sr=topics [QSA,L,NC]
+RewriteRule ^new-posts(-([0-9]+))?\.html$ search.php?search_id=newposts&start=$2&sr=topics [QSA,L,NC]
 # UNREAD POSTS
-RewriteRule ^unreadposts(-([0-9]+))?\.html$ search.php?search_id=unreadposts&start=$2 [QSA,L,NC]
+RewriteRule ^unread-posts(-([0-9]+))?\.html$ search.php?search_id=unreadposts&start=$2 [QSA,L,NC]
 # THE TEAM
 RewriteRule ^the-team\.html$ memberlist.php?mode=leaders [QSA,L,NC]
 # HERE IS A GOOD PLACE TO ADD OTHER PHPBB RELATED REWRITERULES

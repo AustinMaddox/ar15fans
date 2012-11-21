@@ -29,15 +29,6 @@
                     <!-- ENDIF -->
                     <li><a href="{U_G_SEARCH}">{L_GALLERY_SEARCH}</a></li>
 					<li><a href="{U_USERS_PERSONAL_GALLERIES}">{L_VIEW_USER_ALBUMS}</a></li>
-					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-					<!-- IF U_YOUR_PERSONAL_GALLERY -->
-					<li><a href="{U_YOUR_PERSONAL_GALLERY}">{L_YOUR_PHOTOS}</a></li>
-					<!-- ELSE -->
-					<li><a href="{U_MANAGE_PHOTOS}">{L_YOUR_PHOTOS}</a></li>
-					<!-- ENDIF -->
-					<li><a href="{U_G_SEARCH_SELF}">{L_VIEW_SEARCH_SELF}</a></li>
-					<li><a href="{U_G_MANAGE_PHOTOS}">{L_MANAGE_PHOTOS}</a></li>
-					<!-- ENDIF -->
 				</ul>
 			</li>
             <li><a href="{U_ABOUT}">{L_ABOUT}</a>
@@ -47,32 +38,38 @@
                     <!-- IF U_TEAM -->
                     <li><a href="{U_TEAM}" title="{L_THE_TEAM_EXPLAIN}">{L_THE_TEAM}</a></li>
                     <!-- ENDIF -->
+                    <li><a href="mailto:support@ar15fans.com">Contact Admin</a></li>
                 </ul>
             </li>
-            <li><a href="mailto:support@ar15fans.com">Contact Us</a></li>
             
-			<li><a href="#">User Menu</a>
+            <!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
+			<li><a href="#">{L_USER_MENU}</a>
 				<ul>
-				<!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
 					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li>
 					<!-- IF S_DISPLAY_PM -->
-					<li><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a></li>
+						<li><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a></li>
 					<!-- ENDIF -->
 					<!-- IF U_YOUR_PROFILE -->
-					<li><a href="{U_YOUR_PROFILE}" title="{L_YOUR_PROFILE_EXPLAIN}">{L_YOUR_PROFILE}</a></li>
+						<li><a href="{U_YOUR_PROFILE}" title="{L_YOUR_PROFILE_EXPLAIN}">{L_YOUR_PROFILE}</a></li>
 					<!-- ENDIF -->
 					<!-- IF S_DISPLAY_SEARCH and (U_SELF_TOPICS or U_SEARCH_SELF) -->
-					<li><a href="{U_SELF_TOPICS}">{L_SEARCH_SELF_TOPICS}</a></li>
-					<li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+						<li><a href="{U_SELF_TOPICS}">{L_SEARCH_SELF_TOPICS}</a></li>
+						<li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
 					<!-- ENDIF -->
+					
 					<!-- IF U_YOUR_PERSONAL_GALLERY or L_NO_PHOTOS or U_G_MANAGE_PHOTOS -->
-					<!-- IF U_YOUR_PERSONAL_GALLERY -->
-					<li><a href="{U_YOUR_PERSONAL_GALLERY}">{L_YOUR_PHOTOS}</a></li>
-					<!-- ELSE -->
-					<li><a href="#">{L_YOUR_PHOTOS}</a></li>
+					<li><a href="#">{L_YOUR_GALLERY}</a>
+						<ul>
+							<li><a href="{U_G_SEARCH_SELF}">{L_VIEW_SEARCH_SELF}</a></li>
+							<!-- IF U_YOUR_PERSONAL_GALLERY -->
+								<li><a href="{U_YOUR_PERSONAL_GALLERY}">{L_YOUR_PHOTOS}</a></li>
+							<!-- ELSE -->
+								<li><a href="{U_G_MANAGE_PHOTOS}">{L_MANAGE_PHOTOS}</a></li>
+							<!-- ENDIF -->
+						</ul>
+					</li>
 					<!-- ENDIF -->
-					<li><a href="{U_G_MANAGE_PHOTOS}">{L_MANAGE_PHOTOS}</a></li>
-					<!-- ENDIF -->
+					
 					<!-- IF U_RESTORE_PERMISSIONS -->
 					<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
 					<!-- ENDIF -->
@@ -81,9 +78,9 @@
 					<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
 					<li><a href="{U_REGISTER}">{L_REGISTER}</a></li>
 					<!-- ENDIF -->
-				<!-- ENDIF -->
 				</ul>
 			</li>
+			<!-- ENDIF -->
             
         </ul><!-- /nav -->
 	</div><!-- /nav-wrap -->

@@ -361,7 +361,7 @@ $lang = array_merge($lang, array(
 	'NOT_WATCHING_FORUM'		=> 'You are no longer subscribed to updates on this forum.',
 	'NOT_WATCHING_TOPIC'		=> 'You are no longer subscribed to this topic.',
 	'NOTIFY_ADMIN'				=> 'Please notify the board administrator or webmaster.',
-	'NOTIFY_ADMIN_EMAIL'		=> 'Please notify the board administrator or webmaster: <a href="mailto:%1$s">%1$s</a>',
+	'NOTIFY_ADMIN_EMAIL'		=> 'Please notify the board administrator or webmaster: <a href="mailto:%1$s">%1$s</a> and <strong>attach a screenshot</strong> of this page if possible.',
 	'NO_ACCESS_ATTACHMENT'		=> 'You are not allowed to access this file.',
 	'NO_ACTION'					=> 'No action specified.',
 	'NO_ADMINISTRATORS'			=> 'There are no administrators.',
@@ -488,7 +488,7 @@ $lang = array_merge($lang, array(
 	'REPLYING_GLOBAL_ANNOUNCE'	=> 'Replying to global announcement',
 	'REPLYING_MESSAGE'			=> 'Replying to message in %s',
 	'REPORT_BY'					=> 'Report by',
-	'REPORT_POST'				=> 'Report this post',
+	'REPORT_POST'				=> 'Report this post. (Alert moderators)',
 	'REPORTING_POST'			=> 'Reporting post',
 	'RESEND_ACTIVATION'			=> 'Resend activation e-mail',
 	'RESET'						=> 'Reset',
@@ -498,7 +498,7 @@ $lang = array_merge($lang, array(
 	'RETURN_PAGE'				=> '%sReturn to the previous page%s',
 	'RETURN_TOPIC'				=> '%sReturn to the topic last visited%s',
 	'RETURN_TO'					=> 'Return to',
-	'FEED'						=> 'Feed',
+	'FEED'						=> 'RSS Feed',
 	'FEED_NEWS'					=> 'News',
 	'FEED_TOPICS_ACTIVE'		=> 'Active Topics',
 	'FEED_TOPICS_NEW'			=> 'New Topics',
@@ -531,6 +531,9 @@ $lang = array_merge($lang, array(
 	'SEARCH_NEW'				=> 'View new posts',
 	'SEARCH_POSTS_BY'			=> 'Search posts by',
 	'SEARCH_SELF'				=> 'View your posts',
+// BEGAN - Search Self Topics mod
+	'SEARCH_SELF_TOPICS'		=> 'View your topics',
+// ENDED - Search Self Topics mod
 	'SEARCH_TOPIC'				=> 'Search this topic…',
 	'SEARCH_UNANSWERED'			=> 'View unanswered posts',
 	'SEARCH_UNREAD'				=> 'View unread posts',
@@ -571,6 +574,7 @@ $lang = array_merge($lang, array(
 	'TERMS_USE'			=> 'Terms of use',
 	'TEST_CONNECTION'	=> 'Test connection',
 	'THE_TEAM'			=> 'The team',
+	'THE_TEAM_EXPLAIN'	=> 'View information about the team of staff members who manage the site.',
 	'TIME'				=> 'Time',
 
 	'TOO_LARGE'						=> 'The value you entered is too large.',
@@ -712,7 +716,7 @@ $lang = array_merge($lang, array(
 	'WATCH_FORUM_DETAILED'	=> 'Are you sure you wish to subscribe to the forum “%s”?',
 	'WATCH_TOPIC_CONFIRM'	=> 'Are you sure you wish to subscribe to this topic?',
 	'WATCH_TOPIC_DETAILED'	=> 'Are you sure you wish to subscribe to the topic “%s”?',
-	'WELCOME_SUBJECT'	=> 'Welcome to %s forums',
+	'WELCOME_SUBJECT'	=> 'Welcome to %s',
 	'WEBSITE'			=> 'Website',
 	'WHOIS'				=> 'Whois',
 	'WHO_IS_ONLINE'		=> 'Who is online',
@@ -732,6 +736,11 @@ $lang = array_merge($lang, array(
 	'YOU_NEW_PM'		=> 'A new private message is waiting for you in your Inbox.',
 	'YOU_NEW_PMS'		=> 'New private messages are waiting for you in your Inbox.',
 	'YOU_NO_NEW_PM'		=> 'No new private messages are waiting for you.',
+
+// BEGAN - Your Profile Link mod
+	'YOUR_PROFILE'				=> 'Your profile',
+	'YOUR_PROFILE_EXPLAIN'		=> 'View your own profile page.',
+// ENDED - Your Profile Link mod
 
 	'datetime'			=> array(
 		'TODAY'		=> 'Today',
@@ -894,6 +903,7 @@ $lang = array_merge($lang, array(
 $lang['Page'] = 'Page ';
 // www.phpBB-SEO.com SEO TOOLKIT END - TITLE
 // www.phpBB-SEO.com SEO TOOLKIT BEGIN -> GYM Sitemaps
+
 $lang = array_merge($lang, array(
 	'GYM_LINKS' => 'Links',
 	'GYM_LINK' => 'Link',
@@ -905,4 +915,38 @@ $lang = array_merge($lang, array(
 // www.phpBB-SEO.com SEO TOOLKIT BEGIN - Related Topics
 $lang['RELATED_TOPICS'] = 'Related topics';
 // www.phpBB-SEO.com SEO TOOLKIT END - Related Topics
+
+// BEGAN - phpBB Gallery mod
+$lang = array_merge($lang, array(
+	'YOUR_GALLERY'			=> 'Your gallery',
+	'YOUR_PHOTOS'			=> 'Your photo albums',
+	'MANAGE_PHOTOS'			=> 'Manage your photos',
+	'NO_PHOTOS'				=> 'You have No Photos! Click the manage link to add some.',
+	'GALLERY_SEARCH'		=> 'Gallery Search',
+
+	'VIEW_SEARCH_RECENT'			=> 'Recent Images',
+	'VIEW_SEARCH_RANDOM'			=> 'Random Images',
+	'VIEW_SEARCH_COMMENTED'			=> 'Recent Comments',
+	'VIEW_SEARCH_TOPRATED'			=> 'Top Rated Images',
+	'VIEW_SEARCH_CONTESTS'			=> 'Contest Winners',
+	'VIEW_USER_ALBUMS'				=> 'User Albums',
+	'VIEW_SEARCH_SELF'				=> 'Search your images',
+));
+// ENDED - phpBB Gallery mod
+
+//  BEGAN - Additions
+$lang = array_merge($lang, array(
+	'USER_MENU'				=> 'User Menu',
+
+	'KEY_TERMS'				=> 'Common phrases',
+	'SYNOPSIS'				=> 'Synopsis',
+
+	'ABOUT'						=> 'About',
+	'ABOUT_EXPLAIN'				=> 'About us page.',
+
+	'SPONSORS'				=> 'Sponsors',
+	'FORUM_SPONSORED_BY'	=> 'Forum sponsored by',
+
+));
+// ENDED - Additions
 ?>

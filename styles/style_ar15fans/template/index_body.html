@@ -13,34 +13,17 @@
 			</div><!-- /col1wrap -->
 			<div class="col2">
 			<!-- Column 2 start -->
-			<!-- INCLUDE block/block_latest_users.html -->
+			<!-- INCLUDE block/block_top_posters_era.html -->
 			<!-- Column 2 end -->
 			</div>
 			<div class="col3">
 			<!-- Column 3 start -->
-			<!-- INCLUDE block/block_latest_users.html -->
+			<!-- INCLUDE block/block_top_posters.html -->
 			<!-- Column 3 end -->
 			</div>
 		</div><!-- /colleft -->
 	</div><!-- /colmid -->
 </div><!-- /colmask blogstyle -->
-
-<div class="colmask leftmenu">
-	<div class="colright">
-		<div class="col1wrap">
-			<div class="col1">
-			<!-- Column 1 start -->
-			<!-- INCLUDE gallery/imageblock_body.html -->
-			<!-- Column 1 end -->
-			</div>
-		</div><!-- /col1wrap -->
-		<div class="col2">
-		<!-- Column 2 start -->
-		<!-- INCLUDE block/block_latest_users.html -->
-		<!-- Column 2 end -->
-		</div>
-	</div><!-- /colright -->
-</div><!-- /colmask leftmenu -->
 
 <div class="colmask rightmenu">
 	<div class="colleft">
@@ -48,18 +31,6 @@
 			<div class="col1">
 			<!-- Column 1 start -->
 			<!-- INCLUDE forumlist_body.html -->
-			
-			<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
-			<ul class="linklist">
-				<!-- IF LEGEND -->
-				<li><em>{L_LEGEND}: {LEGEND}</em></li>
-				<!-- ENDIF -->
-				<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-				<li class="rightside"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
-				<!-- ENDIF -->
-			</ul>
-			<!-- ENDIF -->
-			
 			<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
 				<form method="post" action="{S_LOGIN_ACTION}" class="headerspace">
 				<h3><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
@@ -79,8 +50,6 @@
 		</div><!-- /col1wrap -->
 		<div class="col2">
 		<!-- Column 2 start -->
-		<!-- INCLUDE block/block_top_posters.html -->
-		<!-- INCLUDE block/block_top_posters_era.html -->
 		<!-- IF (RECENT_ATTACHMENTS_EXIST and not S_VIEWTOPIC) or (RECENT_ATTACHMENTS_EXIST and S_VIEWTOPIC and S_NUM_POSTS > 1) -->
 			<!-- INCLUDE attached_recent_images.html -->
 		<!-- ENDIF -->
@@ -128,6 +97,23 @@
 		</div>
 	</div><!-- /colleft -->
 </div><!-- /colmask rightmenu -->
+
+<div class="colmask leftmenu">
+	<div class="colright">
+		<div class="col1wrap">
+			<div class="col1">
+			<!-- Column 1 start -->
+			<!-- INCLUDE gallery/imageblock_body.html -->
+			<!-- Column 1 end -->
+			</div>
+		</div><!-- /col1wrap -->
+		<div class="col2">
+		<!-- Column 2 start -->
+		<!-- INCLUDE block/block_latest_users.html -->
+		<!-- Column 2 end -->
+		</div>
+	</div><!-- /colright -->
+</div><!-- /colmask leftmenu -->
 
 <!-- IF not S_IS_BOT -->
 <div class="colmask blogstyle_fluid">

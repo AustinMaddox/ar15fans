@@ -22,10 +22,20 @@
 								</ul>
 							<span class="corners-bottom"><span></span></span></div>
 						</div><!-- /navbar -->
-						<div>
-							<a href="http://www.astrosafari.com" title="Chevy Astro and GMC Safari van specific community.">Chevy Astro Van Forum</a> &bull; 
-							<a href="http://www.silveradosierra.com" title="Chevy Silverado and GMC Sierra truck specific community.">Chevy Truck Forum</a>
-						</div>
+						<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
+						<ul class="linklist">
+							<!-- IF LEGEND -->
+							<li><em>{L_LEGEND}: {LEGEND}</em></li>
+							<!-- ENDIF -->
+							<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+							<li class="rightside"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
+							<!-- ENDIF -->
+						</ul>
+						<!-- ENDIF -->
+						<ul class="linklist">
+							<li><a href="http://www.astrosafari.com" title="Chevy Astro and GMC Safari van specific community.">Chevy Astro Van Forum</a></li> 
+							<li class="rightside"><a href="http://www.silveradosierra.com" title="Chevy Silverado and GMC Sierra truck specific community.">Chevy Truck Forum</a></li>
+						</ul>
 						<!-- Column 1 end -->
 						</div>
 					</div><!-- /col1wrap -->

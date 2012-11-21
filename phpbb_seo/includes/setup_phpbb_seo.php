@@ -122,6 +122,19 @@ class setup_phpbb_seo {
 		}
 		// <== Special for lazy French, others may delete this part
 
+// BEGAN - Austin added default overrides
+//			$this->seo_static['leaders'] = ''; // instead of the default "the-team"
+//			$this->seo_static['global_announce'] = ''; // instead of the default "announces"
+			$this->seo_static['utopic'] = 'unanswered-posts'; // instead of the default "unanswered"
+			$this->seo_static['urpost'] = 'unread-posts'; // instead of default "unreadposts"
+			$this->seo_static['npost'] = 'new-posts'; // instead of the default "newposts"
+//			$this->seo_static['atopic'] = ''; // instead of the default "active-topics"
+//			$this->seo_static['user'] = ''; // instead of the default "members"
+//			$this->seo_static['post'] = ''; // instead of the default "post"
+//			$this->seo_static['index'] = ''; // instead of the default "index"
+// ENDED - Austin added default overrides
+
+
 		// Let's make sure that settings are consistent
 		$this->check_config();
 	}
@@ -141,13 +154,15 @@ class setup_phpbb_seo {
 		// Behave as redirect() for checks to provide with the same level of protection
 		// Make sure no linebreaks are there... to prevent http response splitting for PHP < 4.4.2
 		if (strpos(urldecode($url), "\n") !== false || strpos(urldecode($url), "\r") !== false || strpos($url, ';') !== false) {
-			trigger_error('Tried to redirect to potentially insecure url.', E_USER_ERROR);
+//			trigger_error('Tried to redirect to potentially insecure url.', E_USER_ERROR);
+			trigger_error('Tried to redirect to potentially insecure url. {' . $url . '}', E_USER_ERROR);
 		}
 		// Now, also check the protocol and for a valid url the last time...
 		$allowed_protocols = array('http', 'https'/*, 'ftp', 'ftps'*/);
 		$url_parts = parse_url($url);
 		if ($url_parts === false || empty($url_parts['scheme']) || !in_array($url_parts['scheme'], $allowed_protocols)) {
-			trigger_error('Tried to redirect to potentially insecure url.', E_USER_ERROR);
+//			trigger_error('Tried to redirect to potentially insecure url.', E_USER_ERROR);
+			trigger_error('Tried to redirect to potentially insecure url. {{' . $url . '}}', E_USER_ERROR);
 		}
 		$http = 'HTTP/1.1 ';
 		header($http . $header, $replace, $code);
