@@ -39,6 +39,7 @@
 				dE('forum_link_options', -1);
 				dE('forum_rules_options', 1);
 				dE('forum_cat_options', -1);
+				dE('forum_seo_options', 1);
 			}
 			else if (value == {FORUM_LINK})
 			{
@@ -46,6 +47,7 @@
 				dE('forum_link_options', 1);
 				dE('forum_rules_options', -1);
 				dE('forum_cat_options', -1);
+				dE('forum_seo_options', -1);
 			}
 			else if (value == {FORUM_CAT})
 			{
@@ -53,6 +55,7 @@
 				dE('forum_link_options', -1);
 				dE('forum_rules_options', 1);
 				dE('forum_cat_options', 1);
+				dE('forum_seo_options', 1);
 			}
 		}
 
@@ -88,6 +91,7 @@
 
 			<!-- IF S_FORUM_LINK -->
 			dE('forum_rules_options', -1);
+			dE('forum_seo_options', -1);
 			<!-- ENDIF -->
 		}
 
@@ -183,6 +187,24 @@
 		<dd><select id="forum_style" name="forum_style"><option value="0">{L_DEFAULT_STYLE}</option>{S_STYLES_OPTIONS}</select></dd>
 	</dl>
 	</fieldset>
+
+	<div id="forum_seo_options">
+		<fieldset>
+			<legend>{L_FORUM_SEO_SETTINGS}</legend>
+		<dl>
+			<dt><label for="forum_seo_key">{L_FORUM_SEO_KEY}:</label><br /><span>{L_FORUM_SEO_KEY_EXPLAIN}</span></dt>
+			<dd><input class="text full" type="text" id="forum_seo_key" name="forum_seo_key" value="{FORUM_SEO_KEY}" maxlength="255" /></dd>
+		</dl>
+		<dl>
+			<dt><label for="forum_seo_desc">{L_FORUM_SEO_DESC}:</label><br /><span>{L_FORUM_SEO_DESC_EXPLAIN}</span></dt>
+			<dd><textarea id="forum_seo_desc" name="forum_seo_desc" rows="5" cols="45">{FORUM_SEO_DESC}</textarea></dd>
+		</dl>
+		<dl>
+			<dt><label for="forum_seo_synopsis">{L_FORUM_SEO_SYNOPSIS}:</label><br /><span>{L_FORUM_SEO_SYNOPSIS_EXPLAIN}</span></dt>
+			<dd><textarea id="forum_seo_synopsis" name="forum_seo_synopsis" rows="5" cols="45">{FORUM_SEO_SYNOPSIS}</textarea></dd>
+		</dl>
+		</fieldset>
+	</div>
 
 	<div id="forum_cat_options">
 		<fieldset>

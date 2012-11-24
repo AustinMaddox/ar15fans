@@ -128,6 +128,11 @@ class acp_forums
 						'forum_desc_uid'		=> '',
 						'forum_desc_options'	=> 7,
 						'forum_desc_bitfield'	=> '',
+// BEGAN - Forum SEO mod
+						'forum_seo_key'			=> utf8_normalize_nfc(request_var('forum_seo_key', '', true)),
+						'forum_seo_desc'		=> utf8_normalize_nfc(request_var('forum_seo_desc', '', true)),
+						'forum_seo_synopsis'	=> utf8_normalize_nfc(request_var('forum_seo_synopsis', '', true)),
+// ENDED - Forum SEO mod
 						'forum_rules'			=> utf8_normalize_nfc(request_var('forum_rules', '', true)),
 						'forum_rules_uid'		=> '',
 						'forum_rules_options'	=> 7,
@@ -433,6 +438,11 @@ class acp_forums
 							'forum_link'			=> '',
 							'forum_link_track'		=> false,
 							'forum_desc'			=> '',
+// BEGAN - Forum SEO mod
+							'forum_seo_key'         => '',
+							'forum_seo_desc'      	=> '',
+							'forum_seo_synopsis'      => '',
+// ENDED - Forum SEO mod
 							'forum_rules'			=> '',
 							'forum_rules_link'		=> '',
 							'forum_image'			=> '',
@@ -627,6 +637,12 @@ class acp_forums
 					'S_DESC_BBCODE_CHECKED'		=> ($forum_desc_data['allow_bbcode']) ? true : false,
 					'S_DESC_SMILIES_CHECKED'	=> ($forum_desc_data['allow_smilies']) ? true : false,
 					'S_DESC_URLS_CHECKED'		=> ($forum_desc_data['allow_urls']) ? true : false,
+
+// BEGAN - Forum SEO mod
+					'FORUM_SEO_KEY'				=> $forum_data['forum_seo_key'],
+					'FORUM_SEO_DESC'			=> $forum_data['forum_seo_desc'],
+					'FORUM_SEO_SYNOPSIS'		=> $forum_data['forum_seo_synopsis'],
+// ENDED - Forum SEO mod
 
 					'S_FORUM_TYPE_OPTIONS'		=> $forum_type_options,
 					'S_STATUS_OPTIONS'			=> $statuslist,

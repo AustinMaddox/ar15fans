@@ -157,4 +157,19 @@ $lang = array_merge($lang, array(
 	'UNLOCKED'			=> 'Unlocked',
 ));
 
+// BEGAN - Forum SEO mod
+$lang = array_merge($lang, array(
+	'FORUM_SEO_SETTINGS'			=> 'Forum SEO',
+
+	'FORUM_SEO_KEY'					=> 'SEO keywords',
+	'FORUM_SEO_KEY_EXPLAIN'			=> 'Enter comma-separated keywords that pertain to this forum.<br />Max: 255 characters',
+
+	'FORUM_SEO_DESC'				=> 'SEO description',
+	'FORUM_SEO_DESC_EXPLAIN'		=> 'Enter a short description for this forum.',
+
+	'FORUM_SEO_SYNOPSIS'			=> 'SEO synopsis',
+    'FORUM_SEO_SYNOPSIS_EXPLAIN'	=> 'Enter a brief synopsis of this forum.',
+));
+// ENDED - Forum SEO mod
+
 ?>
