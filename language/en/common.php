@@ -458,7 +458,7 @@ $lang = array_merge($lang, array(
 	'PRIVATE_MESSAGE'		=> 'Private message',
 	'PRIVATE_MESSAGES'		=> 'Private messages',
 	'PRIVATE_MESSAGING'		=> 'Private messaging',
-	'PROFILE'				=> 'User Control Panel',
+	'PROFILE'				=> 'User control panel',
 
 	'RANK'						=> 'Rank',
 	'READING_FORUM'				=> 'Viewing topics in %s',
@@ -573,8 +573,8 @@ $lang = array_merge($lang, array(
 
 	'TERMS_USE'			=> 'Terms of use',
 	'TEST_CONNECTION'	=> 'Test connection',
-	'THE_TEAM'			=> 'The team',
-	'THE_TEAM_EXPLAIN'	=> 'View information about the team of staff members who manage the site.',
+	'THE_STAFF'			=> 'The staff',
+	'THE_STAFF_EXPLAIN'	=> 'View information about the team of staff members who manage the site.',
 	'TIME'				=> 'Time',
 
 	'TOO_LARGE'						=> 'The value you entered is too large.',
@@ -922,14 +922,14 @@ $lang = array_merge($lang, array(
 	'YOUR_PHOTOS'			=> 'Your photo albums',
 	'MANAGE_PHOTOS'			=> 'Manage your photos',
 	'NO_PHOTOS'				=> 'You have No Photos! Click the manage link to add some.',
-	'GALLERY_SEARCH'		=> 'Gallery Search',
+	'GALLERY_SEARCH'		=> 'Gallery search',
 
 	'VIEW_SEARCH_RECENT'			=> 'Recent Images',
 	'VIEW_SEARCH_RANDOM'			=> 'Random Images',
 	'VIEW_SEARCH_COMMENTED'			=> 'Recent Comments',
 	'VIEW_SEARCH_TOPRATED'			=> 'Top Rated Images',
 	'VIEW_SEARCH_CONTESTS'			=> 'Contest Winners',
-	'VIEW_USER_ALBUMS'				=> 'User Albums',
+	'VIEW_USER_ALBUMS'				=> 'User albums',
 	'VIEW_SEARCH_SELF'				=> 'Search your images',
 ));
 // ENDED - phpBB Gallery mod
@@ -941,8 +941,11 @@ $lang = array_merge($lang, array(
 	'KEY_TERMS'				=> 'Common phrases',
 	'SYNOPSIS'				=> 'Synopsis',
 
-	'ABOUT'						=> 'About',
-	'ABOUT_EXPLAIN'				=> 'About us page.',
+	'ABOUT'					=> 'About',
+	'ABOUT_EXPLAIN'			=> 'About us page.',
+	'CONTACT_US'			=> 'Contact admin',
+	'CONTACT_US_EXPLAIN'	=> 'Contact the webmaster/administrator',
+	'FORUM_SEARCH'			=> 'Forum search',
 
 	'SPONSORS'				=> 'Sponsors',
 	'FORUM_SPONSORED_BY'	=> 'Forum sponsored by',

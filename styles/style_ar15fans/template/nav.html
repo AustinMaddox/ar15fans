@@ -3,7 +3,7 @@
     
         <ul id="nav">
 			<li><a href="{U_INDEX}" title="{L_HOME}" accesskey="h">{L_HOME}</a></li>
-			<li><a href="#">{L_SEARCH}</a>
+			<li><a href="{U_INDEX}">{L_FORUM}</a>
 				<ul>
 					<!-- IF S_DISPLAY_SEARCH -->
 					<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
@@ -14,7 +14,7 @@
 					<li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
 					<!-- ENDIF -->
                     <!-- IF not S_IS_BOT -->
-                    <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li>
+                    <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_FORUM_SEARCH}</a></li>
                     <!-- ENDIF -->
 				</ul>
 			</li>
@@ -27,18 +27,18 @@
 					<!-- IF U_G_SEARCH_CONTESTS -->
                     <li><a href="{U_G_SEARCH_CONTESTS}">{L_VIEW_SEARCH_CONTESTS}</a></li>
                     <!-- ENDIF -->
-                    <li><a href="{U_G_SEARCH}">{L_GALLERY_SEARCH}</a></li>
 					<li><a href="{U_USERS_PERSONAL_GALLERIES}">{L_VIEW_USER_ALBUMS}</a></li>
+					<li><a href="{U_G_SEARCH}">{L_GALLERY_SEARCH}</a></li>
 				</ul>
 			</li>
             <li><a href="{U_ABOUT}">{L_ABOUT}</a>
             	<ul>
 					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
                     <li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li>
-                    <!-- IF U_TEAM -->
-                    <li><a href="{U_TEAM}" title="{L_THE_TEAM_EXPLAIN}">{L_THE_TEAM}</a></li>
+                    <!-- IF U_STAFF -->
+                    <li><a href="{U_STAFF}" title="{L_THE_STAFF_EXPLAIN}">{L_THE_STAFF}</a></li>
                     <!-- ENDIF -->
-                    <li><a href="mailto:support@ar15fans.com">Contact Admin</a></li>
+                    <li><a href="mailto:support@ar15fans.com" title="{L_CONTACT_US_EXPLAIN}">{L_CONTACT_US}</a></li>
                 </ul>
             </li>
             

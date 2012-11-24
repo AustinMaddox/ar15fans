@@ -3386,7 +3386,7 @@ function parse_cfg_file($filename, $lines = false)
 
 		$parsed_items[$key] = $value;
 	}
-	
+
 	if (isset($parsed_items['inherit_from']) && isset($parsed_items['name']) && $parsed_items['inherit_from'] == $parsed_items['name'])
 	{
 		unset($parsed_items['inherit_from']);
@@ -4688,7 +4688,7 @@ function page_header($page_title = '', $display_online_list = true, $item_id = 0
 		'U_G_SEARCH_TOPRATED'			=> (phpbb_gallery_config::get('allow_rates')) ? phpbb_gallery_url::append_sid('search', 'search_id=toprated') : '',
 
 		'U_G_MANAGE_PHOTOS'				=> append_sid("{$phpbb_root_path}ucp.$phpEx", 'i=gallery&mode=manage_albums'),
-		
+
 //		'U_YOUR_PERSONAL_GALLERY'		=> // See includes/gallery/integration.php Search for "static public function page_header()"
 		'U_USERS_PERSONAL_GALLERIES'	=> phpbb_gallery_url::append_sid('index', 'mode=personal'),
 	));
@@ -4752,7 +4752,7 @@ function page_header($page_title = '', $display_online_list = true, $item_id = 0
 		'U_SEARCH_UNREAD'		=> append_sid("{$phpbb_root_path}search.$phpEx", 'search_id=unreadposts'),
 		'U_SEARCH_ACTIVE_TOPICS'=> append_sid("{$phpbb_root_path}search.$phpEx", 'search_id=active_topics'),
 		'U_DELETE_COOKIES'		=> append_sid("{$phpbb_root_path}ucp.$phpEx", 'mode=delete_cookies'),
-		'U_TEAM'				=> ($user->data['user_id'] != ANONYMOUS && !$auth->acl_get('u_viewprofile')) ? '' : append_sid("{$phpbb_root_path}memberlist.$phpEx", 'mode=leaders'),
+		'U_STAFF'				=> ($user->data['user_id'] != ANONYMOUS && !$auth->acl_get('u_viewprofile')) ? '' : append_sid("{$phpbb_root_path}memberlist.$phpEx", 'mode=leaders'),
 		'U_TERMS_USE'			=> append_sid("{$phpbb_root_path}ucp.$phpEx", 'mode=terms'),
 		'U_PRIVACY'				=> append_sid("{$phpbb_root_path}ucp.$phpEx", 'mode=privacy'),
 		'U_RESTORE_PERMISSIONS'	=> ($user->data['user_perm_from'] && $auth->acl_get('a_switchperm')) ? append_sid("{$phpbb_root_path}ucp.$phpEx", 'mode=restore_perm') : '',

@@ -108,23 +108,9 @@ class setup_phpbb_seo {
 		// );
 		//
 
-		// ==> Special for lazy French, others may delete this part
-		if ( strpos($config['default_lang'], 'fr') !== false ) {
-			$this->seo_static['user'] = 'membre';
-			$this->seo_static['group'] = 'groupe';
-			$this->seo_static['global_announce'] = 'annonces';
-			$this->seo_static['leaders'] = 'equipe';
-			$this->seo_static['atopic'] = 'sujets-actifs';
-			$this->seo_static['utopic'] = 'sans-reponses';
-			$this->seo_static['npost'] = 'nouveaux-messages';
-			$this->seo_static['urpost'] = 'non-lu';
-			$this->seo_static['file_index'] = 'ressources';
-		}
-		// <== Special for lazy French, others may delete this part
-
 // BEGAN - Austin added default overrides
-//			$this->seo_static['leaders'] = ''; // instead of the default "the-team"
-//			$this->seo_static['global_announce'] = ''; // instead of the default "announces"
+			$this->seo_static['leaders'] = 'the-staff'; // instead of the default "leaders"
+			$this->seo_static['announces'] = 'sitewide-announcements'; // instead of the default "announces"
 			$this->seo_static['utopic'] = 'unanswered-posts'; // instead of the default "unanswered"
 			$this->seo_static['urpost'] = 'unread-posts'; // instead of default "unreadposts"
 			$this->seo_static['npost'] = 'new-posts'; // instead of the default "newposts"
@@ -133,7 +119,6 @@ class setup_phpbb_seo {
 //			$this->seo_static['post'] = ''; // instead of the default "post"
 //			$this->seo_static['index'] = ''; // instead of the default "index"
 // ENDED - Austin added default overrides
-
 
 		// Let's make sure that settings are consistent
 		$this->check_config();

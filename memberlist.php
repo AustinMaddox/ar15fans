@@ -85,7 +85,7 @@ switch ($mode)
 		// Display a listing of board admins, moderators
 		include($phpbb_root_path . 'includes/functions_user.' . $phpEx);
 
-		$page_title = $user->lang['THE_TEAM'];
+		$page_title = $user->lang['THE_STAFF'];
 		$template_html = 'memberlist_leaders.html';
 
 		$user_ary = $auth->acl_get_list(false, array('a_', 'm_'), false);
@@ -599,7 +599,7 @@ switch ($mode)
 
 			unset($module);
 		}
-		
+
 // BEGAN - phpBB Gallery mod
 		if (class_exists('phpbb_gallery_integration'))
 		{
