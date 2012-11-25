@@ -4,7 +4,7 @@ Colours and backgrounds for common.css
 -------------------------------------------------------------- */
 
 html, body {
-	color: #536482;
+	color: #333333;
 	background-color: #FFFFFF;
 }
 
@@ -18,7 +18,7 @@ h2 {
 
 h3 {
 	border-bottom-color: #CCCCCC;
-	color: #115098;
+	color: #333366;
 }
 
 hr {
@@ -48,15 +48,22 @@ hr.dashed {
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
 .headerbar {
-	background-color: #12A3EB;
+	background-color: #cccccc;
 	background-image: url("{T_THEME_PATH}/images/bg_header.gif");
 	color: #FFFFFF;
 }
 
 .navbar {
-	background-color: #ffcc00;
-	border-bottom: 1px dotted #111111;
-	border-top: 1px dotted #111111;
+	background-color: #0186ba;
+	background-image: -moz-linear-gradient(#04acec,  #0186ba);	
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#04acec), to(#0186ba));
+	background-image: -webkit-linear-gradient(#04acec, #0186ba);
+	background-image: -o-linear-gradient(#04acec, #0186ba);
+	background-image: -ms-linear-gradient(#04acec, #0186ba);
+	background-image: linear-gradient(#04acec, #0186ba);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .forabg {
@@ -65,12 +72,12 @@ hr.dashed {
 }
 
 .forumbg {
-	background-color: #12A3EB;
-	background-image: url("{T_THEME_PATH}/images/bg_header.gif");
+	background-color: #a8a8a8;
+	background-image: url("{T_THEME_PATH}/images/bg_forumbg.gif");
 }
 
 .panel {
-	background-color: #ECF1F3;
+	background-color: #eeeeee;
 	color: #28313F;
 }
 
@@ -82,9 +89,9 @@ hr.dashed {
 	color: #000000;
 }
 
-.bg1	{ background-color: #ECF3F7; }
-.bg2	{ background-color: #e1ebf2;  }
-.bg3	{ background-color: #cadceb; }
+.bg1	{ background-color: #eeeeee; }
+.bg2	{ background-color: #dddddd;  }
+.bg3	{ background-color: #cccccc; }
 
 .ucprowbg {
 	background-color: #DCDEE2;
@@ -112,9 +119,13 @@ span.corners-bottom span {
 
 /* Horizontal lists
 ----------------------------------------*/
-
 ul.navlinks {
-	border-bottom-color: #FFFFFF;
+	color: #ffffff;
+}
+
+ul.navlinks a {
+	color: #fff;
+	text-shadow: 0 1px 0 #000000;
 }
 
 /* Table styles
@@ -128,12 +139,11 @@ table.table1 tbody tr {
 }
 
 table.table1 tbody tr:hover, table.table1 tbody tr.hover {
-/* 	background-color: #CFE1F6; */
 	color: #000;
 }
 
 table.table1 td {
-	color: #536482;
+	color: #333333;
 }
 
 table.table1 tbody td {
@@ -157,7 +167,7 @@ dl.details dt {
 }
 
 dl.details dd {
-	color: #536482;
+	color: #333333;
 }
 
 .sep {
@@ -227,12 +237,13 @@ li.reported:hover {
 }
 
 div.rules {
-	background-color: #ECD5D8;
-	color: #BC2A4D;
+	color: #444444;
+	border: 1px solid #999999;
+	background-color: #ffffa3;
 }
 
 p.rules {
-	background-color: #ECD5D8;
+	background-color: #ffffa3;
 	background-image: none;
 }
 
@@ -241,10 +252,10 @@ p.rules {
 Colours and backgrounds for links.css
 -------------------------------------------------------------- */
 
-a:link	{ color: #105289; }
-a:visited	{ color: #105289; }
-a:hover	{ color: #D31141; }
-a:active	{ color: #368AD2; }
+a:link	{ color: #000066; }
+a:visited	{ color: #000066; }
+a:hover	{ color: #0000aa; }
+a:active	{ color: #0000ff; }
 
 /* Links on gradient backgrounds */
 #search-box a:link, .navbg a:link, .forumbg .header a:link, .forabg .header a:link, th a:link {
@@ -265,31 +276,31 @@ a:active	{ color: #368AD2; }
 
 /* Links for forum/topic lists */
 a.forumtitle {
-	color: #105289;
+	color: #333333;
 }
 
 /* a.forumtitle:visited { color: #105289; } */
 
 a.forumtitle:hover {
-	color: #BC2A4D;
+	color: #0000aa;
 }
 
 a.forumtitle:active {
-	color: #105289;
+	color: #0000ff;
 }
 
 a.topictitle {
-	color: #105289;
+	color: #000066;
 }
 
 /* a.topictitle:visited { color: #368AD2; } */
 
 a.topictitle:hover {
-	color: #BC2A4D;
+	color: #0000aa;
 }
 
 a.topictitle:active {
-	color: #105289;
+	color: #0000ff;
 }
 
 /* Post body links */
@@ -372,12 +383,11 @@ Colours and backgrounds for content.css
 -------------------------------------------------------------- */
 
 ul.forums {
-	background-color: #eef5f9;
-	background-image: url("{T_THEME_PATH}/images/gradient.gif");
+	background: url("{T_THEME_PATH}/images/bg_stainless.jpg") repeat scroll 0 0 #cccccc;
 }
 
 ul.topiclist li {
-	color: #4C5D77;
+	color: #333333;
 }
 
 ul.topiclist dd {
@@ -398,8 +408,8 @@ ul.topiclist li.row dt a.subforum.unread {
 }
 
 li.row {
-	border-top-color:  #FFFFFF;
-	border-bottom-color: #00608F;
+	border-top-color: #FFFFFF;
+	border-bottom-color: #333333;
 }
 
 li.row strong {
@@ -671,7 +681,7 @@ Colours and backgrounds for buttons.css
 .forwardpm-icon span	{ background-image: url("{IMG_BUTTON_PM_FORWARD_SRC}") ;}
 
 a.print {
-	background-image: url("{T_THEME_PATH}/images/icon_print.gif");
+	background-image: url("{T_THEME_PATH}/images/icon_print.png");
 }
 
 a.sendemail {
@@ -685,18 +695,20 @@ a.fontsize {
 /* Icon images
 ---------------------------------------- */
 .sitehome						{ background-image: url("{T_THEME_PATH}/images/icon_home.gif"); }
-.icon-faq						{ background-image: url("{T_THEME_PATH}/images/icon_faq.gif"); }
-.icon-members					{ background-image: url("{T_THEME_PATH}/images/icon_members.gif"); }
+.icon-faq						{ background-image: url("{T_THEME_PATH}/images/icon_faq.png"); }
+.icon-members					{ background-image: url("{T_THEME_PATH}/images/icon_members.png"); }
 .icon-home						{ background-image: url("{T_THEME_PATH}/images/icon_home.gif"); }
 .icon-ucp						{ background-image: url("{T_THEME_PATH}/images/icon_ucp.gif"); }
 .icon-register					{ background-image: url("{T_THEME_PATH}/images/icon_register.gif"); }
-.icon-logout					{ background-image: url("{T_THEME_PATH}/images/icon_logout.gif"); }
+.icon-logout					{ background-image: url("{T_THEME_PATH}/images/icon_logout.png"); }
 .icon-bookmark					{ background-image: url("{T_THEME_PATH}/images/icon_bookmark.gif"); }
 .icon-bump						{ background-image: url("{T_THEME_PATH}/images/icon_bump.gif"); }
 .icon-subscribe					{ background-image: url("{T_THEME_PATH}/images/icon_subscribe.gif"); }
 .icon-unsubscribe				{ background-image: url("{T_THEME_PATH}/images/icon_unsubscribe.gif"); }
 .icon-pages						{ background-image: url("{T_THEME_PATH}/images/icon_pages.gif"); }
 .icon-search					{ background-image: url("{T_THEME_PATH}/images/icon_search.gif"); }
+.icon-staff						{ background-image: url("{T_THEME_PATH}/images/icon_staff.png"); }
+.icon-contact					{ background-image: url("{T_THEME_PATH}/images/icon_contact.png"); }
 
 /* Profile & navigation icons */
 .email-icon, .email-icon a		{ background-image: url("{IMG_ICON_CONTACT_EMAIL_SRC}"); }
@@ -1022,4 +1034,13 @@ input.search {
 
 input.disabled {
 	color: #666666;
+}
+
+/* Additions */
+}
+.gradient-yellow {
+	background-image: linear-gradient(#ffffff, #ffffa3);
+}
+.stainless {
+	background-image: url("{T_THEME_PATH}/images/bg_stainless.jpg");
 }

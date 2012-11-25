@@ -2,7 +2,6 @@
     <div id="nav-wrap">
     
         <ul id="nav">
-			<li><a href="{U_INDEX}" title="{L_HOME}" accesskey="h">{L_HOME}</a></li>
 			<li><a href="{U_INDEX}">{L_FORUM}</a>
 				<ul>
 					<!-- IF S_DISPLAY_SEARCH -->
@@ -31,19 +30,25 @@
 					<li><a href="{U_G_SEARCH}">{L_GALLERY_SEARCH}</a></li>
 				</ul>
 			</li>
+			<li><a href="#" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a>
+				<ul>
+                    <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_FORUM_SEARCH}</a></li>
+					<li><a href="{U_G_SEARCH}">{L_GALLERY_SEARCH}</a></li>
+				</ul>
+			</li>
             <li><a href="{U_ABOUT}">{L_ABOUT}</a>
             	<ul>
-					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
-                    <li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li>
+					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><span class="icon-faq"></span>{L_FAQ}</a></li>
+                    <li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><span class="icon-members"></span>{L_MEMBERLIST}</a></li>
                     <!-- IF U_STAFF -->
-                    <li><a href="{U_STAFF}" title="{L_THE_STAFF_EXPLAIN}">{L_THE_STAFF}</a></li>
+                    <li><a href="{U_STAFF}" title="{L_THE_STAFF_EXPLAIN}"><span class="icon-staff"></span>{L_THE_STAFF}</a></li>
                     <!-- ENDIF -->
-                    <li><a href="mailto:support@ar15fans.com" title="{L_CONTACT_US_EXPLAIN}">{L_CONTACT_US}</a></li>
+                    <li><a href="mailto:support@ar15fans.com" title="{L_CONTACT_US_EXPLAIN}"><span class="icon-contact"></span>{L_CONTACT_US}</a></li>
                 </ul>
             </li>
             
             <!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
-			<li><a href="#">{L_USER_MENU}</a>
+			<li class="user-menu"><a href="#">{L_USER_MENU}</a>
 				<ul>
 					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li>
 					<!-- IF S_DISPLAY_PM -->
@@ -73,7 +78,7 @@
 					<!-- IF U_RESTORE_PERMISSIONS -->
 					<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
 					<!-- ENDIF -->
-					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l">{L_LOGIN_LOGOUT}</a></li>
+					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l"><span class="icon-logout"></span>{L_LOGIN_LOGOUT}</a></li>
 					<!-- ELSE -->
 					<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
 					<li><a href="{U_REGISTER}">{L_REGISTER}</a></li>

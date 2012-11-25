@@ -41,6 +41,7 @@ h2 {
 	color: #3f3f3f;
 	font-size: 2em;
 	margin: 0;
+	display: inline;
 }
 
 h2.solo {
@@ -53,11 +54,8 @@ h3 {
 	font-weight: bold;
 	text-transform: uppercase;
 	border-bottom: 1px solid #CCCCCC;
-	margin-bottom: 3px;
-	padding-bottom: 2px;
 	font-size: 1.05em;
 	color: #989898;
-	margin-top: 20px;
 }
 
 h4 {
@@ -190,7 +188,7 @@ a#logo:hover {
 }
 
 .navbar {
-	padding: 0 4px;
+	padding: 4px 4px;
 }
 
 .forabg {
@@ -307,7 +305,6 @@ ul.linklist li {
 	width: auto;
 	margin-right: 5px;
 	font-size: 1.1em;
-	line-height: 2.2em;
 }
 
 ul.linklist li.rightside, p.rightside {
@@ -599,11 +596,11 @@ li.reported:hover {
 }
 
 div.rules {
-	background-color: #ececec;
-	color: #bcbcbc;
-	padding: 0 10px;
-	margin: 0;
-	font-size: 1.1em;
+	margin: 0 0;
+	padding: 4px 6px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 div.rules ul, div.rules ol {

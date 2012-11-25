@@ -1,40 +1,31 @@
 	</div><!-- page-body -->
-
-	<div id="page-footer">
 	
+	<div id="page-footer">
+		
+		<div class="navbar">
+			<ul class="linklist navlinks">
+				<li class="icon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+				<li class="rightside">{S_TIMEZONE}</li>
+			</ul>
+		</div><!-- /navbar -->
+		
 		<div class="colmask holygrail">
 			<div class="colmid">
 				<div class="colleft">
 					<div class="col1wrap">
 						<div class="col1">
 						<!-- Column 1 start -->
-						<div class="navbar">
-							<div class="inner"><span class="corners-top"><span></span></span>
-								<ul class="linklist<!-- IF GYM_LINKS --> navlinks<!-- ENDIF -->">
-									<li class="icon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
-									<!-- IF not S_IS_BOT -->
-									<!-- IF S_WATCH_FORUM_LINK --><li <!-- IF S_WATCHING_FORUM -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-									<!-- IF U_WATCH_TOPIC --><li <!-- IF S_WATCHING_TOPIC -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
-									<!-- IF U_BOOKMARK_TOPIC --><li class="icon-bookmark"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
-									<!-- IF U_BUMP_TOPIC --><li class="icon-bump"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
-									<!-- ENDIF -->
-									<li class="rightside"><!-- IF not S_IS_BOT --><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a> &bull; <!-- ENDIF -->{S_TIMEZONE}</li>
-								</ul>
-							<span class="corners-bottom"><span></span></span></div>
-						</div><!-- /navbar -->
 						<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
 						<ul class="linklist">
-							<!-- IF LEGEND -->
-							<li><em>{L_LEGEND}: {LEGEND}</em></li>
-							<!-- ENDIF -->
-							<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+							<li><a href="http://www.silveradosierra.com" title="Chevy Silverado and GMC Sierra truck specific community.">Chevy Truck Forum</a> &bull; <a href="http://www.astrosafari.com" title="Chevy Astro and GMC Safari van specific community.">Chevy Astro Van Forum</a></li>
 							<li class="rightside"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
-							<!-- ENDIF -->
 						</ul>
 						<!-- ENDIF -->
 						<ul class="linklist">
-							<li><a href="http://www.astrosafari.com" title="Chevy Astro and GMC Safari van specific community.">Chevy Astro Van Forum</a></li> 
-							<li class="rightside"><a href="http://www.silveradosierra.com" title="Chevy Silverado and GMC Sierra truck specific community.">Chevy Truck Forum</a></li>
+							<li>Powered by phpBB&reg; Forum Software</li>
+							<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+							<li class="rightside"><!-- IF not S_IS_BOT --><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a><!-- ENDIF --></li>
+							<!-- ENDIF -->
 						</ul>
 						<!-- Column 1 end -->
 						</div>
@@ -42,26 +33,17 @@
 					<div class="col2">
 					<!-- Column 2 start -->
 					<div class="copyright">
-						Copyright&copy; 2011-{CURRENT_YEAR}	{SITENAME} - a <a href="http://whoa.co" title="Whoa.Co Entrepreneurial Web Ventures">Whoa.Co</a> venture. All rights reserved.<br />
-						Powered by phpBB&reg; Forum Software.<br />
-						<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
-						<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
-						<br /><a href="http://validator.w3.org/check?uri=referer"><img src="{T_IMAGESET_PATH}/w3c_xhtml.png" alt="Valid XHTML 1.0 Strict" /></a>        
-						<!-- IF U_ACP --><br /><strong><a href="{U_ACP}">{L_ACP}</a></strong><!-- ENDIF -->
+						Copyright&copy; 2011-{CURRENT_YEAR}	{SITENAME} - a <a href="http://whoa.co" title="Whoa.Co Entrepreneurial Web Ventures">Whoa.Co</a> venture. All rights reserved.
 					</div>
 					<!-- Column 2 end -->
 					</div>
 					<div class="col3">
 					<!-- Column 3 start -->
-						<!-- IF GYM_LINKS -->
-						<ul style="padding: 0 0 0 20px;">
-							<!-- IF GYM_HTML_NEWS_LINK --><li>{GYM_HTML_NEWS_LINK}</li><!-- ENDIF -->
-							<!-- IF GYM_HTML_MAP_LINK --><li>{GYM_HTML_MAP_LINK}</li><!-- ENDIF -->
-							<!-- IF GYM_GOOGLE_LINK --><li>{GYM_GOOGLE_LINK}</li><!-- ENDIF -->
-							<!-- IF GYM_RSS_LINK --><li>{GYM_RSS_LINK}</li><!-- ENDIF -->
-							<!-- IF GYM_RSS_CHAN_LINK --><li>{GYM_RSS_CHAN_LINK}</li><!-- ENDIF -->
-						</ul>
-						<!-- ENDIF -->
+					<div class="copyright">
+						<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
+						<br /><a href="http://validator.w3.org/check?uri=referer"><img src="{T_THEME_PATH}/images/w3c_xhtml.png" alt="Valid XHTML 1.0 Strict" /></a>        
+						<!-- IF U_ACP --><br /><strong><a href="{U_ACP}">{L_ACP}</a></strong><!-- ENDIF -->
+					</div>
 					<!-- Column 3 end -->
 					</div>
 				</div><!-- /colleft -->
@@ -99,6 +81,10 @@
 		if (isiPad) $('#menu ul').addClass('no-transition');      
     });          
 </script>
+
+<!-- IF S_VIEWTOPIC -->
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<!-- ENDIF -->
 
 </body>
 </html>

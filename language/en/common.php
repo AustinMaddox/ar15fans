@@ -328,7 +328,7 @@ $lang = array_merge($lang, array(
 	'MB'					=> 'MB',
 	'MIB'					=> 'MiB',
 	'MCP'					=> 'Moderator Control Panel',
-	'MEMBERLIST'			=> 'Members',
+	'MEMBERLIST'			=> 'Member list',
 	'MEMBERLIST_EXPLAIN'	=> 'View complete list of members',
 	'MERGE'					=> 'Merge',
 	'MERGE_POSTS'			=> 'Move posts',
@@ -946,6 +946,10 @@ $lang = array_merge($lang, array(
 	'CONTACT_US'			=> 'Contact admin',
 	'CONTACT_US_EXPLAIN'	=> 'Contact the webmaster/administrator',
 	'FORUM_SEARCH'			=> 'Forum search',
+
+	'FONT_SIZE'				=> 'Font size (+/-)',
+
+	'ACTIONS'				=> 'Actions',
 
 	'SPONSORS'				=> 'Sponsors',
 	'FORUM_SPONSORED_BY'	=> 'Forum sponsored by',
