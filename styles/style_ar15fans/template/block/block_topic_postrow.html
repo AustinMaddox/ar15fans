@@ -65,8 +65,7 @@
 			</dt>
 
 			<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><dd>{postrow.RANK_TITLE}<!-- IF postrow.RANK_TITLE and postrow.RANK_IMG --><br /><!-- ENDIF -->{postrow.RANK_IMG}</dd><!-- ENDIF -->
-
-		<dd>&nbsp;</dd>
+			<!-- IF postrow.EXTRA_RANK_TITLE or postrow.EXTRA_RANK_IMG --><dd>{postrow.EXTRA_RANK_TITLE}<!-- IF postrow.EXTRA_RANK_TITLE and postrow.EXTRA_RANK_IMG --><br /><!-- ENDIF -->{postrow.EXTRA_RANK_IMG}</dd><!-- ENDIF -->
 
 		<!-- IF postrow.POSTER_POSTS != '' --><dd><strong>{L_POSTS}:</strong> {postrow.POSTER_POSTS}</dd><!-- ENDIF -->
 		<!-- IF postrow.GALLERY_IMAGES != '' --><dd><strong>{L_IMAGES}:</strong> <!-- IF postrow.U_GALLERY_SEARCH --><a href="{postrow.U_GALLERY_SEARCH}">{postrow.GALLERY_IMAGES}</a><!-- ELSE -->{postrow.GALLERY_IMAGES}<!-- ENDIF --></dd><!-- ENDIF -->

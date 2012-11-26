@@ -11,6 +11,8 @@
 			<dt>{AVATAR_IMG}</dt>
 			<!-- IF RANK_TITLE --><dd style="text-align: center;">{RANK_TITLE}</dd><!-- ENDIF -->
 			<!-- IF RANK_IMG --><dd style="text-align: center;">{RANK_IMG}</dd><!-- ENDIF -->
+			<!-- IF EXTRA_RANK_TITLE --><dd style="text-align: center;">{EXTRA_RANK_TITLE}</dd><!-- ENDIF -->
+			<!-- IF EXTRA_RANK_IMG --><dd style="text-align: center;">{EXTRA_RANK_IMG}</dd><!-- ENDIF -->
 		</dl>
 	<!-- ENDIF -->
 
@@ -25,6 +27,8 @@
 		<!-- IF not AVATAR_IMG -->
 			<!-- IF RANK_TITLE --><dt>{L_RANK}:</dt> <dd>{RANK_TITLE}</dd><!-- ENDIF -->
 			<!-- IF RANK_IMG --><dt><!-- IF RANK_TITLE -->&nbsp;<!-- ELSE -->{L_RANK}:<!-- ENDIF --></dt> <dd>{RANK_IMG}</dd><!-- ENDIF -->
+			<!-- IF EXTRA_RANK_TITLE --><dt>&nbsp;</dt> <dd>{EXTRA_RANK_TITLE}</dd><!-- ENDIF -->
+			<!-- IF EXTRA_RANK_IMG --><dt>&nbsp;</dt> <dd>{EXTRA_RANK_IMG}</dd><!-- ENDIF -->
 		<!-- ENDIF -->
 		<!-- IF S_USER_INACTIVE --><dt>{L_USER_IS_INACTIVE}:</dt> <dd>{USER_INACTIVE_REASON}</dd><!-- ENDIF -->
 		<!-- IF LOCATION --><dt>{L_LOCATION}:</dt> <dd>{LOCATION}</dd><!-- ENDIF -->

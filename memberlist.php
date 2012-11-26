@@ -1600,7 +1600,17 @@ switch ($mode)
 
 					'U_VIEW_PROFILE'	=> append_sid("{$phpbb_root_path}memberlist.$phpEx", 'mode=viewprofile&amp;u=' . $user_id))
 				);
+// BEGAN - Special and normal rank images
+				$user_rank = $row['user_rank'];
 
+				if (defined('SHOW_ONLY_NORMAL_RANKS_ON_MEMBERLIST') && SHOW_ONLY_NORMAL_RANKS_ON_MEMBERLIST)
+				{
+					$user_rank = 0;
+				}
+
+				//Reset our ranks, since show_profile() gets the values for the profile page
+				get_user_rank($user_rank, (($user_id == ANONYMOUS) ? false : $row['user_posts']), $memberrow['RANK_TITLE'], $memberrow['RANK_IMG'], $memberrow['RANK_IMG_SRC']);
+// ENDED - Special and normal rank images
 				if (isset($cp_row['row']) && sizeof($cp_row['row']))
 				{
 					$memberrow = array_merge($memberrow, $cp_row['row']);
@@ -1685,7 +1695,26 @@ function show_profile($data, $user_notes_enabled = false, $warn_user_enabled = f
 
 	$rank_title = $rank_img = $rank_img_src = '';
 	get_user_rank($data['user_rank'], (($user_id == ANONYMOUS) ? false : $data['user_posts']), $rank_title, $rank_img, $rank_img_src);
+// BEGAN - Special and normal rank images
+	$extra_rank_title = $extra_rank_img = $extra_rank_img_src = '';
 
+	if (!empty($data['user_rank']))
+	{
+		if (defined('SHOW_SPECIAL_AS_EXTRA') && SHOW_SPECIAL_AS_EXTRA)
+		{
+			$extra_rank_title = $rank_title;
+			$extra_rank_img = $rank_img;
+			$extra_rank_img_src = $rank_img_src;
+			$rank_title = $rank_img = $rank_img_src = '';
+
+			get_user_additional_rank($data['user_rank'], $data['user_posts'], $rank_title, $rank_img, $rank_img_src);
+		}
+		else
+		{
+			get_user_additional_rank($data['user_rank'], $data['user_posts'], $extra_rank_title, $extra_rank_img, $extra_rank_img_src);
+		}
+	}
+// ENDED - Special and normal rank images
 	if ((!empty($data['user_allow_viewemail']) && $auth->acl_get('u_sendemail')) || $auth->acl_get('a_user'))
 	{
 		$email = ($config['board_email_form'] && $config['email_enable']) ? append_sid("{$phpbb_root_path}memberlist.$phpEx", 'mode=email&amp;u=' . $user_id) : (($config['board_hide_emails'] && !$auth->acl_get('a_user')) ? '' : 'mailto:' . $data['user_email']);
@@ -1759,6 +1788,11 @@ function show_profile($data, $user_notes_enabled = false, $warn_user_enabled = f
 		'S_ONLINE'			=> ($config['load_onlinetrack'] && $online) ? true : false,
 		'RANK_IMG'			=> $rank_img,
 		'RANK_IMG_SRC'		=> $rank_img_src,
+// BEGAN - Special and normal rank images
+		'EXTRA_RANK_TITLE'	=> $extra_rank_title,
+		'EXTRA_RANK_IMG'	=> $extra_rank_img,
+		'EXTRA_RANK_IMG_SRC'=> $extra_rank_img_src,
+// ENDED - Special and normal rank images
 		'ICQ_STATUS_IMG'	=> (!empty($data['user_icq'])) ? '<img src="http://web.icq.com/whitepages/online?icq=' . $data['user_icq'] . '&amp;img=5" width="18" height="18" />' : '',
 		'S_JABBER_ENABLED'	=> ($config['jab_enable']) ? true : false,
 

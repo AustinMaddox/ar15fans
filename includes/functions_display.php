@@ -1419,6 +1419,25 @@ function get_user_rank($user_rank, $user_posts, &$rank_title, &$rank_img, &$rank
 }
 
 /**
+ * Get user's additional (normal) rank title and image if they have a special rank
+ *
+ * @param int $user_rank the current stored users rank id
+ * @param int $user_posts the users number of posts
+ * @param string &$rank_title the additional rank title will be stored here after execution, if the user has an additional rank
+ * @param string &$rank_img the additional rank image as full img tag is stored here after execution, if the user has an additional rank
+ * @param string &$rank_img_src the additional rank image source is stored here after execution, if the user has an additional rank
+ *
+ */
+function get_user_additional_rank($user_rank, $user_posts, &$rank_title, &$rank_img, &$rank_img_src)
+{
+	if (!empty($user_rank))
+	{
+		//Always pass 0 to save duplicating get_user_rank and getting the special rank back
+		get_user_rank(0, $user_posts, $rank_title, $rank_img, $rank_img_src);
+	}
+}
+
+/**
 * Get user avatar
 *
 * @param string $avatar Users assigned avatar name

@@ -214,6 +214,13 @@ define('CAPTCHA_MAX_CHARS', 7);
 // Additional constants
 define('VOTE_CONVERTED', 127);
 
+// BEGAN - Special and normal rank images
+// Set to true if you want topics and profiles to show the special ranks, e.g. Administrator, as the 'extra' rank
+define('SHOW_SPECIAL_AS_EXTRA', false);
+// Set to true if you want the memberslist to show only normal ranks and not special ranks
+define('SHOW_ONLY_NORMAL_RANKS_ON_MEMBERLIST', false);
+// ENDED - Special and normal rank images
+
 // Table names
 define('ACL_GROUPS_TABLE',			$table_prefix . 'acl_groups');
 define('ACL_OPTIONS_TABLE',			$table_prefix . 'acl_options');
@@ -280,7 +287,6 @@ define('WORDS_TABLE',				$table_prefix . 'words');
 define('ZEBRA_TABLE',				$table_prefix . 'zebra');
 
 // Additional tables
-
 
 // BEGAN - phpBB Gallery mod
 define('GALLERY_ALBUMS_TABLE',			$table_prefix . 'gallery_albums');
