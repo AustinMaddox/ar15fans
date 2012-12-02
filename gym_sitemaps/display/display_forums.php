@@ -85,7 +85,7 @@ class display_forums {
 		$level = $last_level = 0;
 		$html = $html_before = $html_after = '';
 		$separator = ' &nbsp; ';
-		$news_img = sprintf($tpl['img'], $master->gym_master->path_config['gym_img_url'] . 'html_news.gif', $user->lang['HTML_NEWS']);
+		$news_img = sprintf($tpl['img'], $master->gym_master->path_config['gym_img_url'] . 'html_news.png', $user->lang['HTML_NEWS']);
 		$map_img = sprintf($tpl['img'], $master->gym_master->path_config['gym_img_url'] . 'maps-icon.gif', $user->lang['HTML_MAP']);
 		$subf_img = $user->img('subforum_read', 'NO_NEW_POSTS');
 		$sql = $db->sql_build_query('SELECT', $sql_array);
@@ -329,7 +329,7 @@ class display_forums {
 			'U_FORUMS' => $display_link ? append_sid("{$phpbb_root_path}index.$phpEx") : false,
 			'FORUM_MAP_URL' => $master->module_config['html_allow_map'] ? append_sid($master->module_config['html_url'] . $master->url_settings['html_forum_map']) : '',
 			'FORUM_NEWS' => sprintf($user->lang['HTML_NEWS_OF'], $master->module_config['html_sitename']),
-			'NEWS_IMG_SRC' => $master->gym_master->path_config['gym_img_url'] . 'html_news.gif',
+			'NEWS_IMG_SRC' => $master->gym_master->path_config['gym_img_url'] . 'html_news.png',
 			'FORUM_NEWS_URL' => $master->module_config['html_allow_news'] ? append_sid($master->module_config['html_url'] . $master->url_settings['html_forum_news']) : '',
 			'DISPLAY_FORUMS' => $has_result,
 			'DISPLAY_USER_INFO' => $display_user_info,

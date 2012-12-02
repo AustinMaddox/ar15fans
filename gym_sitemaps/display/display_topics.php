@@ -309,7 +309,7 @@ class display_topics {
 			'MAP_RULES' => $rules_info['forum_rules'],
 			'MAP_RULES_LINK' => $rules_info['forum_rules_link'],
 			'T_ICONS_PATH' => "{$phpbb_root_path}{$config['icons_path']}/",
-			'NEWS_IMG_SRC' => $master->gym_master->path_config['gym_img_url'] . 'html_news.gif',
+			'NEWS_IMG_SRC' => $master->gym_master->path_config['gym_img_url'] . 'html_news.png',
 		);
 		if ($master->call['single_forum'] || $master->call['cat_forum']) {
 			$tpl_data += array(

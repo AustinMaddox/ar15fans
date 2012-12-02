@@ -423,7 +423,7 @@ class gym_html extends gym_sitemaps {
 			'HTML_URL' => $this->html_config['html_allow_map'] ? append_sid($this->html_config['html_url'] . $this->url_config['html_default']) : '',
 			'HTML_NEWS_TITLE' => sprintf($user->lang['HTML_NEWS_OF'], $this->html_config['html_sitename']),
 			'HTML_NEWS_URL' => $this->html_config['html_allow_news'] ? append_sid($this->html_config['html_url'] . $this->url_config['html_news_default']) : '',
-			'NEWS_IMG_SRC' => $this->path_config['gym_img_url'] . 'html_news.gif',
+			'NEWS_IMG_SRC' => $this->path_config['gym_img_url'] . 'html_news.png',
 			'ROOT_PATH' => $phpbb_root_path,
 		));
 		$return = $template->assign_display('index_data', '', true);

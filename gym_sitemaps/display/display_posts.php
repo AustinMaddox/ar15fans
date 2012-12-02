@@ -599,7 +599,7 @@ class display_posts {
 			'REPORTED_IMG' => $user->img('icon_topic_reported', 'POST_REPORTED'),
 			'UNAPPROVED_IMG' => $user->img('icon_topic_unapproved', 'POST_UNAPPROVED'),
 			'T_ICONS_PATH' => "{$phpbb_root_path}{$config['icons_path']}/",
-			'NEWS_IMG_SRC' => $master->gym_master->path_config['gym_img_url'] . 'html_news.gif',
+			'NEWS_IMG_SRC' => $master->gym_master->path_config['gym_img_url'] . 'html_news.png',
 		);
 		if ($master->call['single_forum'] || $master->call['cat_forum']) {
 			$tpl_vars += array(

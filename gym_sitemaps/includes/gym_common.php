@@ -140,7 +140,7 @@ function obtain_gym_links($gym_links = array()) {
 					if (!empty($html_setup['link_index']) && (isset($html_setup['auth_guest'][$forum_id]) || (!empty($html_setup['forum_allow_auth']) && !isset($html_setup['forum_exclude'][$forum_id])))) {
 						if ($html_setup['forum_allow_cat_news']) {
 							$url = sprintf($html_setup['forum_cat_news'], $_phpbb_seo ? $phpbb_seo->seo_url['forum'][$forum_id] : '', $forum_id );
-							$link .= sprintf($gym_link_tpl, $url, 'html_news.gif', sprintf($html_setup['l_html_news_of'], $forum_name), $html_setup['l_html_news']);
+							$link .= sprintf($gym_link_tpl, $url, 'html_news.png', sprintf($html_setup['l_html_news_of'], $forum_name), $html_setup['l_html_news']);
 						}
 						if ($html_setup['forum_allow_cat_map']) {
 							$url = sprintf($html_setup['forum_cat_map'], $_phpbb_seo ? $phpbb_seo->seo_url['forum'][$forum_id] : '', $forum_id );
@@ -177,7 +177,7 @@ function obtain_gym_links($gym_links = array()) {
 					if ($html_setup['forum_allow_cat_news']) {
 						$url = sprintf($html_setup['forum_cat_news'], $_phpbb_seo ? $phpbb_seo->seo_url['forum'][$forum_id] : '', $forum_id);
 						$title = sprintf($html_setup['l_html_news_of'], $forum_name);
-						$links['main']['GYM_HTML_FORUM_NEWS_LINK'] = sprintf($gym_link_tpl, $url, 'html_news.gif', $title, $html_setup['l_html_news']);
+						$links['main']['GYM_HTML_FORUM_NEWS_LINK'] = sprintf($gym_link_tpl, $url, 'html_news.png', $title, $html_setup['l_html_news']);
 						$do_display = true;
 					}
 					if ($html_setup['forum_allow_cat_map']) {
