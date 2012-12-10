@@ -2,7 +2,40 @@
     <div id="nav-wrap">
     
         <ul id="nav">
-			<li><a href="{U_INDEX}">{L_FORUM}</a>
+			<li><a href="/">{L_FORUMS}</a>
+				<ul>
+				<!-- BEGIN nav_forumrow -->
+					<!-- IF (nav_forumrow.S_IS_CAT and not nav_forumrow.S_FIRST_ROW) or nav_forumrow.S_NO_CAT  -->
+							</ul>
+					<!-- ENDIF -->
+				
+					<!-- IF nav_forumrow.S_IS_CAT or nav_forumrow.S_FIRST_ROW or nav_forumrow.S_NO_CAT  -->
+					<li><!-- IF nav_forumrow.S_IS_CAT --><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --><!-- S_IS_CAT -->
+						<ul><!-- S_IS_CAT -->
+					<!-- ENDIF -->
+				
+							<!-- IF not nav_forumrow.S_IS_CAT -->
+							<li><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- not S_IS_CAT -->
+							
+								<!-- IF nav_forumrow.SUBFORUMS and nav_forumrow.S_LIST_SUBFORUMS -->
+								<ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
+									{nav_forumrow.SUBFORUMS}<!-- not S_IS_CAT --><!-- SUBFORUMS -->
+								</ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
+								<!-- ENDIF -->
+							
+							</li>
+							<!-- ENDIF -->
+				
+					<!-- IF nav_forumrow.S_LAST_ROW -->
+						</ul>
+					<!-- ENDIF -->
+				
+				<!-- BEGINELSE -->
+						<strong>{L_NO_FORUMS}</strong>
+				<!-- END nav_forumrow -->
+				</ul>
+			</li>
+			<li><a href="{U_INDEX}">{L_ACTIVITY}</a>
 				<ul>
 					<!-- IF S_DISPLAY_SEARCH -->
 					<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
@@ -12,9 +45,6 @@
 					<!-- ENDIF -->
 					<li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
 					<!-- ENDIF -->
-                    <!-- IF not S_IS_BOT -->
-                    <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_FORUM_SEARCH}</a></li>
-                    <!-- ENDIF -->
 				</ul>
 			</li>
 			<li><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a>
@@ -27,7 +57,6 @@
                     <li><a href="{U_G_SEARCH_CONTESTS}">{L_VIEW_SEARCH_CONTESTS}</a></li>
                     <!-- ENDIF -->
 					<li><a href="{U_USERS_PERSONAL_GALLERIES}">{L_VIEW_USER_ALBUMS}</a></li>
-					<li><a href="{U_G_SEARCH}">{L_GALLERY_SEARCH}</a></li>
 				</ul>
 			</li>
 			<li><a href="#" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a>
@@ -86,168 +115,7 @@
 				</ul>
 			</li>
 			<!-- ENDIF -->
-            
+			
         </ul><!-- /nav -->
 	</div><!-- /nav-wrap -->
 </div><!-- /floatmenu_expanse -->
-
-<!--
-<div id="nav-wrap">
-	<ul id="nav">
-		<li><a href="/">Home</a></li>
-
-		<li>
-			<a href="">Categories</a>
-			<ul>
-				<li>
-					<a href="">CSS</a>
-					<ul>
-						<li><a href="">Item 11</a></li>
-
-						<li><a href="">Item 12</a></li>
-						<li><a href="">Item 13</a></li>
-						<li><a href="">Item 14</a></li>
-					</ul>				
-				</li>
-				<li>
-					<a href="">Graphic design</a>
-
-					<ul>
-						<li><a href="">Item 21</a></li>
-						<li><a href="">Item 22</a></li>
-						<li><a href="">Item 23</a></li>
-						<li><a href="">Item 24</a></li>
-					</ul>				
-				</li>
-
-				<li>
-					<a href="">Development tools</a>
-					<ul>
-						<li><a href="">Item 31</a></li>
-						<li><a href="">Item 32</a></li>
-						<li><a href="">Item 33</a></li>
-						<li><a href="">Item 34</a></li>
-
-					</ul>				
-				</li>
-				<li>
-					<a href="">Web design</a>				
-					<ul>
-						<li><a href="">Item 41</a></li>
-						<li><a href="">Item 42</a></li>
-						<li><a href="">Item 43</a></li>
-
-						<li><a href="">Item 44</a></li>
-					</ul>	
-				</li>
-			</ul>
-		</li>
-		<li>
-			<a href="">Work</a>
-			<ul>
-
-				<li>
-					<a href="">Work 1</a>
-					<ul>
-						<li>
-							<a href="">Work 11</a>		
-							<ul>
-								<li><a href="">Work 111</a></li>
-								<li><a href="">Work 112</a></li>
-
-								<li><a href="">Work 113</a></li>
-							</ul>							
-						</li>
-						<li>
-							<a href="">Work 12</a>
-							<ul>
-								<li><a href="">Work 121</a></li>
-								<li><a href="">Work 122</a></li>
-
-								<li><a href="">Work 123</a></li>
-							</ul>							
-						</li>
-						<li>
-							<a href="">Work 13</a>
-							<ul>
-								<li><a href="">Work 131</a></li>
-								<li><a href="">Work 132</a></li>
-
-								<li><a href="">Work 133</a></li>
-							</ul>							
-						</li>
-					</ul>					
-				</li>
-				<li>
-					<a href="">Work 2</a>
-					<ul>
-						<li>
-
-							<a href="">Work 21</a>
-							<ul>
-								<li><a href="">Work 211</a></li>
-								<li><a href="">Work 212</a></li>
-								<li><a href="">Work 213</a></li>
-							</ul>							
-						</li>
-
-						<li>
-							<a href="">Work 22</a>
-							<ul>
-								<li><a href="">Work 221</a></li>
-								<li><a href="">Work 222</a></li>
-								<li><a href="">Work 223</a></li>
-							</ul>							
-						</li>
-
-						<li>
-							<a href="">Work 23</a>
-							<ul>
-								<li><a href="">Work 231</a></li>
-								<li><a href="">Work 232</a></li>
-								<li><a href="">Work 233</a></li>
-							</ul>							
-						</li>
-
-					</ul>					
-				</li>
-				<li>
-					<a href="">Work 3</a>
-					<ul>
-						<li>
-							<a href="">Work 31</a>
-							<ul>
-
-								<li><a href="">Work 311</a></li>
-								<li><a href="">Work 312</a></li>
-								<li><a href="">Work 313</a></li>
-							</ul>							
-						</li>
-						<li>
-							<a href="">Work 32</a>
-
-							<ul>
-								<li><a href="">Work 321</a></li>
-								<li><a href="">Work 322</a></li>
-								<li><a href="">Work 323</a></li>
-							</ul>							
-						</li>
-						<li>
-							<a href="">Work 33</a>
-
-							<ul>
-								<li><a href="">Work 331</a></li>
-								<li><a href="">Work 332</a></li>
-								<li><a href="">Work 333</a></li>
-							</ul>							
-						</li>
-					</ul>					
-				</li>
-
-			</ul>		
-		</li>
-		<li><a href="">About</a></li>
-		<li><a href="">Contact</a></li>
-	</ul>
-</div>
--->

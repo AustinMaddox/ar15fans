@@ -4695,6 +4695,14 @@ function page_header($page_title = '', $display_online_list = true, $item_id = 0
 		// ENDED - Gallery Link additions for the nav.html menu
 // ENDED - phpBB Gallery mod
 
+// BEGAN - Display forums in the navigation menu
+	if (!function_exists('display_navforums'))
+	{
+		include($phpbb_root_path . 'includes/functions_nav.' . $phpEx);
+	}
+	display_navforums('');
+// ENDED - Display forums in the navigation menu
+
 	// The following assigns all _common_ variables that may be used at any point in a template.
 	$template->assign_vars(array(
 		'SITENAME'						=> $config['sitename'],
