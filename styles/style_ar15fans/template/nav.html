@@ -2,7 +2,7 @@
     <div id="nav-wrap">
     
         <ul id="nav">
-			<li><a href="/">{L_FORUMS}</a>
+			<li><a href="{U_INDEX}">{L_FORUMS}</a>
 				<ul>
 				<!-- BEGIN nav_forumrow -->
 					<!-- IF (nav_forumrow.S_IS_CAT and not nav_forumrow.S_FIRST_ROW) or nav_forumrow.S_NO_CAT  -->
@@ -17,9 +17,11 @@
 							<!-- IF not nav_forumrow.S_IS_CAT -->
 							<li><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- not S_IS_CAT -->
 							
-								<!-- IF nav_forumrow.SUBFORUMS and nav_forumrow.S_LIST_SUBFORUMS -->
+								<!-- IF nav_forumrow.S_LIST_SUBFORUMS -->
 								<ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
-									{nav_forumrow.SUBFORUMS}<!-- not S_IS_CAT --><!-- SUBFORUMS -->
+									<!-- BEGIN subforum -->
+									<li><a href="{nav_forumrow.subforum.U_SUBFORUM}">{nav_forumrow.subforum.SUBFORUM_NAME}</a></li><!-- not S_IS_CAT --><!-- SUBFORUMS -->
+									<!-- END subforum -->
 								</ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
 								<!-- ENDIF -->
 							
@@ -31,7 +33,7 @@
 					<!-- ENDIF -->
 				
 				<!-- BEGINELSE -->
-						<strong>{L_NO_FORUMS}</strong>
+					<li><a href="{U_INDEX}">{L_NO_FORUMS}</a></li>
 				<!-- END nav_forumrow -->
 				</ul>
 			</li>
@@ -59,7 +61,7 @@
 					<li><a href="{U_USERS_PERSONAL_GALLERIES}">{L_VIEW_USER_ALBUMS}</a></li>
 				</ul>
 			</li>
-			<li><a href="#" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a>
+			<li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a>
 				<ul>
                     <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_FORUM_SEARCH}</a></li>
 					<li><a href="{U_G_SEARCH}">{L_GALLERY_SEARCH}</a></li>
@@ -77,7 +79,7 @@
             </li>
             
             <!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
-			<li class="user-menu"><a href="#">{L_USER_MENU}</a>
+			<li class="user-menu"><a href="{U_PROFILE}">{L_USER_MENU}</a>
 				<ul>
 					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li>
 					<!-- IF S_DISPLAY_PM -->
