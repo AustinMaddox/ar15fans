@@ -950,6 +950,7 @@ $lang = array_merge($lang, array(
 	'FONT_SIZE'				=> 'Font size (+/-)',
 
 	'ACTIONS'				=> 'Actions',
+	'ACTIVITY'				=> 'Activity',
 
 	'SPONSORS'				=> 'Sponsors',
 	'FORUM_SPONSORED_BY'	=> 'Forum sponsored by',

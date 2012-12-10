@@ -210,7 +210,7 @@ $gallery_block->set_nums(array('rows' => 1, 'columns' => 4, 'comments' => 1, 'co
 $gallery_block->set_pegas(true);
 //$gallery_block->add_albums(array(1, 2, 3));
 //$gallery_block->add_users(array(4, 5, 6));
-$gallery_block->display(); 
+$gallery_block->display();
 // ENDED - phpBB Gallery mod
 
 $template->set_filenames(array(

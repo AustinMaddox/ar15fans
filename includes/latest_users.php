@@ -16,7 +16,6 @@ if (!defined('IN_PHPBB'))
 	exit;
 }
 
-
 function get_latest_users($limit = 10, $cache_secs = 300)
 {
 	global $auth, $cache, $config, $user, $db, $template;
