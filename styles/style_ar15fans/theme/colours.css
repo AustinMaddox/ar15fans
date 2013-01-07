@@ -81,6 +81,9 @@ hr.dashed {
 	color: #28313F;
 }
 
+.post {
+	background: linear-gradient(#CCCCCC 0%, #FFFFFF 20%, #FFFFFF 90%, #CCCCCC 100%) repeat scroll 0 0 transparent;
+}
 .post:target .content {
 	color: #000000;
 }
@@ -664,7 +667,7 @@ fieldset.polls dd div {
 }
 
 .online {
-	background-image: url("{IMG_ICON_USER_ONLINE_SRC}");
+/* 	background-image: url("{IMG_ICON_USER_ONLINE_SRC}"); */
 }
 
 /*  	

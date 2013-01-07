@@ -259,7 +259,7 @@ div[class].topic-actions {
 }
 
 .postbody .content {
-	font-size: 1.3em;
+	font-size: 1.7em;
 }
 
 .search .postbody {
@@ -317,7 +317,7 @@ div[class].topic-actions {
 	min-height: 3em;
 	overflow: hidden;
 	line-height: 1.4em;
-	font-family: "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Tahoma, "Trebuchet MS", Verdana, Arial, sans-serif;
 	font-size: 1em;
 	color: #333333;
 	padding-bottom: 1px;

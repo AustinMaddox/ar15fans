@@ -658,3 +658,10 @@ div.gymsublist ul li {
 	font-size:11px;
 }
 /* GYM Sitemaps & RSS - www.phpbb-seo.com */
+
+.kill-click {
+	cursor: default;
+}
+
+
+
