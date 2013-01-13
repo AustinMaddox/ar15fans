@@ -1,29 +1,40 @@
 <!-- INCLUDE overall_header.html -->
-<div class="colmask blogstyle">
-	<div class="colmid">
-		<div class="colleft">
-			<div class="col1wrap">
-				<div class="col1">
-				<!-- Column 1 start -->
-				<!-- IF RECENT_TOPICS_DISPLAY -->
-					<!-- INCLUDE recent_topics_body.html -->
-				<!-- ENDIF -->
-				<!-- Column 1 end -->
-				</div>
-			</div><!-- /col1wrap -->
-			<div class="col2">
-			<!-- Column 2 start -->
-			<!-- INCLUDE block/block_top_posters_era.html -->
-			<!-- Column 2 end -->
+
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1wrap">
+			<div class="col1">
+			<!-- Column 1 start -->
+			<!-- IF RECENT_TOPICS_DISPLAY -->
+				<!-- INCLUDE recent_topics_body.html -->
+			<!-- ENDIF -->
+			<!-- Column 1 end -->
 			</div>
-			<div class="col3">
-			<!-- Column 3 start -->
-			<!-- INCLUDE block/block_latest_users.html -->
-			<!-- Column 3 end -->
+		</div><!-- /col1wrap -->
+		<div class="col2">
+		<!-- Column 2 start -->
+		<!-- INCLUDE block/block_latest_users.html -->
+		<!-- Column 2 end -->
+		</div>
+	</div><!-- /colleft -->
+</div><!-- /colmask rightmenu -->
+
+<div class="colmask leftmenu">
+	<div class="colright">
+		<div class="col1wrap">
+			<div class="col1">
+			<!-- Column 1 start -->
+			<!-- INCLUDE gallery/imageblock_body.html -->
+			<!-- Column 1 end -->
 			</div>
-		</div><!-- /colleft -->
-	</div><!-- /colmid -->
-</div><!-- /colmask blogstyle -->
+		</div><!-- /col1wrap -->
+		<div class="col2">
+		<!-- Column 2 start -->
+		<!-- INCLUDE block/block_top_posters.html -->
+		<!-- Column 2 end -->
+		</div>
+	</div><!-- /colright -->
+</div><!-- /colmask leftmenu -->
 
 <div class="colmask rightmenu">
 	<div class="colleft">
@@ -39,6 +50,7 @@
 		</div><!-- /col1wrap -->
 		<div class="col2">
 		<!-- Column 2 start -->
+		<!-- INCLUDE block/block_top_posters_era.html -->
 		<!-- IF (RECENT_ATTACHMENTS_EXIST and not S_VIEWTOPIC) or (RECENT_ATTACHMENTS_EXIST and S_VIEWTOPIC and S_NUM_POSTS > 1) -->
 			<!-- INCLUDE attached_recent_images.html -->
 		<!-- ENDIF -->
@@ -86,23 +98,6 @@
 		</div>
 	</div><!-- /colleft -->
 </div><!-- /colmask rightmenu -->
-
-<div class="colmask leftmenu">
-	<div class="colright">
-		<div class="col1wrap">
-			<div class="col1">
-			<!-- Column 1 start -->
-			<!-- INCLUDE gallery/imageblock_body.html -->
-			<!-- Column 1 end -->
-			</div>
-		</div><!-- /col1wrap -->
-		<div class="col2">
-		<!-- Column 2 start -->
-		<!-- INCLUDE block/block_top_posters.html -->
-		<!-- Column 2 end -->
-		</div>
-	</div><!-- /colright -->
-</div><!-- /colmask leftmenu -->
 
 <!-- IF not S_IS_BOT -->
 <div class="colmask blogstyle_fluid gradient-yellow">
