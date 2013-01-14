@@ -5,18 +5,6 @@ ul.profile-icons li.gallery-icon	{ width: 20px; height: 20px; }
 .buttons div.upload-icon	{ width: {IMG_BUTTON_UPLOAD_IMAGE_WIDTH}px; height: {IMG_BUTTON_UPLOAD_IMAGE_HEIGHT}px; }
 .upload-icon span	{ background-image: url("{IMG_BUTTON_UPLOAD_IMAGE_SRC}"); }
 
-.icon-gallery {
-	background-position: 0 50%;
-	background-repeat: no-repeat;
-	padding: 1px 0 0 17px;
-	background-image: url("{T_THEME_PATH}/images/icon_gallery.gif");
-}
-
-.rtl .icon-gallery {
-	background-position: 100% 50%;
-	padding: 1px 17px 0 0;
-}
-
 fieldset.gallery dd.simulate-dt label {
 	margin-left:	0;
 	float:			left;

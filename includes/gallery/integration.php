@@ -247,7 +247,21 @@ class phpbb_gallery_integration
 
 	static public function page_header()
 	{
-		global $phpbb_root_path, $phpEx, $template, $user;
+		global $phpbb_root_path, $phpEx, $template, $user, $db;
+
+// BEGAN - Allow link to own personal gallery in navigation bar
+		$sql = 'SELECT personal_album_id
+			FROM ' . GALLERY_USERS_TABLE . '
+			WHERE user_id = ' . (int) $user->data['user_id'];
+		$result = $db->sql_query($sql);
+		$album_id = (int) $db->sql_fetchfield('personal_album_id');
+		$db->sql_freeresult($result);
+
+		if ($album_id)
+		{
+			$template->assign_var('U_YOUR_PERSONAL_GALLERY', phpbb_gallery_url::append_sid('album', 'album_id=' . $album_id));
+		}
+// ENDED - Allow link to own personal gallery in navigation bar
 
 		$user->add_lang('mods/info_acp_gallery');
 		phpbb_gallery_plugins::init(phpbb_gallery_url::path('gallery'));

@@ -919,9 +919,11 @@ $lang['RELATED_TOPICS'] = 'Related topics';
 // BEGAN - phpBB Gallery mod
 $lang = array_merge($lang, array(
 	'YOUR_GALLERY'			=> 'Your gallery',
-	'YOUR_PHOTOS'			=> 'Your photo albums',
+	'YOUR_ALBUMS'			=> 'Your photo albums',
+		'YOUR_PHOTOS'		=> 'View your photos',
 	'MANAGE_PHOTOS'			=> 'Manage your photos',
 	'NO_PHOTOS'				=> 'You have No Photos! Click the manage link to add some.',
+	'PHOTO_GALLERY'			=> 'Photo Gallery',
 	'GALLERY_SEARCH'		=> 'Gallery search',
 
 	'VIEW_SEARCH_RECENT'			=> 'Recent Images',
@@ -929,8 +931,7 @@ $lang = array_merge($lang, array(
 	'VIEW_SEARCH_COMMENTED'			=> 'Recent Comments',
 	'VIEW_SEARCH_TOPRATED'			=> 'Top Rated Images',
 	'VIEW_SEARCH_CONTESTS'			=> 'Contest Winners',
-	'VIEW_USER_ALBUMS'				=> 'User albums',
-	'VIEW_SEARCH_SELF'				=> 'Search your images',
+	'VIEW_USER_ALBUMS'				=> 'Member albums',
 ));
 // ENDED - phpBB Gallery mod
 
@@ -942,6 +943,7 @@ $lang = array_merge($lang, array(
 	'SYNOPSIS'				=> 'Synopsis',
 
 	'ABOUT'					=> 'About',
+	'ABOUT_US'				=> 'About us',
 	'ABOUT_EXPLAIN'			=> 'About us page.',
 	'CONTACT_US'			=> 'Contact admin',
 	'CONTACT_US_EXPLAIN'	=> 'Contact the webmaster/administrator',

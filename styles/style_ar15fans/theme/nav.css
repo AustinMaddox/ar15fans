@@ -354,11 +354,30 @@
 }
 
 /* Navigation icons */
-#nav .icon-contact,
+#nav .icon-gallery,
+#nav .icon-gallery-user-albums,
+
+#nav .icon-forum-search,
+#nav .icon-gallery-search,
+
+#nav .icon-about,
 #nav .icon-faq,
-#nav .icon-logout,
 #nav .icon-members,
-#nav .icon-staff {
+#nav .icon-staff,
+#nav .icon-contact,
+
+#nav .icon-ucp,
+#nav .icon-pm,
+#nav .icon-profile,
+#nav .icon-topics,
+#nav .icon-posts,
+#nav .icon-gallery-personal,
+	#nav .icon-gallery-albums,
+	#nav .icon-gallery-photos,
+	#nav .icon-gallery-manage,
+#nav .icon-login,
+#nav .icon-logout
+{
     background-position: 0 50%;
     background-repeat: no-repeat;
 	padding: 0 0 0 20px;

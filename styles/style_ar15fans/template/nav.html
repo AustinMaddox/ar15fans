@@ -49,8 +49,10 @@
 					<!-- ENDIF -->
 				</ul>
 			</li>
-			<li><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a>
+			<li><a href="" class="kill-click">{L_GALLERY}</a>
 				<ul>
+					<li><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}"><span class="icon-gallery"></span>{L_PHOTO_GALLERY}</a></li>
+					<li><a href="{U_USERS_PERSONAL_GALLERIES}"><span class="icon-gallery-user-albums"></span>{L_VIEW_USER_ALBUMS}</a></li>
 					<li><a href="{U_G_SEARCH_RECENT}">{L_VIEW_SEARCH_RECENT}</a></li>
 					<li><a href="{U_G_SEARCH_RANDOM}">{L_VIEW_SEARCH_RANDOM}</a></li>
 					<li><a href="{U_G_SEARCH_COMMENTED}">{L_VIEW_SEARCH_COMMENTED}</a></li>
@@ -58,17 +60,17 @@
 					<!-- IF U_G_SEARCH_CONTESTS -->
                     <li><a href="{U_G_SEARCH_CONTESTS}">{L_VIEW_SEARCH_CONTESTS}</a></li>
                     <!-- ENDIF -->
-					<li><a href="{U_USERS_PERSONAL_GALLERIES}">{L_VIEW_USER_ALBUMS}</a></li>
 				</ul>
 			</li>
-			<li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a>
+			<li><a href="" class="kill-click">{L_SEARCH}</a>
 				<ul>
-                    <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_FORUM_SEARCH}</a></li>
-					<li><a href="{U_G_SEARCH}">{L_GALLERY_SEARCH}</a></li>
+                    <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><span class="icon-forum-search"></span>{L_FORUM_SEARCH}</a></li>
+					<li><a href="{U_G_SEARCH}"><span class="icon-gallery-search"></span>{L_GALLERY_SEARCH}</a></li>
 				</ul>
 			</li>
-            <li><a href="{U_ABOUT}">{L_ABOUT}</a>
+            <li><a href="" class="kill-click">{L_ABOUT}</a>
             	<ul>
+            		<li><a href="{U_ABOUT}"><span class="icon-about"></span>{L_ABOUT_US}</a></li>
 					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><span class="icon-faq"></span>{L_FAQ}</a></li>
                     <li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><span class="icon-members"></span>{L_MEMBERLIST}</a></li>
                     <!-- IF U_STAFF -->
@@ -79,28 +81,29 @@
             </li>
             
             <!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
-			<li class="user-menu"><a href="{U_PROFILE}">{L_USER_MENU}</a>
+			<li class="user-menu"><a href="" class="kill-click">{L_USER_MENU}</a>
 				<ul>
-					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a></li>
+					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><span class="icon-ucp"></span>{L_PROFILE}</a></li>
 					<!-- IF S_DISPLAY_PM -->
-						<li><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a></li>
+						<li><a href="{U_PRIVATEMSGS}"><span class="icon-pm"></span>{PRIVATE_MESSAGE_INFO}</a></li>
 					<!-- ENDIF -->
 					<!-- IF U_YOUR_PROFILE -->
-						<li><a href="{U_YOUR_PROFILE}" title="{L_YOUR_PROFILE_EXPLAIN}">{L_YOUR_PROFILE}</a></li>
+						<li><a href="{U_YOUR_PROFILE}" title="{L_YOUR_PROFILE_EXPLAIN}"><span class="icon-profile"></span>{L_YOUR_PROFILE}</a></li>
 					<!-- ENDIF -->
 					<!-- IF S_DISPLAY_SEARCH and (U_SELF_TOPICS or U_SEARCH_SELF) -->
-						<li><a href="{U_SELF_TOPICS}">{L_SEARCH_SELF_TOPICS}</a></li>
-						<li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+						<li><a href="{U_SELF_TOPICS}"><span class="icon-topics"></span>{L_SEARCH_SELF_TOPICS}</a></li>
+						<li><a href="{U_SEARCH_SELF}"><span class="icon-posts"></span>{L_SEARCH_SELF}</a></li>
 					<!-- ENDIF -->
 					
-					<!-- IF U_YOUR_PERSONAL_GALLERY or L_NO_PHOTOS or U_G_MANAGE_PHOTOS -->
-					<li><a href="#">{L_YOUR_GALLERY}</a>
+					<!-- IF U_YOUR_PERSONAL_GALLERY or U_G_MANAGE_PHOTOS -->
+					<li><a href="" class="kill-click" style="cursor:alias;"><span class="icon-gallery-personal"></span>{L_YOUR_GALLERY}</a>
 						<ul>
-							<li><a href="{U_G_SEARCH_SELF}">{L_VIEW_SEARCH_SELF}</a></li>
 							<!-- IF U_YOUR_PERSONAL_GALLERY -->
-								<li><a href="{U_YOUR_PERSONAL_GALLERY}">{L_YOUR_PHOTOS}</a></li>
-							<!-- ELSE -->
-								<li><a href="{U_G_MANAGE_PHOTOS}">{L_MANAGE_PHOTOS}</a></li>
+								<li><a href="{U_YOUR_PERSONAL_GALLERY}"><span class="icon-gallery-albums"></span>{L_YOUR_ALBUMS}</a></li>
+							<!-- ENDIF -->
+							<li><a href="{U_G_SEARCH_SELF}"><span class="icon-gallery-photos"></span>{L_YOUR_PHOTOS}</a></li>
+							<!-- IF U_G_MANAGE_PHOTOS -->
+								<li><a href="{U_G_MANAGE_PHOTOS}"><span class="icon-gallery-manage"></span>{L_MANAGE_PHOTOS}</a></li>
 							<!-- ENDIF -->
 						</ul>
 					</li>
@@ -109,13 +112,25 @@
 					<!-- IF U_RESTORE_PERMISSIONS -->
 					<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
 					<!-- ENDIF -->
+					
 					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l"><span class="icon-logout"></span>{L_LOGIN_LOGOUT}</a></li>
-					<!-- ELSE -->
-					<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
-					<li><a href="{U_REGISTER}">{L_REGISTER}</a></li>
-					<!-- ENDIF -->
 				</ul>
 			</li>
+			
+			<!-- ELSE -->
+			
+			<!-- IF not S_IS_BOT -->
+			<li class="user-menu"><a href="" class="kill-click">{L_USER_MENU}</a>
+				<ul>
+					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l"><!-- IF S_USER_LOGGED_IN --><span class="icon-logout"></span><!-- ELSE --><span class="icon-login"></span><!-- ENDIF -->{L_LOGIN_LOGOUT}</a></li>
+				</ul>
+			</li>
+			<!-- ENDIF -->
+			
+			<!-- IF S_REGISTER_ENABLED and not S_IS_BOT and not (S_SHOW_COPPA or S_REGISTRATION) -->
+			<li><a href="{U_REGISTER}">{L_REGISTER}</a></li>
+			<!-- ENDIF -->
+			
 			<!-- ENDIF -->
 			
         </ul><!-- /nav -->

@@ -36,7 +36,7 @@ $lang = array_merge($lang, array(
 	'ACP_IMPORT_ALBUMS'					=> 'Import Images',
 
 	'GALLERY'							=> 'Gallery',
-	'GALLERY_EXPLAIN'					=> 'Photo Gallery',
+	'GALLERY_EXPLAIN'					=> 'AR-15 Photo Gallery',
 	'GALLERY_HELPLINE_ALBUM'			=> 'Gallery image: [gallery]image_id[/gallery], with this BBCode you can add an image from the gallery into your post.',
 	'GALLERY_POPUP'						=> 'Gallery',
 	'GALLERY_POPUP_HELPLINE'			=> 'Open a popup where you can select your recent images and upload new images.',
