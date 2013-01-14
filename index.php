@@ -235,7 +235,7 @@ $seo_meta->collect('description', $config['sitename'] . ' : ' .  $config['site_d
 $seo_meta->collect('keywords', $config['sitename'] . ' ' . $seo_meta->meta['description']);
 // www.phpBB-SEO.com SEO TOOLKIT END - META
 // www.phpBB-SEO.com SEO TOOLKIT BEGIN - TITLE
-page_header($config['sitename']);
+page_header($config['sitename'] . ' - Fans of the semi-automatic .223/5.56mm AR-15 rifle.');
 // www.phpBB-SEO.com SEO TOOLKIT END - TITLE
 
 $template->set_filenames(array(
