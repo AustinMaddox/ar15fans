@@ -82,7 +82,17 @@ function attached_images($type, $forum_ids, $max_num_results, $orientation, $num
 			$attach_comment = $row['attach_comment'];
 			$attachment_date = $user->format_date($row['filetime'], "|M d 'y|");
 			$attachment_time = $user->format_date($row['filetime'], "g:ia");
-			$attachment_url = append_sid($phpbb_root_path . 'download/file.' . $phpEx . '?id=' . $attach_id);
+			
+			if ($row['thumbnail'] == 1)
+			{
+				$filename = 'thumb_' . $row['physical_filename'];
+				$attachment_url = append_sid($phpbb_root_path . 'download/file.' . $phpEx . '?id=' . $attach_id . '&amp;t=1');
+			}
+			else
+			{
+				$filename = $row['physical_filename'];
+				$attachment_url = append_sid($phpbb_root_path . 'download/file.' . $phpEx . '?id=' . $attach_id);
+			}
 
 			$poster_name = get_username_string('username', $row['user_id'], $row['username'], $row['user_colour']);
 			$poster_name_full = get_username_string('full', $row['user_id'], $row['username'], $row['user_colour']);
@@ -92,12 +102,6 @@ function attached_images($type, $forum_ids, $max_num_results, $orientation, $num
 			if ($num_chars != 0 && utf8_strlen($topic_title) > $num_chars)
 			{
 				$topic_title = utf8_substr($topic_title, 0, $num_chars) . '...';
-			}
-
-			if ($row['thumbnail'] == 1)
-			{
-				$filename = 'thumb_' . $row['physical_filename'];
-				$attachment_url = append_sid($phpbb_root_path . 'download/file.' . $phpEx . '?id=' . $attach_id . '&amp;t=1');
 			}
 
 			// Resize the attachment image
