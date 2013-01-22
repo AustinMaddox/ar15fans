@@ -45,25 +45,21 @@ $phpbb_seo->seo_chk_dupe();
 // www.phpBB-SEO.com SEO TOOLKIT END -> Zero dupe
 
 // BEGAN - Attached Images Block mod
-if (!function_exists('attached_recent_images') || !function_exists('attached_random_images'))
+if (!function_exists('attached_images'))
 {
 	include($phpbb_root_path . 'includes/functions_attached_images.' . $phpEx);
 }
+// Get all forum_ids, since attachments are being displayed on the index page
 $sql = 'SELECT forum_id
 		FROM ' . FORUMS_TABLE . '
 		WHERE forum_type = 1';
-$result = $db->sql_query($sql);
-$forum_id = '';
+$result = $db->sql_query($sql, 86400);
 while ($row = $db->sql_fetchrow($result))
 {
-	$forum_id .= $row['forum_id'] . ',';
+	$forum_ids[] = $row['forum_id'];
 }
 $db->sql_freeresult($result);
-
-/* RECENT function
- attached_recent_images($forum_ids, $max_limit_arg, $orientation_arg, $num_chars, $max_width, $resize_after)
-*/
-attached_recent_images($forum_id, 5, 'vertical', 32, 200, 201);
+attached_images('recent', $forum_ids, 2, 'vertical', 32, 200, 50);
 // ENDED - Attached Images Block mod
 
 display_forums('', $config['load_moderators']);

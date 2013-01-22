@@ -36,16 +36,13 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ATTACHED_RECENT_IMAGE'		=> 'Recent Image Attachments',
-	'ATTACHED_RANDOM_IMAGE'		=> 'Random Image Attachments',
-	
+	'ATTACHED_IMAGE_TITLE'		=> '%s Image Attachments',
 	'ATTACHED_BY'				=> 'Attached by:',
 	'ATTACHMENT_VIEWS'			=> 'Views:',
 	'ATTACHMENT_REPLIES'		=> 'Comments:',
 	'ATTACHMENT_DATE'			=> 'Date:',
 	'ATTACHMENT_TIME'			=> 'Time:',
 	'ATTACHMENT_LAST_COMMENT'	=> 'Read last comment',
-
 ));
 
 ?>

@@ -1,0 +1,72 @@
+<div class="forabg">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<table class="table1" cellspacing="1">
+		<thead>
+			<tr>
+				<th style="text-align:left;" colspan="{COLSPAN}">{ATTACHED_IMAGE_TITLE}</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!-- IF VERTICAL -->
+			<!-- BEGIN attached_images -->
+			<tr class="<!-- IF attached_images.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg3<!-- ENDIF -->">
+				<td valign="top">
+					<div style="text-align:center; padding-bottom:4px;">
+						<a href="{attached_images.U_ATTACHMENT_POST}"><img src="{attached_images.U_ATTACHED_IMG}" width="{attached_images.ATTACHED_IMG_WIDTH}" height="{attached_images.ATTACHED_IMG_HEIGHT}" alt="{attached_images.TOPIC_TITLE}"/></a><br />
+						<a href="{attached_images.U_VIEW_TOPIC}" class="topictitle">{attached_images.TOPIC_TITLE}</a>
+					</div>
+					
+					<div style="float:left; text-align:center; padding:0 8px 0 1px;">
+                        {L_ATTACHED_BY}<br />
+                        <!-- IF attached_images.POSTER_AVATAR --><a href="{attached_images.U_POSTER}">{attached_images.POSTER_AVATAR}</a><br /><!-- ENDIF -->
+                        {attached_images.POSTER_NAME_FULL}<br />
+                        {L_IN} <a href="{attached_images.U_FORUM}" style="font-weight:bold;">{attached_images.FORUM_NAME}</a>
+					</div>
+					
+					<div style="padding:0 0 0 90px;">
+						<!-- IF attached_images.ATTACHMENT_COMMENT -->
+						<em>{attached_images.ATTACHMENT_COMMENT}</em><br />
+						<!-- ENDIF -->
+						<span class="syntaxhtml">{L_ATTACHMENT_VIEWS}</span> {attached_images.ATTACHMENT_VIEWS}<br />
+						<span class="syntaxhtml">{L_ATTACHMENT_REPLIES}</span> {attached_images.ATTACHMENT_REPLIES}<br />
+						<span class="syntaxhtml">{L_ATTACHMENT_DATE}</span> {attached_images.ATTACHMENT_DATE}<br />
+						<span class="syntaxhtml">{L_ATTACHMENT_TIME}</span> {attached_images.ATTACHMENT_TIME}<br />
+						&#187; <a href="{attached_images.U_TOPIC_LAST_POST}">{L_ATTACHMENT_LAST_COMMENT}</a>
+					</div>
+				</td>
+			</tr>
+			<!-- END attached_images -->
+		<!-- ELSE -->
+			<tr>
+			<!-- BEGIN attached_images -->
+				<td valign="top" class="<!-- IF attached_images.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg3<!-- ENDIF -->">
+					<div style="text-align:center; padding-bottom:4px;">
+						<a href="{attached_images.U_ATTACHMENT_POST}"><img src="{attached_images.U_ATTACHED_IMG}" height="{attached_images.ATTACHED_IMG_HEIGHT}" width="{attached_images.ATTACHED_IMG_WIDTH}" alt="{attached_images.TOPIC_TITLE}"/></a><br />
+						<a href="{attached_images.U_VIEW_TOPIC}" class="topictitle">{attached_images.TOPIC_TITLE}</a>
+					</div>
+					
+					<div style="float:left; text-align:center; width:80px; padding:0 8px 0 1px;">
+                        {L_ATTACHED_BY}<br />
+                        <!-- IF attached_images.POSTER_AVATAR --><a href="{attached_images.U_POSTER}">{attached_images.POSTER_AVATAR}</a><br /><!-- ENDIF -->
+                        {attached_images.POSTER_NAME_FULL}<br />
+                        {L_IN} <a href="{attached_images.U_FORUM}" style="font-weight:bold;">{attached_images.FORUM_NAME}</a>
+					</div>
+					
+					<div style="padding:0 0 0 90px;">
+						<!-- IF attached_images.ATTACHMENT_COMMENT -->
+						<em>{attached_images.ATTACHMENT_COMMENT}</em><br />
+						<!-- ENDIF -->
+						<span class="syntaxhtml">{L_ATTACHMENT_VIEWS}</span> {attached_images.ATTACHMENT_VIEWS}<br />
+						<span class="syntaxhtml">{L_ATTACHMENT_REPLIES}</span> {attached_images.ATTACHMENT_REPLIES}<br />
+						<span class="syntaxhtml">{L_ATTACHMENT_DATE}</span> {attached_images.ATTACHMENT_DATE}<br />
+						<span class="syntaxhtml">{L_ATTACHMENT_TIME}</span> {attached_images.ATTACHMENT_TIME}<br />
+						&#187; <a href="{attached_images.U_TOPIC_LAST_POST}">{L_ATTACHMENT_LAST_COMMENT}</a>
+					</div>
+				</td>
+			<!-- END attached_images -->
+			</tr>
+		<!-- ENDIF -->
+		</tbody>
+		</table>	
+	<span class="corners-bottom"><span></span></span></div>
+</div>

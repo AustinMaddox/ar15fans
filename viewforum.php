@@ -213,6 +213,32 @@ $gallery_block->set_pegas(true);
 $gallery_block->display();
 // ENDED - phpBB Gallery mod
 
+// BEGAN - Attached Images Block mod
+if (!function_exists('attached_images'))
+{
+	include($phpbb_root_path . 'includes/functions_attached_images.' . $phpEx);
+}
+if ($forum_data['forum_type'] == FORUM_CAT) {
+	$type = 'random';
+	// Get all forum_ids
+	$sql = 'SELECT forum_id
+		FROM ' . FORUMS_TABLE . '
+		WHERE forum_type = 1';
+	$result = $db->sql_query($sql, 86400);
+	while ($row = $db->sql_fetchrow($result))
+	{
+		$forum_ids[] = $row['forum_id'];
+	}
+	$db->sql_freeresult($result);
+}
+else
+{
+	$type = 'recent';
+	$forum_ids[] = $forum_id;
+}
+attached_images($type, $forum_ids, 3, 'horizontal', 32, 200, 50);
+// ENDED - Attached Images Block mod
+
 $template->set_filenames(array(
 	'body' => 'viewforum_body.html')
 );
