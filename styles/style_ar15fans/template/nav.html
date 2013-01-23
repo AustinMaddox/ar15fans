@@ -1,138 +1,136 @@
-<div id="nav-expanse">
-    <div id="nav-wrap">
-    
-        <ul id="nav">
-			<li><a href="" class="kill-click">{L_FORUMS}</a>
-				<ul>
-				<!-- BEGIN nav_forumrow -->
-					<!-- IF (nav_forumrow.S_IS_CAT and not nav_forumrow.S_FIRST_ROW) or nav_forumrow.S_NO_CAT  -->
-							</ul>
-					<!-- ENDIF -->
-				
-					<!-- IF nav_forumrow.S_IS_CAT or nav_forumrow.S_FIRST_ROW or nav_forumrow.S_NO_CAT  -->
-					<li><!-- IF nav_forumrow.S_IS_CAT --><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --><!-- S_IS_CAT -->
-						<ul><!-- S_IS_CAT -->
-					<!-- ENDIF -->
-				
-							<!-- IF not nav_forumrow.S_IS_CAT -->
-							<li><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- not S_IS_CAT -->
-							
-								<!-- IF nav_forumrow.S_LIST_SUBFORUMS -->
-								<ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
-									<!-- BEGIN subforum -->
-									<li><a href="{nav_forumrow.subforum.U_SUBFORUM}">{nav_forumrow.subforum.SUBFORUM_NAME}</a></li><!-- not S_IS_CAT --><!-- SUBFORUMS -->
-									<!-- END subforum -->
-								</ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
-								<!-- ENDIF -->
-							
-							</li>
-							<!-- ENDIF -->
-				
-					<!-- IF nav_forumrow.S_LAST_ROW -->
+<div id="nav-wrap">
+
+	<ul id="nav">
+		<li><a href="" class="kill-click">{L_FORUMS}</a>
+			<ul>
+			<!-- BEGIN nav_forumrow -->
+				<!-- IF (nav_forumrow.S_IS_CAT and not nav_forumrow.S_FIRST_ROW) or nav_forumrow.S_NO_CAT  -->
 						</ul>
-					<!-- ENDIF -->
+				<!-- ENDIF -->
+			
+				<!-- IF nav_forumrow.S_IS_CAT or nav_forumrow.S_FIRST_ROW or nav_forumrow.S_NO_CAT  -->
+				<li><!-- IF nav_forumrow.S_IS_CAT --><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --><!-- S_IS_CAT -->
+					<ul><!-- S_IS_CAT -->
+				<!-- ENDIF -->
+			
+						<!-- IF not nav_forumrow.S_IS_CAT -->
+						<li><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- not S_IS_CAT -->
+						
+							<!-- IF nav_forumrow.S_LIST_SUBFORUMS -->
+							<ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
+								<!-- BEGIN subforum -->
+								<li><a href="{nav_forumrow.subforum.U_SUBFORUM}">{nav_forumrow.subforum.SUBFORUM_NAME}</a></li><!-- not S_IS_CAT --><!-- SUBFORUMS -->
+								<!-- END subforum -->
+							</ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
+							<!-- ENDIF -->
+						
+						</li>
+						<!-- ENDIF -->
+			
+				<!-- IF nav_forumrow.S_LAST_ROW -->
+					</ul>
+				<!-- ENDIF -->
+			
+			<!-- BEGINELSE -->
+				<li><a href="{U_INDEX}">{L_NO_FORUMS}</a></li>
+			<!-- END nav_forumrow -->
+			</ul>
+		</li>
+		<li><a href="" class="kill-click">{L_ACTIVITY}</a>
+			<ul>
+				<!-- IF S_DISPLAY_SEARCH -->
+				<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
+				<!-- IF S_USER_LOGGED_IN -->
+				<li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li>
+				<li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a>
+				<!-- ENDIF -->
+				<li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
+				<!-- ENDIF -->
+			</ul>
+		</li>
+		<li><a href="" class="kill-click">{L_GALLERY}</a>
+			<ul>
+				<li><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}"><span class="icon-gallery"></span>{L_PHOTO_GALLERY}</a></li>
+				<li><a href="{U_USERS_PERSONAL_GALLERIES}"><span class="icon-gallery-user-albums"></span>{L_VIEW_USER_ALBUMS}</a></li>
+				<li><a href="{U_G_SEARCH_RECENT}">{L_VIEW_SEARCH_RECENT}</a></li>
+				<li><a href="{U_G_SEARCH_RANDOM}">{L_VIEW_SEARCH_RANDOM}</a></li>
+				<li><a href="{U_G_SEARCH_COMMENTED}">{L_VIEW_SEARCH_COMMENTED}</a></li>
+				<li><a href="{U_G_SEARCH_TOPRATED}">{L_VIEW_SEARCH_TOPRATED}</a></li>
+				<!-- IF U_G_SEARCH_CONTESTS -->
+				<li><a href="{U_G_SEARCH_CONTESTS}">{L_VIEW_SEARCH_CONTESTS}</a></li>
+				<!-- ENDIF -->
+			</ul>
+		</li>
+		<li><a href="" class="kill-click">{L_SEARCH}</a>
+			<ul>
+				<li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><span class="icon-forum-search"></span>{L_FORUM_SEARCH}</a></li>
+				<li><a href="{U_G_SEARCH}"><span class="icon-gallery-search"></span>{L_GALLERY_SEARCH}</a></li>
+			</ul>
+		</li>
+		<li><a href="" class="kill-click">{L_ABOUT}</a>
+			<ul>
+				<li><a href="{U_ABOUT}"><span class="icon-about"></span>{L_ABOUT_US}</a></li>
+				<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><span class="icon-faq"></span>{L_FAQ}</a></li>
+				<li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><span class="icon-members"></span>{L_MEMBERLIST}</a></li>
+				<!-- IF U_STAFF -->
+				<li><a href="{U_STAFF}" title="{L_THE_STAFF_EXPLAIN}"><span class="icon-staff"></span>{L_THE_STAFF}</a></li>
+				<!-- ENDIF -->
+				<li><a href="mailto:support@ar15fans.com" title="{L_CONTACT_US_EXPLAIN}"><span class="icon-contact"></span>{L_CONTACT_US}</a></li>
+			</ul>
+		</li>
+		
+		<!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
+		<li class="user-menu"><a href="" class="kill-click">{L_USER_MENU}</a>
+			<ul>
+				<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><span class="icon-ucp"></span>{L_PROFILE}</a></li>
+				<!-- IF S_DISPLAY_PM -->
+					<li><a href="{U_PRIVATEMSGS}"><span class="icon-pm"></span>{PRIVATE_MESSAGE_INFO}</a></li>
+				<!-- ENDIF -->
+				<!-- IF U_YOUR_PROFILE -->
+					<li><a href="{U_YOUR_PROFILE}" title="{L_YOUR_PROFILE_EXPLAIN}"><span class="icon-profile"></span>{L_YOUR_PROFILE}</a></li>
+				<!-- ENDIF -->
+				<!-- IF S_DISPLAY_SEARCH and (U_SELF_TOPICS or U_SEARCH_SELF) -->
+					<li><a href="{U_SELF_TOPICS}"><span class="icon-topics"></span>{L_SEARCH_SELF_TOPICS}</a></li>
+					<li><a href="{U_SEARCH_SELF}"><span class="icon-posts"></span>{L_SEARCH_SELF}</a></li>
+				<!-- ENDIF -->
 				
-				<!-- BEGINELSE -->
-					<li><a href="{U_INDEX}">{L_NO_FORUMS}</a></li>
-				<!-- END nav_forumrow -->
-				</ul>
-			</li>
-			<li><a href="" class="kill-click">{L_ACTIVITY}</a>
-				<ul>
-					<!-- IF S_DISPLAY_SEARCH -->
-					<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
-					<!-- IF S_USER_LOGGED_IN -->
-					<li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li>
-					<li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a>
-					<!-- ENDIF -->
-					<li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
-					<!-- ENDIF -->
-				</ul>
-			</li>
-			<li><a href="" class="kill-click">{L_GALLERY}</a>
-				<ul>
-					<li><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}"><span class="icon-gallery"></span>{L_PHOTO_GALLERY}</a></li>
-					<li><a href="{U_USERS_PERSONAL_GALLERIES}"><span class="icon-gallery-user-albums"></span>{L_VIEW_USER_ALBUMS}</a></li>
-					<li><a href="{U_G_SEARCH_RECENT}">{L_VIEW_SEARCH_RECENT}</a></li>
-					<li><a href="{U_G_SEARCH_RANDOM}">{L_VIEW_SEARCH_RANDOM}</a></li>
-					<li><a href="{U_G_SEARCH_COMMENTED}">{L_VIEW_SEARCH_COMMENTED}</a></li>
-					<li><a href="{U_G_SEARCH_TOPRATED}">{L_VIEW_SEARCH_TOPRATED}</a></li>
-					<!-- IF U_G_SEARCH_CONTESTS -->
-                    <li><a href="{U_G_SEARCH_CONTESTS}">{L_VIEW_SEARCH_CONTESTS}</a></li>
-                    <!-- ENDIF -->
-				</ul>
-			</li>
-			<li><a href="" class="kill-click">{L_SEARCH}</a>
-				<ul>
-                    <li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><span class="icon-forum-search"></span>{L_FORUM_SEARCH}</a></li>
-					<li><a href="{U_G_SEARCH}"><span class="icon-gallery-search"></span>{L_GALLERY_SEARCH}</a></li>
-				</ul>
-			</li>
-            <li><a href="" class="kill-click">{L_ABOUT}</a>
-            	<ul>
-            		<li><a href="{U_ABOUT}"><span class="icon-about"></span>{L_ABOUT_US}</a></li>
-					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><span class="icon-faq"></span>{L_FAQ}</a></li>
-                    <li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><span class="icon-members"></span>{L_MEMBERLIST}</a></li>
-                    <!-- IF U_STAFF -->
-                    <li><a href="{U_STAFF}" title="{L_THE_STAFF_EXPLAIN}"><span class="icon-staff"></span>{L_THE_STAFF}</a></li>
-                    <!-- ENDIF -->
-                    <li><a href="mailto:support@ar15fans.com" title="{L_CONTACT_US_EXPLAIN}"><span class="icon-contact"></span>{L_CONTACT_US}</a></li>
-                </ul>
-            </li>
-            
-            <!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
-			<li class="user-menu"><a href="" class="kill-click">{L_USER_MENU}</a>
-				<ul>
-					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><span class="icon-ucp"></span>{L_PROFILE}</a></li>
-					<!-- IF S_DISPLAY_PM -->
-						<li><a href="{U_PRIVATEMSGS}"><span class="icon-pm"></span>{PRIVATE_MESSAGE_INFO}</a></li>
-					<!-- ENDIF -->
-					<!-- IF U_YOUR_PROFILE -->
-						<li><a href="{U_YOUR_PROFILE}" title="{L_YOUR_PROFILE_EXPLAIN}"><span class="icon-profile"></span>{L_YOUR_PROFILE}</a></li>
-					<!-- ENDIF -->
-					<!-- IF S_DISPLAY_SEARCH and (U_SELF_TOPICS or U_SEARCH_SELF) -->
-						<li><a href="{U_SELF_TOPICS}"><span class="icon-topics"></span>{L_SEARCH_SELF_TOPICS}</a></li>
-						<li><a href="{U_SEARCH_SELF}"><span class="icon-posts"></span>{L_SEARCH_SELF}</a></li>
-					<!-- ENDIF -->
-					
-					<!-- IF U_YOUR_PERSONAL_GALLERY or U_G_MANAGE_PHOTOS -->
-					<li><a href="" class="kill-click" style="cursor:alias;"><span class="icon-gallery-personal"></span>{L_YOUR_GALLERY}</a>
-						<ul>
-							<!-- IF U_YOUR_PERSONAL_GALLERY -->
-								<li><a href="{U_YOUR_PERSONAL_GALLERY}"><span class="icon-gallery-albums"></span>{L_YOUR_ALBUMS}</a></li>
-							<!-- ENDIF -->
-							<li><a href="{U_G_SEARCH_SELF}"><span class="icon-gallery-photos"></span>{L_YOUR_PHOTOS}</a></li>
-							<!-- IF U_G_MANAGE_PHOTOS -->
-								<li><a href="{U_G_MANAGE_PHOTOS}"><span class="icon-gallery-manage"></span>{L_MANAGE_PHOTOS}</a></li>
-							<!-- ENDIF -->
-						</ul>
-					</li>
-					<!-- ENDIF -->
-					
-					<!-- IF U_RESTORE_PERMISSIONS -->
-					<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
-					<!-- ENDIF -->
-					
-					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l"><span class="icon-logout"></span>{L_LOGIN_LOGOUT}</a></li>
-				</ul>
-			</li>
-			
-			<!-- ELSE -->
-			
-			<!-- IF not S_IS_BOT -->
-			<li class="user-menu"><a href="" class="kill-click">{L_USER_MENU}</a>
-				<ul>
-					<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l"><!-- IF S_USER_LOGGED_IN --><span class="icon-logout"></span><!-- ELSE --><span class="icon-login"></span><!-- ENDIF -->{L_LOGIN_LOGOUT}</a></li>
-				</ul>
-			</li>
-			<!-- ENDIF -->
-			
-			<!-- IF S_REGISTER_ENABLED and not S_IS_BOT and not (S_SHOW_COPPA or S_REGISTRATION) -->
-			<li><a href="{U_REGISTER}">{L_REGISTER}</a></li>
-			<!-- ENDIF -->
-			
-			<!-- ENDIF -->
-			
-        </ul><!-- /nav -->
-	</div><!-- /nav-wrap -->
-</div><!-- /floatmenu_expanse -->
+				<!-- IF U_YOUR_PERSONAL_GALLERY or U_G_MANAGE_PHOTOS -->
+				<li><a href="" class="kill-click" style="cursor:alias;"><span class="icon-gallery-personal"></span>{L_YOUR_GALLERY}</a>
+					<ul>
+						<!-- IF U_YOUR_PERSONAL_GALLERY -->
+							<li><a href="{U_YOUR_PERSONAL_GALLERY}"><span class="icon-gallery-albums"></span>{L_YOUR_ALBUMS}</a></li>
+						<!-- ENDIF -->
+						<li><a href="{U_G_SEARCH_SELF}"><span class="icon-gallery-photos"></span>{L_YOUR_PHOTOS}</a></li>
+						<!-- IF U_G_MANAGE_PHOTOS -->
+							<li><a href="{U_G_MANAGE_PHOTOS}"><span class="icon-gallery-manage"></span>{L_MANAGE_PHOTOS}</a></li>
+						<!-- ENDIF -->
+					</ul>
+				</li>
+				<!-- ENDIF -->
+				
+				<!-- IF U_RESTORE_PERMISSIONS -->
+				<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
+				<!-- ENDIF -->
+				
+				<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l"><span class="icon-logout"></span>{L_LOGIN_LOGOUT}</a></li>
+			</ul>
+		</li>
+		
+		<!-- ELSE -->
+		
+		<!-- IF not S_IS_BOT -->
+		<li class="user-menu"><a href="" class="kill-click">{L_USER_MENU}</a>
+			<ul>
+				<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l"><!-- IF S_USER_LOGGED_IN --><span class="icon-logout"></span><!-- ELSE --><span class="icon-login"></span><!-- ENDIF -->{L_LOGIN_LOGOUT}</a></li>
+			</ul>
+		</li>
+		<!-- ENDIF -->
+		
+		<!-- IF S_REGISTER_ENABLED and not S_IS_BOT and not (S_SHOW_COPPA or S_REGISTRATION) -->
+		<li><a href="{U_REGISTER}">{L_REGISTER}</a></li>
+		<!-- ENDIF -->
+		
+		<!-- ENDIF -->
+		
+	</ul><!-- /nav -->
+</div><!-- /nav-wrap -->

@@ -183,8 +183,13 @@ a#logo:hover {
 .headerbar {
 	background: #ebebeb none repeat-x 0 0;
 	color: #FFFFFF;
-	margin-bottom: 4px;
+	margin-bottom: -6px;
 	padding: 0 5px;
+}
+
+.breadcrumb {
+	margin: 4px 0 0;
+	padding: 4px 4px;
 }
 
 .navbar {
@@ -312,6 +317,10 @@ ul.linklist li.rightside, p.rightside {
 	margin-right: 0;
 	margin-left: 5px;
 	text-align: right;
+}
+
+ul.breadcrumblinks {
+	font-weight: bold;
 }
 
 ul.navlinks {

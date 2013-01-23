@@ -2,9 +2,6 @@
 * CSS3 animated dropdown menu
 * Stolen from: http://www.red-team-design.com/css3-animated-dropdown-menu
 */
-#nav-expanse {
-	height: 40px;
-}
 #nav,
 #nav ul {
 	margin: 0;
@@ -13,9 +10,9 @@
 }
 
 #nav {
-	position: fixed;
 	width: 100%;
-	border: 1px solid #222;
+	border-top: 1px solid #222;
+	border-bottom: 1px solid #999;
 	z-index: 999;
 	background-color: #111;
 	background-image: -moz-linear-gradient(#444, #111); 

@@ -101,24 +101,23 @@
 </head>
 
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
-<!-- INCLUDE nav.html -->
+
+<a id="top" name="top" accesskey="t"></a>
+
+<div id="page-header">
+	<div class="headerbar">
+		<a href="{U_INDEX}"><img src="{T_THEME_PATH}/images/ar15fans_logo.png" alt="Home" /></a>
+	</div>
+	<!-- INCLUDE nav.html -->
+</div>
 
 <div id="wrap">
-	<a id="top" name="top" accesskey="t"></a>
-	<div id="page-header">
-		<div class="headerbar">
-		<!-- Logo? -->
-		</div>
-
-		<div class="navbar">
-			<ul class="linklist navlinks">
-				<li class="icon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> <strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></li>
-				<li class="rightside"><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" title="{L_CHANGE_FONT_SIZE}">{L_FONT_SIZE}</a></li>
-			</ul>
-		</div>
-
+	<div class="breadcrumb">
+		<ul class="linklist breadcrumblinks">
+			<li class="icon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a> <!-- BEGIN navlinks --> <strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></li>
+			<li class="rightside"><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" title="{L_CHANGE_FONT_SIZE}">{L_FONT_SIZE}</a></li>
+		</ul>
 	</div>
-
 	<a name="start_here"></a>
 	<div id="page-body">
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->

@@ -48,9 +48,19 @@ hr.dashed {
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
 .headerbar {
-	background-color: #cccccc;
-	background-image: url("{T_THEME_PATH}/images/bg_header.gif");
-	color: #FFFFFF;
+	background: #cccccc;
+	background: -moz-linear-gradient(top, #000 0%, #717171 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000), color-stop(100%,#717171));
+	background: -webkit-linear-gradient(top, #000 0%, #717171 100%);
+	background: -o-linear-gradient(top, #000 0%, #717171 100%);
+	background: -ms-linear-gradient(top, #000 0%, #717171 100%);
+	background: linear-gradient(to bottom, #000 0%, #717171 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#717171',GradientType=0 );
+	color: #ffffff;
+}
+
+.breadcrumb {
+	
 }
 
 .navbar {
@@ -122,6 +132,14 @@ span.corners-bottom span {
 
 /* Horizontal lists
 ----------------------------------------*/
+ul.breadcrumblinks {
+	color: #333;
+}
+
+ul.breadcrumblinks a {
+	color: #333;
+}
+
 ul.navlinks {
 	color: #ffffff;
 }
