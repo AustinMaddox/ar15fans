@@ -114,4 +114,8 @@ $lang = array_merge($lang, array(
 
 ));
 
+$lang = array_merge($lang, array(
+	'SHARE_TOPIC'			=> 'Share Topic',
+));
+
 ?>

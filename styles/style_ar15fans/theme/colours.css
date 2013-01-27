@@ -5,11 +5,11 @@ Colours and backgrounds for common.css
 
 html, body {
 	color: #333333;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 }
 
 h1 {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 h2 {
@@ -17,24 +17,24 @@ h2 {
 }
 
 h3 {
-	border-bottom-color: #CCCCCC;
+	border-bottom-color: #cccccc;
 	color: #333366;
 }
 
 hr {
-	border-color: #FFFFFF;
-	border-top-color: #CCCCCC;
+	border-color: #ffffff;
+	border-top-color: #cccccc;
 }
 
 hr.dashed {
-	border-top-color: #CCCCCC;
+	border-top-color: #cccccc;
 }
 
 /* Search box
 --------------------------------------------- */
 
 #search-box {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 #search-box #keywords {
@@ -48,14 +48,14 @@ hr.dashed {
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
 .headerbar {
-	background: #cccccc;
-	background: -moz-linear-gradient(top, #000 0%, #717171 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000), color-stop(100%,#717171));
-	background: -webkit-linear-gradient(top, #000 0%, #717171 100%);
-	background: -o-linear-gradient(top, #000 0%, #717171 100%);
-	background: -ms-linear-gradient(top, #000 0%, #717171 100%);
-	background: linear-gradient(to bottom, #000 0%, #717171 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#717171',GradientType=0 );
+	background-color: #000000;
+	background-image: -moz-linear-gradient(top, #000000 0%, #717171 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(100%,#717171));
+	background-image: -webkit-linear-gradient(top, #000000 0%, #717171 100%);
+	background-image: -o-linear-gradient(top, #000000 0%, #717171 100%);
+	background-image: -ms-linear-gradient(top, #000000 0%, #717171 100%);
+	background-image: linear-gradient(to bottom, #000000 0%, #717171 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#717171', GradientType=0);
 	color: #ffffff;
 }
 
@@ -71,6 +71,7 @@ hr.dashed {
 	background-image: -o-linear-gradient(#04acec, #0186ba);
 	background-image: -ms-linear-gradient(#04acec, #0186ba);
 	background-image: linear-gradient(#04acec, #0186ba);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#04acec', endColorstr='#0186ba', GradientType=0);
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -92,7 +93,14 @@ hr.dashed {
 }
 
 .post {
-	background: linear-gradient(#CCCCCC 0%, #FFFFFF 20%, #FFFFFF 90%, #CCCCCC 100%) repeat scroll 0 0 transparent;
+	background-color: #cccccc;
+	background-image: -moz-linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%); 
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ffffff));	
+	background-image: -webkit-linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%);	
+	background-image: -o-linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%);
+	background-image: -ms-linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%);
+	background-image: linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#ffffff', GradientType=0);
 }
 .post:target .content {
 	color: #000000;
@@ -152,7 +160,7 @@ ul.navlinks a {
 /* Table styles
 ----------------------------------------*/
 table.table1 thead th {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 table.table1 tbody tr {
@@ -174,7 +182,7 @@ table.table1 tbody td {
 table.table1 tbody th {
 	border-bottom-color: #000000;
 	color: #333333;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 }
 
 table.info tbody th {
@@ -199,7 +207,7 @@ dl.details dd {
 ---------------------------------------- */
 
 .pagination span strong {
-	color: #FFFFFF;
+	color: #ffffff;
 	background-color: #4692BF;
 	border-color: #4692BF;
 }
@@ -228,7 +236,7 @@ dl.details dd {
 }
 
 .row .pagination span a, li.pagination span a {
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 }
 
 .row .pagination span a:hover, li.pagination span a:hover {
@@ -280,11 +288,11 @@ a:active	{ color: #0000ff; }
 
 /* Links on gradient backgrounds */
 #search-box a:link, .navbg a:link, .forumbg .header a:link, .forabg .header a:link, th a:link {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 #search-box a:visited, .navbg a:visited, .forumbg .header a:visited, .forabg .header a:visited, th a:visited {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 #search-box a:hover, .navbg a:hover, .forumbg .header a:hover, .forabg .header a:hover, th a:hover {
@@ -412,7 +420,7 @@ ul.topiclist li {
 }
 
 ul.topiclist dd {
-	border-left-color: #FFFFFF;
+	border-left-color: #ffffff;
 }
 
 .rtl ul.topiclist dd {
@@ -429,7 +437,7 @@ ul.topiclist li.row dt a.subforum.unread {
 }
 
 li.row {
-	border-top-color: #FFFFFF;
+	border-top-color: #ffffff;
 	border-bottom-color: #333333;
 }
 
@@ -442,16 +450,16 @@ li.row:hover {
 }
 
 li.row:hover dd {
-	border-left-color: #CCCCCC;
+	border-left-color: #cccccc;
 }
 
 .rtl li.row:hover dd {
-	border-right-color: #CCCCCC;
+	border-right-color: #cccccc;
 	border-left-color: transparent;
 }
 
 li.header dt, li.header dd {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 /* Forum list column styles */
@@ -473,7 +481,7 @@ ul.topiclist dd.searchextra {
 
 .content h2, .panel h2 {
 	color: #115098;
-	border-bottom-color:  #CCCCCC;
+	border-bottom-color:  #cccccc;
 }
 
 dl.faq dt {
@@ -487,12 +495,12 @@ dl.faq dt {
 
 /* Post signature */
 .signature {
-	border-top-color: #CCCCCC;
+	border-top-color: #cccccc;
 }
 
 /* Post noticies */
 .notice {
-	border-top-color:  #CCCCCC;
+	border-top-color:  #cccccc;
 }
 
 /* BB Code styles
@@ -520,19 +528,19 @@ blockquote blockquote blockquote {
 
 /* Code block */
 dl.codebox {
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	border-color: #C9D2D8;
 }
 
 dl.codebox dt {
-	border-bottom-color:  #CCCCCC;
+	border-bottom-color:  #cccccc;
 }
 
 dl.codebox code {
 	color: #2E8B57;
 }
 
-.syntaxbg		{ color: #FFFFFF; }
+.syntaxbg		{ color: #ffffff; }
 .syntaxcomment	{ color: #FF8000; }
 .syntaxdefault	{ color: #0000BB; }
 .syntaxhtml		{ color: #000000; }
@@ -542,7 +550,7 @@ dl.codebox code {
 /* Attachments
 ----------------------------------------*/
 .attachbox {
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	border-color:  #C9D2D8;
 }
 
@@ -574,7 +582,7 @@ dl.file dd {
 
 dl.thumbnail img {
 	border-color: #666666;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 }
 
 dl.thumbnail dd {
@@ -602,7 +610,7 @@ fieldset.polls dl.voted {
 }
 
 fieldset.polls dd div {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 .rtl .pollbar1, .rtl .pollbar2, .rtl .pollbar3, .rtl .pollbar4, .rtl .pollbar5 {
@@ -663,11 +671,11 @@ fieldset.polls dd div {
 ----------------------------------------*/
 .postprofile {
 	color: #666666;
-	border-left-color: #FFFFFF;
+	border-left-color: #ffffff;
 }
 
 .rtl .postprofile {
-	border-right-color: #FFFFFF;
+	border-right-color: #ffffff;
 	border-left-color: transparent;
 }
 
@@ -701,15 +709,15 @@ Colours and backgrounds for buttons.css
 .newpm-icon span 	{ background-image: url("{IMG_BUTTON_PM_NEW_SRC}") ;}
 .forwardpm-icon span	{ background-image: url("{IMG_BUTTON_PM_FORWARD_SRC}") ;}
 
-a.print {
+.print {
 	background-image: url("{T_THEME_PATH}/images/icon_print.png");
 }
 
-a.sendemail {
+.sendemail {
 	background-image: url("{T_THEME_PATH}/images/icon_sendemail.gif");
 }
 
-a.fontsize {
+.fontsize {
 	background-image: url("{T_THEME_PATH}/images/icon_fontsize.gif");
 }
 
@@ -796,7 +804,7 @@ ul.cplist {
 
 #cp-main .pm-message {
 	border-color: #DBDEE2;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 }
 
 /* CP tabbed menu
@@ -882,7 +890,7 @@ ul.cplist {
 }
 
 #cp-main .pm {
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 }
 
 #cp-main span.corners-top, #cp-menu span.corners-top {
@@ -958,7 +966,7 @@ dl.mini dt {
 
 /* Avatar gallery */
 #gallery label {
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	border-color: #CCC;
 }
 
@@ -1017,7 +1025,7 @@ fieldset.quick-login input.inputbox {
 /* Input field styles
 ---------------------------------------- */
 .inputbox {
-	background-color: #FFFFFF; 
+	background-color: #ffffff; 
 	border-color: #B4BAC0;
 	color: #333333;
 }
