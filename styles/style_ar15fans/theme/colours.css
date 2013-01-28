@@ -14,6 +14,7 @@ h1 {
 
 h2 {
 	color: #28313F;
+	text-shadow: 1px 1px 0 #ddd, 2px 2px 0 #bbb;
 }
 
 h3 {
@@ -93,14 +94,14 @@ hr.dashed {
 }
 
 .post {
-	background-color: #cccccc;
-	background-image: -moz-linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%); 
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#ffffff));	
-	background-image: -webkit-linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%);	
-	background-image: -o-linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%);
-	background-image: -ms-linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%);
-	background-image: linear-gradient(#cccccc 0%, #ffffff 20%, #ffffff 90%, #cccccc 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#ffffff', GradientType=0);
+	background-color: #CCCCCC;
+	background-image: -moz-linear-gradient(#BBBBBB 0%, #EEEEEE 12%, #CCCCCC 90%, #BBBBBB 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#CCCCCC), to(#eeeeee));
+	background-image: -webkit-linear-gradient(#BBBBBB 0%, #EEEEEE 12%, #CCCCCC 90%, #BBBBBB 100%);
+	background-image: -o-linear-gradient(#BBBBBB 0%, #EEEEEE 12%, #CCCCCC 90%, #BBBBBB 100%);
+	background-image: -ms-linear-gradient(#BBBBBB 0%, #EEEEEE 12%, #CCCCCC 90%, #BBBBBB 100%);
+	background-image: linear-gradient(#BBBBBB 0%, #EEEEEE 12%, #CCCCCC 90%, #BBBBBB 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#EEEEEE', GradientType=0);
 }
 .post:target .content {
 	color: #000000;
@@ -358,7 +359,7 @@ a.topictitle:active {
 
 /* Profile links */
 .postprofile a:link, .postprofile a:visited, .postprofile dt.author a {
-	color: #105289;
+	color: #000066;
 }
 
 .postprofile a:hover, .postprofile dt.author a:hover {
@@ -366,12 +367,12 @@ a.topictitle:active {
 }
 
 .postprofile a:active {
-	color: #105289;
+	color: #000066;
 }
 
 /* Profile searchresults */	
 .search .postprofile a {
-	color: #105289;
+	color: #000066;
 }
 
 .search .postprofile a:hover {

@@ -213,7 +213,7 @@ ul.topiclist dd.searchextra {
 
 /* Container for post/reply buttons and pagination */
 .topic-actions {
-	margin-bottom: 3px;
+	margin: 2px 0;
 	font-size: 1.1em;
 	height: 28px;
 	min-height: 28px;
