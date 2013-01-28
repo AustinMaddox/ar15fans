@@ -2,6 +2,9 @@
 * CSS3 animated dropdown menu
 * Stolen from: http://www.red-team-design.com/css3-animated-dropdown-menu
 */
+#nav-wrap {
+	height: 37px;
+}
 #nav,
 #nav ul {
 	margin: 0;
