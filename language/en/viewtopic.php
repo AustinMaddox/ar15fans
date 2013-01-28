@@ -55,13 +55,13 @@ $lang = array_merge($lang, array(
 
 	'EDITED_TIMES_TOTAL'	=> 'Last edited by %1$s on %2$s, edited %3$d times in total.',
 	'EDITED_TIME_TOTAL'		=> 'Last edited by %1$s on %2$s, edited %3$d time in total.',
-	'EMAIL_TOPIC'			=> 'E-mail friend',
+	'EMAIL_TOPIC'			=> 'Tell-A-Friend via Email',
 	'ERROR_NO_ATTACHMENT'	=> 'The selected attachment does not exist anymore.',
 
 	'FILE_NOT_FOUND_404'	=> 'The file <strong>%s</strong> does not exist.',
 	'FORK_TOPIC'			=> 'Copy topic',
 	'FULL_EDITOR'			=> 'Full Editor',
-	
+
 	'LINKAGE_FORBIDDEN'		=> 'You are not authorised to view, download or link from/to this site.',
 	'LOGIN_NOTIFY_TOPIC'	=> 'You have been notified about this topic, please login to view it.',
 	'LOGIN_VIEWTOPIC'		=> 'The board requires you to be registered and logged in to view this topic.',
@@ -85,7 +85,7 @@ $lang = array_merge($lang, array(
 	'POLL_ENDED_AT'			=> 'Poll ended at %s',
 	'POLL_RUN_TILL'			=> 'Poll runs till %s',
 	'POLL_VOTED_OPTION'		=> 'You voted for this option',
-	'PRINT_TOPIC'			=> 'Print view',
+	'PRINT_TOPIC'			=> 'Printer-friendly version',
 
 	'QUICK_MOD'				=> 'Quick-mod tools',
 	'QUICKREPLY'			=> 'Quick Reply',
