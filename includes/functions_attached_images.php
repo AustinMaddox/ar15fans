@@ -26,7 +26,7 @@ function attached_images($type, $forum_ids, $max_num_results, $orientation, $num
 	$max_num_results = (!empty($max_num_results)) ? $max_num_results : 1;
 	$order = ($type == 'recent') ? 'filetime DESC, post_msg_id ASC' : 'RAND()';
 	$max_width_img = (!empty($max_width_img)) ? $max_width_img : 200;
-	$max_width_avatar = (!empty($max_width_avatar)) ? $max_width_avatar : 50;
+	$max_width_avatar = (!empty($max_width_avatar)) ? $max_width_avatar : $config['avatar_max_dimensions'];
 	$num_results = 0;
 
 	// Don't display attachments if the forum and attachment are not authorized
@@ -61,13 +61,13 @@ function attached_images($type, $forum_ids, $max_num_results, $orientation, $num
 								AND t.topic_approved = 1
 							GROUP BY post_msg_id
 							ORDER BY ' . $order;
-		
+
 		$result = $db->sql_query_limit($sql, $max_num_results, 0, 60);
-		
+
 		while ($row = $db->sql_fetchrow($result))
 		{
 			$num_results++;
-			
+
 			// Resize the avatar of the poster
 			$dimensions_avatar = resize_image($row['user_avatar_width'], $row['user_avatar_height'], $max_width_avatar);
 
@@ -82,7 +82,7 @@ function attached_images($type, $forum_ids, $max_num_results, $orientation, $num
 			$attach_comment = $row['attach_comment'];
 			$attachment_date = $user->format_date($row['filetime'], "|M d 'y|");
 			$attachment_time = $user->format_date($row['filetime'], "g:ia");
-			
+
 			if ($row['thumbnail'] == 1)
 			{
 				$filename = 'thumb_' . $row['physical_filename'];
@@ -97,7 +97,7 @@ function attached_images($type, $forum_ids, $max_num_results, $orientation, $num
 			$poster_name = get_username_string('username', $row['user_id'], $row['username'], $row['user_colour']);
 			$poster_name_full = get_username_string('full', $row['user_id'], $row['username'], $row['user_colour']);
 			$poster_avatar = get_user_avatar($row['user_avatar'], $row['user_avatar_type'], $dimensions_avatar['width'], $dimensions_avatar['height'], $user->lang['ATTACHED_BY'] . ' ' . $poster_name);
-			
+
 			// Trim the topic titles
 			if ($num_chars != 0 && utf8_strlen($topic_title) > $num_chars)
 			{
@@ -107,7 +107,7 @@ function attached_images($type, $forum_ids, $max_num_results, $orientation, $num
 			// Resize the attachment image
 			$imagesize = @getimagesize($config['upload_path'] . '/' . $filename);
 			$dimensions_img = resize_image($imagesize[0], $imagesize[1], $max_width_img);
-			
+
 			// Assign index specific vars
 			$template->assign_block_vars('attached_images', array(
 				'FORUM_NAME'			=> $forum_name,
@@ -134,7 +134,7 @@ function attached_images($type, $forum_ids, $max_num_results, $orientation, $num
 				'U_VIEW_TOPIC'				=> append_sid("{$phpbb_root_path}viewtopic.$phpEx", 'f=' . $forum_id . '&amp;t=' . $topic_id),
 			));
 		}
-		
+
 		// Assign specific vars
 		$template->assign_vars(array(
 			'NUM_RESULTS'			=> $num_results,
@@ -142,7 +142,7 @@ function attached_images($type, $forum_ids, $max_num_results, $orientation, $num
 			'VERTICAL'				=> ($orientation == 'vertical') ? true : false,
 			'ATTACHED_IMAGE_TITLE'	=> sprintf($user->lang['ATTACHED_IMAGE_TITLE'], $type),
 		));
-		
+
 		$db->sql_freeresult($result);
 	}
 }

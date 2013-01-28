@@ -1671,6 +1671,9 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 				$forum_data[$forum_id]['last_poster_name'] = '';
 				$forum_data[$forum_id]['last_poster_colour'] = '';
 			}
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+			$forum_data[$forum_id]['last_poster_avatar'] = '';
+// ENDED - Avatar of Poster on Index and Viewforum mod
 			$db->sql_freeresult($result);
 
 			if (!sizeof($forum_ids))
@@ -1770,6 +1773,9 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 					FROM ' . POSTS_TABLE . ' p, ' . USERS_TABLE . ' u
 					WHERE ' . $db->sql_in_set('p.post_id', $post_ids) . '
 						AND p.poster_id = u.user_id';
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+				$sql = str_replace('SELECT ', 'SELECT u.user_avatar, u.user_avatar_type, u.user_avatar_width, u.user_avatar_height, ', $sql);
+// ENDED - Avatar of Poster on Index and Viewforum mod
 				$result = $db->sql_query($sql);
 
 				while ($row = $db->sql_fetchrow($result))
@@ -1789,6 +1795,14 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 							$forum_data[$forum_id]['last_poster_id'] = $post_info[$data['last_post_id']]['poster_id'];
 							$forum_data[$forum_id]['last_poster_name'] = ($post_info[$data['last_post_id']]['poster_id'] != ANONYMOUS) ? $post_info[$data['last_post_id']]['username'] : $post_info[$data['last_post_id']]['post_username'];
 							$forum_data[$forum_id]['last_poster_colour'] = $post_info[$data['last_post_id']]['user_colour'];
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+							$forum_data[$forum_id]['last_poster_avatar'] = serialize(array(
+								'avatar' => $post_info[$data['last_post_id']]['user_avatar'],
+								'type' => $post_info[$data['last_post_id']]['user_avatar_type'],
+								'width' => $post_info[$data['last_post_id']]['user_avatar_width'],
+								'height' => $post_info[$data['last_post_id']]['user_avatar_height'],
+							));
+// ENDED - Avatar of Poster on Index and Viewforum mod
 						}
 						else
 						{
@@ -1799,6 +1813,9 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 							$forum_data[$forum_id]['last_poster_id'] = 0;
 							$forum_data[$forum_id]['last_poster_name'] = '';
 							$forum_data[$forum_id]['last_poster_colour'] = '';
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+							$forum_data[$forum_id]['last_poster_avatar'] = '';
+// ENDED - Avatar of Poster on Index and Viewforum mod
 						}
 					}
 				}
@@ -1807,7 +1824,9 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 
 			// 6: Now do that thing
 			$fieldnames = array('last_post_id', 'last_post_subject', 'last_post_time', 'last_poster_id', 'last_poster_name', 'last_poster_colour');
-
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+			$fieldnames += array('last_poster_avatar');
+// ENDED - Avatar of Poster on Index and Viewforum mod
 			if ($sync_extra)
 			{
 				array_push($fieldnames, 'posts', 'topics', 'topics_real');
@@ -1821,7 +1840,10 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 				{
 					if ($row['forum_' . $fieldname] != $row[$fieldname])
 					{
-						if (preg_match('#(name|colour|subject)$#', $fieldname))
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+// On the next line "|avatar" was added
+// ENDED - Avatar of Poster on Index and Viewforum mod
+						if (preg_match('#(name|colour|subject|avatar)$#', $fieldname))
 						{
 							$sql_ary['forum_' . $fieldname] = (string) $row[$fieldname];
 						}
@@ -1852,6 +1874,9 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 			$sql = 'SELECT t.topic_id, t.forum_id, t.topic_moved_id, t.topic_approved, ' . (($sync_extra) ? 't.topic_attachment, t.topic_reported, ' : '') . 't.topic_poster, t.topic_time, t.topic_replies, t.topic_replies_real, t.topic_first_post_id, t.topic_first_poster_name, t.topic_first_poster_colour, t.topic_last_post_id, t.topic_last_post_subject, t.topic_last_poster_id, t.topic_last_poster_name, t.topic_last_poster_colour, t.topic_last_post_time
 				FROM ' . TOPICS_TABLE . " t
 				$where_sql";
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+			$sql = str_replace('SELECT ', 'SELECT t.topic_first_poster_avatar, t.topic_last_poster_avatar, ', $sql);
+// ENDED - Avatar of Poster on Index and Viewforum mod
 			$result = $db->sql_query($sql);
 
 			while ($row = $db->sql_fetchrow($result))
@@ -1959,6 +1984,9 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 				FROM ' . POSTS_TABLE . ' p, ' . USERS_TABLE . ' u
 				WHERE ' . $db->sql_in_set('p.post_id', $post_ids) . '
 					AND u.user_id = p.poster_id';
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+			$sql = str_replace('SELECT ', 'SELECT u.user_avatar, u.user_avatar_type, u.user_avatar_width, u.user_avatar_height, ', $sql);
+// ENDED - Avatar of Poster on Index and Viewforum mod
 			$result = $db->sql_query($sql);
 
 			$post_ids = array();
@@ -1976,6 +2004,14 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 					$topic_data[$topic_id]['poster'] = $row['poster_id'];
 					$topic_data[$topic_id]['first_poster_name'] = ($row['poster_id'] == ANONYMOUS) ? $row['post_username'] : $row['username'];
 					$topic_data[$topic_id]['first_poster_colour'] = $row['user_colour'];
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+					$topic_data[$topic_id]['first_poster_avatar'] = serialize(array(
+						'avatar' => $row['user_avatar'],
+						'type' => $row['user_avatar_type'],
+						'width' => $row['user_avatar_width'],
+						'height' => $row['user_avatar_height'],
+					));
+// ENDED - Avatar of Poster on Index and Viewforum mod
 				}
 
 				if ($row['post_id'] == $topic_data[$topic_id]['last_post_id'])
@@ -1985,6 +2021,14 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 					$topic_data[$topic_id]['last_post_time'] = $row['post_time'];
 					$topic_data[$topic_id]['last_poster_name'] = ($row['poster_id'] == ANONYMOUS) ? $row['post_username'] : $row['username'];
 					$topic_data[$topic_id]['last_poster_colour'] = $row['user_colour'];
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+					$topic_data[$topic_id]['last_poster_avatar'] = serialize(array(
+						'avatar' => $row['user_avatar'],
+						'type' => $row['user_avatar_type'],
+						'width' => $row['user_avatar_width'],
+						'height' => $row['user_avatar_height'],
+					));
+// ENDED - Avatar of Poster on Index and Viewforum mod
 				}
 			}
 			$db->sql_freeresult($result);
@@ -2036,6 +2080,9 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 						FROM ' . POSTS_TABLE . ' p, ' . USERS_TABLE . ' u
 						WHERE ' . $db->sql_in_set('p.post_id', $post_ids) . '
 							AND u.user_id = p.poster_id';
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+					$sql = str_replace('SELECT ', 'SELECT u.user_avatar, u.user_avatar_type, u.user_avatar_width, u.user_avatar_height, ', $sql);
+// ENDED - Avatar of Poster on Index and Viewforum mod
 					$result = $db->sql_query($sql);
 
 					$post_ids = array();
@@ -2060,6 +2107,14 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 								$sync_shadow_topics[$orig_topic_id]['topic_poster'] = $row['poster_id'];
 								$sync_shadow_topics[$orig_topic_id]['topic_first_poster_name'] = ($row['poster_id'] == ANONYMOUS) ? $row['post_username'] : $row['username'];
 								$sync_shadow_topics[$orig_topic_id]['topic_first_poster_colour'] = $row['user_colour'];
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+								$sync_shadow_topics[$orig_topic_id]['topic_first_poster_avatar'] = serialize(array(
+									'avatar' => $row['user_avatar'],
+									'type' => $row['user_avatar_type'],
+									'width' => $row['user_avatar_width'],
+									'height' => $row['user_avatar_height'],
+								));
+// ENDED - Avatar of Poster on Index and Viewforum mod
 							}
 
 							if ($row['post_id'] == $shadow_topic_data[$topic_id]['topic_last_post_id'])
@@ -2076,6 +2131,14 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 								$sync_shadow_topics[$orig_topic_id]['topic_last_post_time'] = $row['post_time'];
 								$sync_shadow_topics[$orig_topic_id]['topic_last_poster_name'] = ($row['poster_id'] == ANONYMOUS) ? $row['post_username'] : $row['username'];
 								$sync_shadow_topics[$orig_topic_id]['topic_last_poster_colour'] = $row['user_colour'];
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+								$sync_shadow_topics[$orig_topic_id]['topic_last_poster_avatar'] = serialize(array(
+									'avatar' => $row['user_avatar'],
+									'type' => $row['user_avatar_type'],
+									'width' => $row['user_avatar_width'],
+									'height' => $row['user_avatar_height'],
+								));
+// ENDED - Avatar of Poster on Index and Viewforum mod
 							}
 						}
 					}
@@ -2111,7 +2174,9 @@ function sync($mode, $where_type = '', $where_ids = '', $resync_parents = false,
 
 			// These are fields that will be synchronised
 			$fieldnames = array('time', 'replies', 'replies_real', 'poster', 'first_post_id', 'first_poster_name', 'first_poster_colour', 'last_post_id', 'last_post_subject', 'last_post_time', 'last_poster_id', 'last_poster_name', 'last_poster_colour');
-
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+			$fieldnames += array('first_poster_avatar', 'last_poster_avatar');
+// ENDED - Avatar of Poster on Index and Viewforum mod
 			if ($sync_extra)
 			{
 				// This routine assumes that post_reported values are correct

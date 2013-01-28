@@ -470,6 +470,9 @@ class acp_users
 							if ($user_row['user_avatar'] && $user_row['user_avatar_type'] != AVATAR_GALLERY)
 							{
 								avatar_delete('user', $user_row);
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+								user_update_avatar($user_row['user_id'], '', 0, 0, 0);
+// ENDED - Avatar of Poster on Index and Viewforum mod
 							}
 
 							add_log('admin', 'LOG_USER_DEL_AVATAR', $user_row['username']);

@@ -411,6 +411,42 @@ function change_poster(&$post_info, $userdata)
 	// Resync topic/forum if needed
 	if ($post_info['topic_last_post_id'] == $post_id || $post_info['forum_last_post_id'] == $post_id || $post_info['topic_first_post_id'] == $post_id)
 	{
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+		$avatar_info = '';
+		if ( !empty($userdata['user_avatar']) )
+		{
+			$avatar_info = serialize(array(
+					'avatar' => $userdata['user_avatar'],
+					'type' => (int) $userdata['user_avatar_type'],
+					'width' => (int) $userdata['user_avatar_width'],
+					'height' => (int) $userdata['user_avatar_height'],
+			));
+		}
+
+		if ( $post_info['topic_last_post_id'] == $post_id )
+		{
+			$sql = 'UPDATE ' . TOPICS_TABLE . '
+				SET topic_last_poster_avatar = \'' . $db->sql_escape($avatar_info) . '\'
+				WHERE topic_last_poster_id = ' . (int) $post_info['user_id'];
+			$db->sql_query($sql);
+		}
+
+		if ( $post_info['forum_last_post_id'] == $post_id )
+		{
+			$sql = 'UPDATE ' . FORUMS_TABLE . '
+				SET forum_last_poster_avatar = \'' . $db->sql_escape($avatar_info) . '\'
+				WHERE forum_last_poster_id = ' . (int) $post_info['user_id'];
+			$db->sql_query($sql);
+		}
+
+		if ( $post_info['topic_first_post_id'] == $post_id )
+		{
+			$sql = 'UPDATE ' . TOPICS_TABLE . '
+				SET topic_first_poster_avatar = \'' . $db->sql_escape($avatar_info) . '\'
+				WHERE topic_poster = ' . (int) $post_info['user_id'];
+			$db->sql_query($sql);
+		}
+// ENDED - Avatar of Poster on Index and Viewforum mod
 		sync('topic', 'topic_id', $post_info['topic_id'], false, false);
 		sync('forum', 'forum_id', $post_info['forum_id'], false, false);
 	}

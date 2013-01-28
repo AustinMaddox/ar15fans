@@ -42,7 +42,7 @@
 				<!-- ELSEIF not forumrow.S_IS_LINK -->
 					<dd class="topics">{forumrow.TOPICS} <dfn>{L_TOPICS}</dfn></dd>
 					<dd class="posts">{forumrow.POSTS} <dfn>{L_POSTS}</dfn></dd>
-					<dd class="lastpost"><span>
+					<dd class="lastpost"><!-- IF forumrow.FORUM_LAST_POSTER_AVATAR --><div style="float: left; padding-top: 0px; margin-left: 5px; margin-right: {forumrow.FORUM_LAST_POSTER_AVATAR_MARGIN}px;">{forumrow.FORUM_LAST_POSTER_AVATAR}</div><!-- ENDIF --><span>
 						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
 						<!-- IF forumrow.LAST_POST_TIME --><dfn>{L_LAST_POST}</dfn><!-- IF forumrow.LAST_POST_LINK --><i>{forumrow.LAST_POST_LINK}</i><br/><!-- ENDIF --> {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
 						<a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a><br />{forumrow.LAST_POST_TIME}<!-- ELSE -->{L_NO_POSTS}<br />&nbsp;<!-- ENDIF --></span>

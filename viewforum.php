@@ -435,6 +435,13 @@ $template->assign_vars(array(
 	'U_MARK_TOPICS'		=> ($user->data['is_registered'] || $config['load_anon_lastread']) ? append_sid("{$phpbb_root_path}viewforum.$phpEx", 'hash=' . generate_link_hash('global') . "&amp;f=$forum_id&amp;mark=topics") : '',
 ));
 
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+if ( $config['avatar_topics_first_poster_show'] || $config['avatar_topics_last_poster_show'] )
+{
+	$template->assign_var('AVATAR_MAX_DIMENSIONS', $config['avatar_max_dimensions']);
+}
+// ENDED - Avatar of Poster on Index and Viewforum mod
+
 // Grab icons
 $icons = $cache->obtain_icons();
 
@@ -831,6 +838,11 @@ if (sizeof($topic_list))
 		);
 
 		$s_type_switch = ($row['topic_type'] == POST_ANNOUNCE || $row['topic_type'] == POST_GLOBAL) ? 1 : 0;
+
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+		user_display_avatar($row, 'topic_first', 'topicrow', $config['avatar_topics_first_poster_show']);
+		user_display_avatar($row, 'topic_last', 'topicrow', $config['avatar_topics_last_poster_show']);
+// ENDED - Avatar of Poster on Index and Viewforum mod
 
 		if ($unread_topic)
 		{

@@ -299,6 +299,9 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 				$forum_rows[$parent_id]['forum_last_poster_id'] = $row['forum_last_poster_id'];
 				$forum_rows[$parent_id]['forum_last_poster_name'] = $row['forum_last_poster_name'];
 				$forum_rows[$parent_id]['forum_last_poster_colour'] = $row['forum_last_poster_colour'];
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+				$forum_rows[$parent_id]['forum_last_poster_avatar'] = $row['forum_last_poster_avatar'];
+// ENDED - Avatar of Poster on Index and Viewforum mod
 				$forum_rows[$parent_id]['forum_id_last_post'] = $forum_id;
 				// www.phpBB-SEO.com SEO TOOLKIT BEGIN -> no dupe
 				if (!empty($phpbb_seo->seo_opt['no_dupe']['on'])) {
@@ -340,6 +343,12 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 	// Grab moderators ... if necessary
 	if ($display_moderators)
 	{
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+		if ( $config['avatar_forums_last_poster_show'] )
+		{
+			$template->assign_var('AVATAR_MAX_DIMENSIONS', $config['avatar_max_dimensions']);
+		}
+// ENDED - Avatar of Poster on Index and Viewforum mod
 		if ($return_moderators)
 		{
 			$forum_ids_moderator[] = $root_data['forum_id'];
@@ -554,6 +563,10 @@ function display_forums($root_data = '', $display_moderators = true, $return_mod
 			// www.phpBB-SEO.com SEO TOOLKIT END -> no dupe
 			'U_LAST_POST'		=> $last_post_url)
 		);
+
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+		user_display_avatar($row, 'forum_last', 'forumrow', $config['avatar_forums_last_poster_show']);
+// ENDED - Avatar of Poster on Index and Viewforum mod
 
 		// Assign subforums loop for style authors
 		foreach ($subforums_list as $subforum)
@@ -1489,5 +1502,34 @@ function get_user_avatar($avatar, $avatar_type, $avatar_width, $avatar_height, $
 	$avatar_img .= $avatar;
 	return '<img src="' . (str_replace(' ', '%20', $avatar_img)) . '" width="' . $avatar_width . '" height="' . $avatar_height . '" alt="' . ((!empty($user->lang[$alt])) ? $user->lang[$alt] : $alt) . '" />';
 }
+
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+function user_display_avatar($row, $prefix = '', $tpl_switch, $display)
+{
+	if ( !$display || empty($row[$prefix . '_poster_avatar']) )
+	{
+		return;
+	}
+
+	global $config, $template;
+
+	$avatar = unserialize($row[$prefix . '_poster_avatar']);
+	if ( $avatar['width'] >= $avatar['height'] )
+	{
+		$avatar_width = ($avatar['width'] > $config['avatar_max_dimensions']) ? $config['avatar_max_dimensions'] : $avatar['width'];
+		$avatar_height = ($avatar_width == $config['avatar_max_dimensions']) ? round($config['avatar_max_dimensions'] / $avatar['width'] * $avatar['height']) : $avatar['height'];
+	}
+	else
+	{
+		$avatar_height = ($avatar['height'] > $config['avatar_max_dimensions']) ? $config['avatar_max_dimensions'] : $avatar['height'];
+		$avatar_width = ($avatar_height == $config['avatar_max_dimensions']) ? round($config['avatar_max_dimensions'] / $avatar['height'] * $avatar['width']) : $avatar['width'];
+	}
+
+	$template->alter_block_array($tpl_switch, array(
+		strtoupper($prefix) . '_POSTER_AVATAR' => get_user_avatar($avatar['avatar'], $avatar['type'], $avatar_width, $avatar_height),
+		strtoupper($prefix) . '_POSTER_AVATAR_MARGIN' => ($avatar_width == $config['avatar_max_dimensions']) ? 5 : ($config['avatar_max_dimensions'] - $avatar_width + 5),
+	), true, 'change');
+}
+// ENDED - Avatar of Poster on Index and Viewforum mod
 
 ?>

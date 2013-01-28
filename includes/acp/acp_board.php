@@ -129,6 +129,10 @@ class acp_board
 				);
 			break;
 
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+			$this->apiv_config($display_vars);
+// ENDED - Avatar of Poster on Index and Viewforum mod
+
 			case 'message':
 				$display_vars = array(
 					'title'	=> 'ACP_MESSAGE_SETTINGS',
@@ -782,7 +786,7 @@ class acp_board
 		{
 			$act_ary['ACC_USER'] = USER_ACTIVATION_SELF;
 			$act_ary['ACC_ADMIN'] = USER_ACTIVATION_ADMIN;
-		}		
+		}
 		$act_options = '';
 
 		foreach ($act_ary as $key => $value)
@@ -999,6 +1003,34 @@ class acp_board
 		// Empty sql cache for forums table because options changed
 		$cache->destroy('sql', FORUMS_TABLE);
 	}
+
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+	function apiv_config(&$display_vars)
+	{
+		global $user;
+
+		for ( $legend = 1; isset($display_vars['vars']['legend' . $legend]); $legend++ )
+		{
+			$legend;
+		}
+
+		$options = array(
+			'legend' . $legend => 'APIV',
+			'avatar_max_dimensions' => array('lang' => 'APIV_MAX_DIMENSIONS', 'validate' => 'int', 'type' => 'text:7:15', 'explain' => true, 'append' => ' ' . $user->lang['PIXEL']),
+			'avatar_forums_last_poster_show' => array('lang' => 'APIV_FORUMS_LAST_POSTER_SHOW', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => false),
+			'avatar_topics_first_poster_show' => array('lang' => 'APIV_TOPICS_FIRST_POSTER_SHOW', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => false),
+			'avatar_topics_last_poster_show' => array('lang' => 'APIV_TOPICS_LAST_POSTER_SHOW', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => false),
+
+			'legend' . ($legend + 1) => 'ACP_SUBMIT_CHANGES',
+		);
+
+		foreach ( $options as $key => $val )
+		{
+			$display_vars['vars'][$key] = $val;
+		}
+		unset($key);
+	}
+// ENDED - Avatar of Poster on Index and Viewforum mod
 
 }
 

@@ -149,6 +149,39 @@ function user_update_name($old_name, $new_name)
 	$cache->destroy('sql', MODERATOR_CACHE_TABLE);
 }
 
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+function user_update_avatar($user_id, $new_avatar, $new_avatar_type, $new_avatar_width, $new_avatar_height)
+{
+	global $db;
+
+	$avatar_info = '';
+	if ( !empty($new_avatar) )
+	{
+		$avatar_info = serialize(array(
+			'avatar' => $new_avatar,
+			'type' => (int) $new_avatar_type,
+			'width' => (int) $new_avatar_width,
+			'height' => (int) $new_avatar_height,
+		));
+	}
+
+	$sql = 'UPDATE ' . FORUMS_TABLE . '
+		SET forum_last_poster_avatar = \'' . $db->sql_escape($avatar_info) . '\'
+		WHERE forum_last_poster_id = ' . (int) $user_id;
+	$db->sql_query($sql);
+
+	$sql = 'UPDATE ' . TOPICS_TABLE . '
+		SET topic_first_poster_avatar = \'' . $db->sql_escape($avatar_info) . '\'
+		WHERE topic_poster = ' . (int) $user_id;
+	$db->sql_query($sql);
+
+	$sql = 'UPDATE ' . TOPICS_TABLE . '
+		SET topic_last_poster_avatar = \'' . $db->sql_escape($avatar_info) . '\'
+		WHERE topic_last_poster_id = ' . (int) $user_id;
+	$db->sql_query($sql);
+}
+// ENDED - Avatar of Poster on Index and Viewforum mod
+
 /**
 * Adds an user
 *
@@ -2416,6 +2449,11 @@ function avatar_process_user(&$error, $custom_userdata = false, $can_upload = nu
 						avatar_delete('user', $userdata);
 					}
 				}
+
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+				$user_id = ($custom_userdata === false) ? $user->data['user_id'] : $custom_userdata['user_id'];
+				user_update_avatar($user_id, $sql_ary['user_avatar'], $sql_ary['user_avatar_type'], $sql_ary['user_avatar_width'], $sql_ary['user_avatar_height']);
+// ENDED - Avatar of Poster on Index and Viewforum mod
 			}
 
 			$sql = 'UPDATE ' . USERS_TABLE . '
