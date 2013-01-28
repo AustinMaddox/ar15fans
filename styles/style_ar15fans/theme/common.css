@@ -72,6 +72,7 @@ p {
 
 img {
 	border-width: 0;
+	max-width: 100%;
 }
 
 hr {
