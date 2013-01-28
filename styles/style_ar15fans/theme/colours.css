@@ -1086,5 +1086,8 @@ input.disabled {
 	background-image: linear-gradient(#ffffff, #ffffa3);
 }
 .stainless {
-	background-image: url("{T_THEME_PATH}/images/bg_stainless.jpg");
+	background: url("{T_THEME_PATH}/images/bg_stainless.jpg") repeat scroll 0 0 #cccccc;
+}
+.grungestripes {
+	background: url("{T_THEME_PATH}/images/bg_grungestripes.png") repeat scroll 0 0 #eeeeee;
 }
