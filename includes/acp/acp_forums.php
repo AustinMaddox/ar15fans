@@ -161,7 +161,9 @@ class acp_forums
 						'forum_password_confirm'=> request_var('forum_password_confirm', '', true),
 						'forum_password_unset'	=> request_var('forum_password_unset', false),
 					);
-
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+					$forum_data += array('forum_last_poster_avatar' => '');
+// ENDED - Avatar of Poster on Index and Viewforum mod
 					// On add, add empty forum_options... else do not consider it (not updating it)
 					if ($action == 'add')
 					{

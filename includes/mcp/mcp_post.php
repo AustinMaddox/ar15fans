@@ -408,6 +408,11 @@ function change_poster(&$post_info, $userdata)
 		WHERE post_id = $post_id";
 	$db->sql_query($sql);
 
+// BEGAN - Avatar of Poster on Index and Viewforum mod
+	include $phpbb_root_path . 'includes/functions_user.' . $phpEx;
+	user_update_avatar($post_info['user_id'], $userdata['user_avatar'], $userdata['user_avatar_type'], $userdata['user_avatar_width'], $userdata['user_avatar_height']);
+// ENDED - Avatar of Poster on Index and Viewforum mod
+
 	// Resync topic/forum if needed
 	if ($post_info['topic_last_post_id'] == $post_id || $post_info['forum_last_post_id'] == $post_id || $post_info['topic_first_post_id'] == $post_id)
 	{
