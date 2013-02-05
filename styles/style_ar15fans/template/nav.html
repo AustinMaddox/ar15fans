@@ -5,24 +5,24 @@
 		<li><a href="" class="kill-click">{L_FORUMS}</a>
 			<ul>
 			<!-- BEGIN nav_forumrow -->
-				<!-- IF (nav_forumrow.S_IS_CAT and not nav_forumrow.S_FIRST_ROW) or nav_forumrow.S_NO_CAT  -->
-						</ul>
+				<!-- IF (nav_forumrow.S_IS_CAT and not nav_forumrow.S_FIRST_ROW) or nav_forumrow.S_NO_CAT -->
+						</ul><!-- (S_IS_CAT && not S_FIRST_ROW) || S_NO_CAT -->
 				<!-- ENDIF -->
 			
-				<!-- IF nav_forumrow.S_IS_CAT or nav_forumrow.S_FIRST_ROW or nav_forumrow.S_NO_CAT  -->
-				<li><!-- IF nav_forumrow.S_IS_CAT --><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --><!-- S_IS_CAT -->
-					<ul><!-- S_IS_CAT -->
+				<!-- IF nav_forumrow.S_IS_CAT or nav_forumrow.S_FIRST_ROW or nav_forumrow.S_NO_CAT -->
+				<li><!-- IF nav_forumrow.S_IS_CAT --><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- ELSE --><a href="" class="kill-click more">{L_FORUM}</a><!-- ENDIF --><!-- S_IS_CAT||S_FIRST_ROW||S_NO_CAT -->
+					<ul><!-- S_IS_CAT||S_FIRST_ROW||S_NO_CAT -->
 				<!-- ENDIF -->
 			
 						<!-- IF not nav_forumrow.S_IS_CAT -->
 						<li><a href="{nav_forumrow.U_VIEWFORUM}">{nav_forumrow.FORUM_NAME}</a><!-- not S_IS_CAT -->
 						
-							<!-- IF nav_forumrow.S_LIST_SUBFORUMS -->
-							<ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
+							<!-- IF nav_forumrow.S_SUBFORUMS and nav_forumrow.S_LIST_SUBFORUMS -->
+							<ul><!-- not S_IS_CAT --><!-- S_SUBFORUMS -->
 								<!-- BEGIN subforum -->
-								<li><a href="{nav_forumrow.subforum.U_SUBFORUM}">{nav_forumrow.subforum.SUBFORUM_NAME}</a></li><!-- not S_IS_CAT --><!-- SUBFORUMS -->
+								<li><a href="{nav_forumrow.subforum.U_SUBFORUM}">{nav_forumrow.subforum.SUBFORUM_NAME}</a></li><!-- not S_IS_CAT --><!-- S_SUBFORUMS && S_LIST_SUBFORUMS -->
 								<!-- END subforum -->
-							</ul><!-- not S_IS_CAT --><!-- SUBFORUMS -->
+							</ul><!-- /not S_IS_CAT --><!-- /S_SUBFORUMS -->
 							<!-- ENDIF -->
 						
 						</li>
@@ -96,7 +96,7 @@
 				<!-- ENDIF -->
 				
 				<!-- IF U_YOUR_PERSONAL_GALLERY or U_G_MANAGE_PHOTOS -->
-				<li><a href="" class="kill-click" style="cursor:alias;"><span class="icon-gallery-personal"></span>{L_YOUR_GALLERY}</a>
+				<li><a href="" class="kill-click more"><span class="icon-gallery-personal"></span>{L_YOUR_GALLERY}</a>
 					<ul>
 						<!-- IF U_YOUR_PERSONAL_GALLERY -->
 							<li><a href="{U_YOUR_PERSONAL_GALLERY}"><span class="icon-gallery-albums"></span>{L_YOUR_ALBUMS}</a></li>

@@ -673,6 +673,9 @@ div.gymsublist ul li {
 .kill-click {
 	cursor: default;
 }
+.more {
+	cursor: alias;
+}
 
 
 
