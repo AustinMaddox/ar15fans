@@ -83,6 +83,11 @@ hr.dashed {
 	background-image: url("{T_THEME_PATH}/images/bg_list.gif");
 }
 
+.bg_list_red {
+   background-color: #871212;
+   background-image: url("{T_THEME_PATH}/images/bg_list_red.gif");
+}
+
 .forumbg {
 	background-color: #a8a8a8;
 	background-image: url("{T_THEME_PATH}/images/bg_forumbg.gif");
