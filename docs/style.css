@@ -1,5 +1,5 @@
 a {
-  color: #999;
+  color: #f89c23;
 }
 a:visited {
   color: #999;
@@ -8,7 +8,7 @@ a:hover {
   color: #ccc;
 }
 body {
-  background-color: #3a3a3a;
+  background-color: #222;
   color: #eee;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 8px;
@@ -22,7 +22,6 @@ h1 {
 img {
   height: auto;
   max-width: 100%;
-  margin: 2rem 0;
 }
 section {
   background-color: #000;
@@ -32,9 +31,9 @@ section {
   -moz-border-radius-bottomright: 10px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border: 48px outset #999999;
-  margin: 50px auto;
-  padding: 40px 20px;
+  border: 30px outset #999999;
+  margin: 20px auto;
+  padding: 0;
   text-align: center;
-  width: 300px;
+  width: 50%;
 }
